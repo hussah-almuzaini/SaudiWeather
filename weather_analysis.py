@@ -99,8 +99,13 @@ st.markdown("Here you can add detailed preferences or insights based on weather 
 st.divider()
 
 st.subheader("📍 Location-based Weather Map")
+folium_static(generate_folium_map(df))  # Display the folium map
 
 st.divider()
 
 st.subheader("🔥 Heatmap of Weather Extremes")
 
+# Heatmap plot
+fig = plt.figure(figsize=(10, 6))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm", center=0)
+st.pyplot(fig)
