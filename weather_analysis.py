@@ -103,4 +103,4 @@ st.subheader("📍 Location-based Weather Map")
 st.divider()
 
 st.subheader("🔥 Heatmap of Weather Extremes")
-```
+
