@@ -584,3 +584,4 @@ if st.button("Show Top 3 Options 🔎"):
 
     
     recommend_top3_by_preferences(df, desired_temp, desired_humidity, desired_dew, desired_wind)
+    
