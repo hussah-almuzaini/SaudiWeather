@@ -173,6 +173,7 @@ with left_col:
     start_date = st.date_input("📅 Start date", value=min_date, min_value=min_date, max_value=max_date)
     end_date = st.date_input("📅 End date", value=max_date, min_value=min_date, max_value=max_date)
 
+st.markdown("<hr>", unsafe_allow_html=True)
 
 
 def temperature_plot(avg_df):
