@@ -62,4 +62,46 @@ end = pd.Timestamp(year=latest.year + 1, month=1, day=1) if latest.month == 12 e
 df_month = df[(df["date"] >= start) & (df["date"] < end)]
 avg = df_month.groupby("city", as_index=False).agg({"avg_temp": "mean", "avg_humidity": "mean", "max_dew_point": "mean", "max_wind_speed": "mean"})
 
+# Extract weather extremes
 coldest = avg.loc[avg["avg_temp"].idxmin()]
+hottest = avg.loc[avg["avg_temp"].idxmax()]
+driest = avg.loc[avg["avg_humidity"].idxmin()]
+most_humid = avg.loc[avg["avg_humidity"].idxmax()]
+lowest_dew = avg.loc[avg["max_dew_point"].idxmin()]
+highest_dew = avg.loc[avg["max_dew_point"].idxmax()]
+calmest = avg.loc[avg["max_wind_speed"].idxmin()]
+windiest = avg.loc[avg["max_wind_speed"].idxmax()]
+
+# Display Weather Extremes
+st.subheader("📅 Latest Monthly Weather Extremes")
+st.divider()
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(label="Hottest City", value=hottest["city"], delta=f'{hottest["avg_temp"]:.1f}°C')
+with col2:
+    st.metric(label="Coldest City", value=coldest["city"], delta=f'{coldest["avg_temp"]:.1f}°C')
+with col3:
+    st.metric(label="Most Humid City", value=most_humid["city"], delta=f'{most_humid["avg_humidity"]:.1f}%')
+
+st.divider()
+
+# Adding Preferences Section (Example)
+st.subheader("🌞 Preferences & Insights")
+st.markdown("Here you can add detailed preferences or insights based on weather analysis.")
+
+st.divider()
+
+# Add Map section (Example)
+st.subheader("📍 Location-based Weather Map")
+# Add your folium map here, for example, using `folium_static(generate_folium_map())`
+# folium_static(generate_folium_map())
+
+st.divider()
+
+# Add Heatmap (Example)
+st.subheader("🔥 Heatmap of Weather Extremes")
+# Add your heatmap plotting here if required
+
+st.divider()
