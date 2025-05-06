@@ -151,10 +151,13 @@ def get_weather_extremes_latest_month(df):
                 st.markdown(
                 f"""
                 <div style="background-color:{card['color']};padding:15px;border-radius:10px;
-                            box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-                    <h4>{card['icon']} {card['title']}</h4>
+                            box-shadow:0px 4px 8px rgba(0, 0, 0, 0.1);">
+                    <h3>{card['icon']} {card['title']}</h3>
                     <p>{card['value']}</p>
                 </div>
-                """, unsafe_allow_html=True
+                """,
+                unsafe_allow_html=True
                 )
 
+# استدعاء الدالة للحصول على ملخص الطقس
+get_weather_extremes_latest_month(df)
