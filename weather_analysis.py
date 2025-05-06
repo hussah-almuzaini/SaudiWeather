@@ -89,6 +89,18 @@ def get_weather_extremes_latest_month(df):
     calmest = avg.loc[avg["max_wind_speed"].idxmin()]
     windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
+
+    
+    st.markdown("""
+        <hr style="border: 2px solid #1a237e; margin-top: 20px; margin-bottom: 20px;">
+    """, unsafe_allow_html=True)
+    
+    
+    st.markdown(f"""
+        <h3 style='color:#1a237e; font-weight:700;'>Map</h3>
+    """, unsafe_allow_html=True)
+
+
     st.markdown(f"""
     <h3 style='color:#1a237e; font-weight:700;'>📅 Weather Summary for {start.strftime('%B %Y')}</h3>
 """, unsafe_allow_html=True)
@@ -162,15 +174,6 @@ def get_weather_extremes_latest_month(df):
                 )
 
 
-
-st.markdown("""
-    <hr style="border: 2px solid #1a237e; margin-top: 20px; margin-bottom: 20px;">
-""", unsafe_allow_html=True)
-
-
-st.markdown(f"""
-    <h3 style='color:#1a237e; font-weight:700;'>Map</h3>
-""", unsafe_allow_html=True)
 
 
 get_weather_extremes_latest_month(df)
