@@ -168,6 +168,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+st.markdown(f"""
+    <h3 style='color:#1a237e; font-weight:700;'>Map</h3>
+""", unsafe_allow_html=True)
 
 
 get_weather_extremes_latest_month(df)
@@ -503,7 +506,10 @@ available_cities = sorted(df["city"].dropna().unique())
 selected_city = None
 
 # إضافة عنوان
-st.markdown("### 🌆 Select the city to view the weather: ")
+
+st.markdown(f"""
+    <h3 style='color:#1a237e; font-weight:700;'>🌆 Select the city to view the weather:</h3>
+""", unsafe_allow_html=True)
 
 # عدد الأزرار في الصف الواحد
 buttons_per_row = 6
@@ -521,8 +527,11 @@ for i, city in enumerate(available_cities):
 if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 
+st.markdown(f"""
+    <h3 style='color:#1a237e; font-weight:700;'>🌆 Select Weather Preferences 🎯</h3>
+""", unsafe_allow_html=True)
 
-st.header("Select Weather Preferences 🎯")
+
 
 
 desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
