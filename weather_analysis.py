@@ -32,15 +32,15 @@ st.markdown(
         background-position: center;
     }}
     .block-container {{
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 2rem;
         border-radius: 12px;
     }}
     .stCard {{
-        background-color: #f0f2f6;
+        background-color: #ffffff;
         padding: 1rem;
         border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }}
     </style>
     """,
@@ -62,7 +62,6 @@ end = pd.Timestamp(year=latest.year + 1, month=1, day=1) if latest.month == 12 e
 df_month = df[(df["date"] >= start) & (df["date"] < end)]
 avg = df_month.groupby("city", as_index=False).agg({"avg_temp": "mean", "avg_humidity": "mean", "max_dew_point": "mean", "max_wind_speed": "mean"})
 
-# Extract weather extremes
 coldest = avg.loc[avg["avg_temp"].idxmin()]
 hottest = avg.loc[avg["avg_temp"].idxmax()]
 driest = avg.loc[avg["avg_humidity"].idxmin()]
@@ -72,7 +71,6 @@ highest_dew = avg.loc[avg["max_dew_point"].idxmax()]
 calmest = avg.loc[avg["max_wind_speed"].idxmin()]
 windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
-# Display Weather Extremes
 st.subheader("📅 Latest Monthly Weather Extremes")
 st.divider()
 
@@ -87,21 +85,13 @@ with col3:
 
 st.divider()
 
-# Adding Preferences Section (Example)
 st.subheader("🌞 Preferences & Insights")
 st.markdown("Here you can add detailed preferences or insights based on weather analysis.")
 
 st.divider()
 
-# Add Map section (Example)
 st.subheader("📍 Location-based Weather Map")
-# Add your folium map here, for example, using `folium_static(generate_folium_map())`
-# folium_static(generate_folium_map())
 
 st.divider()
 
-# Add Heatmap (Example)
 st.subheader("🔥 Heatmap of Weather Extremes")
-# Add your heatmap plotting here if required
-
-st.divider()
