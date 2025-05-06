@@ -89,67 +89,62 @@ def get_weather_extremes_latest_month(df):
     calmest = avg.loc[avg["max_wind_speed"].idxmin()]
     windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
-
-    
- 
-
-    st.markdown(f"""
-    <h3 style='color:#1a237e; font-weight:700;'>📅 Weather Summary for {start.strftime('%B %Y')}</h3>
-""", unsafe_allow_html=True)
+    st.subheader(f"📅 Weather Summary for {start.strftime('%B %Y')}")
+    st.markdown("---")
 
     cards = [
         {
             "icon": "🌡️",
             "title": "Lowest Temperature",
             "value": f"{coldest['city']} — {coldest['avg_temp']:.1f}°C",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "🔥",
             "title": "Highest Temperature",
             "value": f"{hottest['city']} — {hottest['avg_temp']:.1f}°C",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "💧",
             "title": "Lowest Humidity",
             "value": f"{driest['city']} — {driest['avg_humidity']:.1f}%",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "🌫️",
             "title": "Highest Humidity",
             "value": f"{most_humid['city']} — {most_humid['avg_humidity']:.1f}%",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "🟢",
             "title": "Lowest Dew Point",
             "value": f"{lowest_dew['city']} — {lowest_dew['max_dew_point']:.1f}°C",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "🔵",
             "title": "Highest Dew Point",
             "value": f"{highest_dew['city']} — {highest_dew['max_dew_point']:.1f}°C",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "🍃",
             "title": "Lowest Wind Speed",
             "value": f"{calmest['city']} — {calmest['max_wind_speed']:.1f} km/h",
-            "color":"#006064"
+            "color": "#e0f7fa"
         },
         {
             "icon": "🌪️",
             "title": "Highest Wind Speed",
             "value": f"{windiest['city']} — {windiest['max_wind_speed']:.1f} km/h",
-            "color": "#006064"
+            "color": "#e0f7fa"
         },
     ]
 
     # عرض البطاقات في صفوف من 3
-    rows = [cards[i:i+2] for i in range(0, len(cards), 2)]
+    rows = [cards[i:i+3] for i in range(0, len(cards), 3)]
     for row in rows:
         cols = st.columns(len(row))
         for col, card in zip(cols, row):
@@ -164,9 +159,6 @@ def get_weather_extremes_latest_month(df):
                 """,
                     unsafe_allow_html=True
                 )
-
-
-
 
 get_weather_extremes_latest_month(df)
 left_col, right_col = st.columns([1, 3])
@@ -350,15 +342,6 @@ with right_col:
                 avg_df['avg_humidity'] = avg_df['avg_humidity'].round(2)
                 avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
                 avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
-                st.markdown("""
-        <hr style="border: 2px solid #1a237e; margin-top: 20px; margin-bottom: 20px;">
-    """, unsafe_allow_html=True)
-    
-    
-                st.markdown(f"""
-        <h3 style='color:#1a237e; font-weight:700;'>Map</h3>
-    """, unsafe_allow_html=True)
-
 
 
                 if map_type == "Temperature":
@@ -510,13 +493,10 @@ available_cities = sorted(df["city"].dropna().unique())
 selected_city = None
 
 # إضافة عنوان
-
-st.markdown(f"""
-    <h3 style='color:#1a237e; font-weight:700;'>🌆 Select the city to view the weather:</h3>
-""", unsafe_allow_html=True)
+st.markdown("### 🌆 Select the city to view the weather: ")
 
 # عدد الأزرار في الصف الواحد
-buttons_per_row = 6
+buttons_per_row = 12
 
 # إنشاء عمود واحد
 cols = st.columns(buttons_per_row)
@@ -531,11 +511,8 @@ for i, city in enumerate(available_cities):
 if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 
-st.markdown(f"""
-    <h3 style='color:#1a237e; font-weight:700;'>🌆 Select Weather Preferences 🎯</h3>
-""", unsafe_allow_html=True)
 
-
+st.header("Select Weather Preferences 🎯")
 
 
 desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
