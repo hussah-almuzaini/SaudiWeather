@@ -5,3 +5,4 @@ numpy
 seaborn
 folium
 geopandas
+streamlit-folium
