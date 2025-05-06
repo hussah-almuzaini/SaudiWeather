@@ -1,3 +1,4 @@
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -32,15 +33,23 @@ st.markdown(
         background-position: center;
     }}
     .block-container {{
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.85);
         padding: 2rem;
         border-radius: 12px;
     }}
     .stCard {{
-        background-color: #ffffff;
+        background-color: #F7F7F7;
         padding: 1rem;
         border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }}
+    .stMetric {{
+        background-color: #D1E7DD;
+        padding: 10px;
+        border-radius: 10px;
+    }}
+    .stSubheader {{
+        color: #017C74;
     }}
     </style>
     """,
@@ -95,3 +104,4 @@ st.subheader("📍 Location-based Weather Map")
 st.divider()
 
 st.subheader("🔥 Heatmap of Weather Extremes")
+```
