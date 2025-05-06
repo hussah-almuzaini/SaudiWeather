@@ -6,7 +6,6 @@ from EDA import load_data, preprocess_data
 import geopandas as gpd
 from datetime import date
 import plotly.express as px
-
 from streamlit_folium import folium_static
 from EDA import generate_folium_map 
 
@@ -144,20 +143,11 @@ def get_weather_extremes_latest_month(df):
 
     # عرض البطاقات في صفوف من 3
     rows = [cards[i:i+3] for i in range(0, len(cards), 3)]
+
     for row in rows:
-        cols = st.columns(len(row))
+        cols = st.columns(3)
         for col, card in zip(cols, row):
             with col:
-                st.markdown(
-                f"""
-                <div style="background-color:{card['color']};padding:15px;border-radius:10px;
-                            box-shadow:0px 4px 8px rgba(0, 0, 0, 0.1);">
-                    <h3>{card['icon']} {card['title']}</h3>
-                    <p>{card['value']}</p>
-                </div>
-                """,
-                unsafe_allow_html=True
-                )
+                st.markdown(f"<div style='background-color:{card['color']}; padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);'><h3>{card['icon']} {card['title']}</h3><p>{card['value']}</p></div>", unsafe_allow_html=True)
 
-# استدعاء الدالة للحصول على ملخص الطقس
-get_weather_extremes_latest_month(df)
+    plt.close()  # إغلاق الرسم البياني بعد عرضه
