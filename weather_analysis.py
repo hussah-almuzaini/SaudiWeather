@@ -53,7 +53,6 @@ df = preprocess_data(df)
 import plotly.express as px 
 
 def get_weather_extremes_latest_month(df):
-    
     latest = df["date"].max()
     start = pd.Timestamp(year=latest.year, month=latest.month, day=1)
 
@@ -145,9 +144,27 @@ def get_weather_extremes_latest_month(df):
     rows = [cards[i:i+3] for i in range(0, len(cards), 3)]
 
     for row in rows:
+        # عرض كل بطاقة في صف من 3 بطاقات
         cols = st.columns(3)
-        for col, card in zip(cols, row):
-            with col:
-                st.markdown(f"<div style='background-color:{card['color']}; padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);'><h3>{card['icon']} {card['title']}</h3><p>{card['value']}</p></div>", unsafe_allow_html=True)
+        for idx, card in enumerate(row):
+            with cols[idx]:
+                st.markdown(f"""
+                    <div style="background-color: {card['color']}; padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <h3>{card['icon']} {card['title']}</h3>
+                        <p style="font-size: 18px; font-weight: bold;">{card['value']}</p>
+                    </div>
+                """, unsafe_allow_html=True)
 
-    plt.close()  # إغلاق الرسم البياني بعد عرضه
+# عرض رسم بياني للطقس باستخدام Plotly أو Matplotlib (حسب الحاجة)
+def plot_temperature_trends(df):
+    # مثال لرسم بياني لدرجات الحرارة على مر الأشهر
+    temp_fig = px.line(df, x="date", y="avg_temp", color="city", title="Temperature Trends Over Time")
+    st.plotly_chart(temp_fig)
+
+# استدعاء وظيفة الرسم البياني
+plot_temperature_trends(df)
+
+# عرض خريطة باستخدام folium (إذا كان مطلوباً)
+st.subheader("🌍 Weather Map")
+weather_map = generate_folium_map(df)  # فرضًا لديك هذه الدالة في `EDA`
+folium_static(weather_map)
