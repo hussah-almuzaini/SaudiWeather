@@ -97,54 +97,54 @@ def get_weather_extremes_latest_month(df):
             "icon": "🌡️",
             "title": "Lowest Temperature",
             "value": f"{coldest['city']} — {coldest['avg_temp']:.1f}°C",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
         {
             "icon": "🔥",
             "title": "Highest Temperature",
             "value": f"{hottest['city']} — {hottest['avg_temp']:.1f}°C",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
         {
             "icon": "💧",
             "title": "Lowest Humidity",
             "value": f"{driest['city']} — {driest['avg_humidity']:.1f}%",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
         {
             "icon": "🌫️",
             "title": "Highest Humidity",
             "value": f"{most_humid['city']} — {most_humid['avg_humidity']:.1f}%",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
         {
             "icon": "🟢",
             "title": "Lowest Dew Point",
             "value": f"{lowest_dew['city']} — {lowest_dew['max_dew_point']:.1f}°C",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
         {
             "icon": "🔵",
             "title": "Highest Dew Point",
             "value": f"{highest_dew['city']} — {highest_dew['max_dew_point']:.1f}°C",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
         {
             "icon": "🍃",
             "title": "Lowest Wind Speed",
             "value": f"{calmest['city']} — {calmest['max_wind_speed']:.1f} km/h",
-            "color": "#e0f7fa"
+            "color":"#006064"
         },
         {
             "icon": "🌪️",
             "title": "Highest Wind Speed",
             "value": f"{windiest['city']} — {windiest['max_wind_speed']:.1f} km/h",
-            "color": "#e0f7fa"
+            "color": "#006064"
         },
     ]
 
     # عرض البطاقات في صفوف من 3
-    rows = [cards[i:i+3] for i in range(0, len(cards), 3)]
+    rows = [cards[i:i+2] for i in range(0, len(cards), 2)]
     for row in rows:
         cols = st.columns(len(row))
         for col, card in zip(cols, row):
