@@ -91,15 +91,7 @@ def get_weather_extremes_latest_month(df):
 
 
     
-    st.markdown("""
-        <hr style="border: 2px solid #1a237e; margin-top: 20px; margin-bottom: 20px;">
-    """, unsafe_allow_html=True)
-    
-    
-    st.markdown(f"""
-        <h3 style='color:#1a237e; font-weight:700;'>Map</h3>
-    """, unsafe_allow_html=True)
-
+ 
 
     st.markdown(f"""
     <h3 style='color:#1a237e; font-weight:700;'>📅 Weather Summary for {start.strftime('%B %Y')}</h3>
@@ -358,6 +350,15 @@ with right_col:
                 avg_df['avg_humidity'] = avg_df['avg_humidity'].round(2)
                 avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
                 avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
+                st.markdown("""
+        <hr style="border: 2px solid #1a237e; margin-top: 20px; margin-bottom: 20px;">
+    """, unsafe_allow_html=True)
+    
+    
+                st.markdown(f"""
+        <h3 style='color:#1a237e; font-weight:700;'>Map</h3>
+    """, unsafe_allow_html=True)
+
 
 
                 if map_type == "Temperature":
