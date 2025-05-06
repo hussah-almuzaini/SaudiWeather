@@ -506,7 +506,7 @@ selected_city = None
 st.markdown("### 🌆 Select the city to view the weather: ")
 
 # عدد الأزرار في الصف الواحد
-buttons_per_row = 12
+buttons_per_row = 6
 
 # إنشاء عمود واحد
 cols = st.columns(buttons_per_row)
