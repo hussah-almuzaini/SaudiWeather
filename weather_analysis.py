@@ -426,13 +426,18 @@ def heatmap_temperature(df, city, col):
 
     # تأكد من إضافة المسافة البادئة بشكل صحيح هنا
     with col:
-        
-    
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+
         st.plotly_chart(fig, use_container_width=True)
-    
+
+        st.markdown("</div>", unsafe_allow_html=True)
+        
+        
 
 
-def heatmap_humidity(df, city،col):
+def heatmap_humidity(df, city,col):
     city_df = df[df["city"] == city]
 
 
@@ -454,7 +459,13 @@ def heatmap_humidity(df, city،col):
     with col:
         
     
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+
         st.plotly_chart(fig, use_container_width=True)
+
+        st.markdown("</div>", unsafe_allow_html=True)
     
 
 
@@ -479,7 +490,13 @@ def heatmap_dew_point(df, city,col):
     with col:
        
     
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+
         st.plotly_chart(fig, use_container_width=True)
+
+        st.markdown("</div>", unsafe_allow_html=True)
     
 
 
@@ -508,7 +525,13 @@ def heatmap_wind(df, city,col):
     with col:
         
     
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+
         st.plotly_chart(fig, use_container_width=True)
+
+        st.markdown("</div>", unsafe_allow_html=True)
     
         
 
