@@ -159,7 +159,7 @@ def get_weather_extremes_latest_month(df):
                 """,
                     unsafe_allow_html=True
                 )
-
+st.markdown('##')
 get_weather_extremes_latest_month(df)
 left_col, right_col = st.columns([1, 3])
 
