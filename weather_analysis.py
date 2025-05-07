@@ -90,7 +90,6 @@ def get_weather_extremes_latest_month(df):
     windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
     st.subheader(f"📅 grean[Weather Summary for {start.strftime('%B %Y')}]", divider=True)
-    st.markdown("---")
 
     cards = [
         {
@@ -159,7 +158,7 @@ def get_weather_extremes_latest_month(df):
                 """,
                     unsafe_allow_html=True
                 )
-st.markdown('##')
+
 get_weather_extremes_latest_month(df)
 left_col, right_col = st.columns([1, 3])
 
@@ -511,7 +510,7 @@ for i, city in enumerate(available_cities):
 if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 
-
+st.markdown('##')
 st.header("Select Weather Preferences 🎯")
 
 
