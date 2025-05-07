@@ -470,65 +470,73 @@ def show_all_weather_heatmaps(df, city):
 
 
 
-    # 🌡️ Temperature
-st.markdown("""
-<div style="
-    border: 2px solid #e76f51; 
-    border-radius: 10px; 
-    padding: 10px 16px; 
-    color: #e76f51; 
-    font-size: 18px; 
-    font-weight: bold; 
-    background-color: #fff3f0; 
-    display: inline-block;">
-    🌡️ Temperature
-</div>
-""", unsafe_allow_html=True)
+# 🌡️ Temperature داخل بوردر
+with st.container():
+    st.markdown("""
+    <div style="
+        border: 2px solid #e76f51; 
+        border-radius: 10px; 
+        padding: 15px; 
+        background-color: #fff3f0;">
+        <p style="color:#e76f51; font-size:18px; font-weight:bold; margin-bottom:10px;">
+            🌡️ Temperature
+        </p>
+    """, unsafe_allow_html=True)
 
-# 💧 Humidity
-st.markdown("""
-<div style="
-    border: 2px solid #457b9d; 
-    border-radius: 10px; 
-    padding: 10px 16px; 
-    color: #457b9d; 
-    font-size: 18px; 
-    font-weight: bold; 
-    background-color: #f0f8ff; 
-    display: inline-block;">
-    💧 Humidity
-</div>
-""", unsafe_allow_html=True)
+    heatmap_temperature(df, city)  # أو st.pyplot إذا ترجع شكل
 
-# 🟢 Dew Point
-st.markdown("""
-<div style="
-    border: 2px solid #5d9c7d; 
-    border-radius: 10px; 
-    padding: 10px 16px; 
-    color: #5d9c7d; 
-    font-size: 18px; 
-    font-weight: bold; 
-    background-color: #f4fdf8; 
-    display: inline-block;">
-    🟢 Dew Point
-</div>
-""", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-# 🍃 Wind Speed
-st.markdown("""
-<div style="
-    border: 2px solid #2a9d8f; 
-    border-radius: 10px; 
-    padding: 10px 16px; 
-    color: #2a9d8f; 
-    font-size: 18px; 
-    font-weight: bold; 
-    background-color: #e0f7f4; 
-    display: inline-block;">
-    🍃 Wind Speed
-</div>
-""", unsafe_allow_html=True)
+# 💧 Humidity داخل بوردر
+with st.container():
+    st.markdown("""
+    <div style="
+        border: 2px solid #457b9d; 
+        border-radius: 10px; 
+        padding: 15px; 
+        background-color: #f0f8ff;">
+        <p style="color:#457b9d; font-size:18px; font-weight:bold; margin-bottom:10px;">
+            💧 Humidity
+        </p>
+    """, unsafe_allow_html=True)
+
+    heatmap_humidity(df, city)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# 🟢 Dew Point داخل بوردر
+with st.container():
+    st.markdown("""
+    <div style="
+        border: 2px solid #5d9c7d; 
+        border-radius: 10px; 
+        padding: 15px; 
+        background-color: #f4fdf8;">
+        <p style="color:#5d9c7d; font-size:18px; font-weight:bold; margin-bottom:10px;">
+            🟢 Dew Point
+        </p>
+    """, unsafe_allow_html=True)
+
+    heatmap_dew_point(df, city)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# 🍃 Wind Speed داخل بوردر
+with st.container():
+    st.markdown("""
+    <div style="
+        border: 2px solid #2a9d8f; 
+        border-radius: 10px; 
+        padding: 15px; 
+        background-color: #e0f7f4;">
+        <p style="color:#2a9d8f; font-size:18px; font-weight:bold; margin-bottom:10px;">
+            🍃 Wind Speed
+        </p>
+    """, unsafe_allow_html=True)
+
+    heatmap_wind_speed(df, city)
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 
