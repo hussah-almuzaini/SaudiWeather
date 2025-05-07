@@ -420,13 +420,13 @@ def heatmap_temperature(df, city):
     fig = customize_heatmap(fig, f"🟢 Daily Avg temperature Point (°C) — {city}", city)
 
     with st.container():
-    st.markdown("""
-        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-    """, unsafe_allow_html=True)
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+    
+        st.plotly_chart(fig, use_container_width=True)
+    
+        st.markdown("</div>", unsafe_allow_html=True)
 
 def heatmap_humidity(df, city):
     city_df = df[df["city"] == city]
@@ -448,13 +448,13 @@ def heatmap_humidity(df, city):
     fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
 
     with st.container():
-    st.markdown("""
-        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-    """, unsafe_allow_html=True)
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+    
+        st.plotly_chart(fig, use_container_width=True)
+    
+        st.markdown("</div>", unsafe_allow_html=True)
 
 
 def heatmap_dew_point(df, city):
@@ -476,13 +476,13 @@ def heatmap_dew_point(df, city):
     fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
 
     with st.container():
-    st.markdown("""
-        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-    """, unsafe_allow_html=True)
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+    
+        st.plotly_chart(fig, use_container_width=True)
+    
+        st.markdown("</div>", unsafe_allow_html=True)
 
 
 
@@ -508,13 +508,13 @@ def heatmap_wind(df, city):
     fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
 
     with st.container():
-    st.markdown("""
-        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-    """, unsafe_allow_html=True)
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("""
+            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+        """, unsafe_allow_html=True)
+    
+        st.plotly_chart(fig, use_container_width=True)
+    
+        st.markdown("</div>", unsafe_allow_html=True)
 
 
 def show_all_weather_heatmaps(df, city):
