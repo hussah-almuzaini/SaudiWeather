@@ -402,7 +402,7 @@ def customize_heatmap(fig, title, city):
 
 
 
-def heatmap_temperature(df, city):
+def heatmap_temperature(df, city,col):
     city_df = df[df["city"] == city]
 
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_temp"].mean()
@@ -419,7 +419,7 @@ def heatmap_temperature(df, city):
     )
     fig = customize_heatmap(fig, f"🟢 Daily Avg temperature Point (°C) — {city}", city)
 
-    with st.container():
+    with col:
         st.markdown("""
             <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
         """, unsafe_allow_html=True)
@@ -428,7 +428,7 @@ def heatmap_temperature(df, city):
     
         st.markdown("</div>", unsafe_allow_html=True)
 
-def heatmap_humidity(df, city):
+def heatmap_humidity(df, city،col):
     city_df = df[df["city"] == city]
 
 
@@ -447,7 +447,7 @@ def heatmap_humidity(df, city):
 
     fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
 
-    with st.container():
+    with col:
         st.markdown("""
             <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
         """, unsafe_allow_html=True)
@@ -457,7 +457,7 @@ def heatmap_humidity(df, city):
         st.markdown("</div>", unsafe_allow_html=True)
 
 
-def heatmap_dew_point(df, city):
+def heatmap_dew_point(df, city,col):
     city_df = df[df["city"] == city]
 
     
@@ -475,7 +475,7 @@ def heatmap_dew_point(df, city):
     )
     fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
 
-    with st.container():
+    with col:
         st.markdown("""
             <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
         """, unsafe_allow_html=True)
@@ -486,7 +486,7 @@ def heatmap_dew_point(df, city):
 
 
 
-def heatmap_wind(df, city):
+def heatmap_wind(df, city,col):
     city_df = df[df["city"] == city]
 
     
@@ -507,7 +507,7 @@ def heatmap_wind(df, city):
     
     fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
 
-    with st.container():
+    with col:
         st.markdown("""
             <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
         """, unsafe_allow_html=True)
@@ -533,16 +533,13 @@ def show_all_weather_heatmaps(df, city):
 
     
     col1, col2 = st.columns(2)
-    with col1:
-        heatmap_temperature(df, city)
-    with col2:
-        heatmap_humidity(df, city)
+    heatmap_temperature(df, city,col1)
+    heatmap_humidity(df, city,col2)
     
     col3, col4 = st.columns(2)
-    with col3:
-        heatmap_dew_point(df, city)
-    with col4:
-        heatmap_wind(df, city)
+    heatmap_dew_point(df, city,col3)
+    
+    heatmap_wind(df, city,col4)
     
          
       
