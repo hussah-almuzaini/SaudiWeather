@@ -492,7 +492,7 @@ available_cities = sorted(df["city"].dropna().unique())
 selected_city = None
 
 # إضافة عنوان
-st.markdown("### 🌆 Select the city to view the weather: ")
+st.markdown("### 🌆 Select the city to view the weather: ", divider=True)
 
 # عدد الأزرار في الصف الواحد
 buttons_per_row = 12
@@ -511,7 +511,7 @@ if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 
 st.markdown('##')
-st.header("Select Weather Preferences 🎯")
+st.header("Select Weather Preferences 🎯", divider=True)
 
 
 desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
