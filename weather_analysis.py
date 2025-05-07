@@ -389,7 +389,7 @@ def heatmap_temperature(df, city, col):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig, f"🟢 Daily Avg Temperature Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, title, city)
 
     # تأكد من إضافة المسافة البادئة بشكل صحيح هنا
     with col:
@@ -421,7 +421,7 @@ def heatmap_humidity(df, city,col):
         nbinsx=31
     )
 
-    fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, title, city)
 
     with col:
         
@@ -452,7 +452,8 @@ def heatmap_dew_point(df, city,col):
         labels={"max_dew_point": "Dew Point (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, title, city)
+
 
     with col:
        
@@ -487,7 +488,7 @@ def heatmap_wind(df, city,col):
 
    
     
-    fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, title, city)
 
     with col:
         
