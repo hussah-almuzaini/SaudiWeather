@@ -94,7 +94,7 @@ def get_weather_extremes_latest_month(df):
     windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
     
-    st.markdown(f'<h1 style="color:#41755b;font-size:36px;">{f"Weather Summary for {start.strftime('%B %Y')}"} </h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="color:#41755b;font-size:36px;">Weather Summary for {start.strftime("%B %Y")}</h1>', unsafe_allow_html=True)
 
     cards = [
         {
