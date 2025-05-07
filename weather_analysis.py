@@ -513,7 +513,7 @@ if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 
 st.markdown('##')
-st.markdown(f'<h1 style="color:#41755b;font-size:30px;">elect Weather Preferences 🎯</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
 
 
 
@@ -564,8 +564,8 @@ if st.button("Show Top 3 Options 🔎"):
         monthly_avg["match_percent"] = monthly_avg.apply(get_score, axis=1)
         results = monthly_avg.sort_values(by="match_percent", ascending=False).head(3)
 
-        
-        st.subheader("✅ Top 3 matching city/month combinations:\n")
+        st.markdown(f'<h1 style="color:#41755b;font-size:30px;">✅ Top 3 matching city/month combinations</h1>', unsafe_allow_html=True)
+
         cols = st.columns(3)
         for i, (_, row) in enumerate(results.iterrows()):
             with cols[i]:
