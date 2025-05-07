@@ -532,22 +532,6 @@ st.markdown("""
 
 
 
-   """ col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown("#### 🌡️ Temperature")
-        heatmap_temperature(df, city)
-
-        st.markdown("#### 💧 Humidity")
-        heatmap_humidity(df, city)
-
-    with col2:
-
-        st.markdown("#### 🟢 Dew Point")
-        heatmap_dew_point(df, city)
-
-        st.markdown("#### 🍃 Wind Speed")
-        heatmap_wind(df, city)"""
 
 
 available_cities = sorted(df["city"].dropna().unique())
