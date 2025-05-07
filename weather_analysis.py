@@ -361,11 +361,9 @@ with right_col:
 import plotly.express as px
 
 def customize_heatmap(fig, city):
-     fig.update_layout(
-        xaxis_title="Day",
-        yaxis_title="Month"
-        # لا تضيف title هنا
-    )
+    title = f"🌡️ Daily Avg Temperature (°C) — {city}"  # تخصيص العنوان هنا
+    fig.update_layout(title=title)  # تعيين العنوان في المخطط
+    return fig
 
 
     
