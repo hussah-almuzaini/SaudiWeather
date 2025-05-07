@@ -505,7 +505,7 @@ def show_all_weather_heatmaps(df, city):
             heatmap_humidity(df, city)
     
             st.markdown("</div>", unsafe_allow_html=True)
-      cols = st.columns(2)
+    cols = st.columns(2)
 
     with cols[0]:
         with st.container():
