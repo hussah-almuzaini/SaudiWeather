@@ -354,6 +354,51 @@ with right_col:
                         wind_plot(avg_df)
 
 # get_weather_extremes_latest_month(df)
+import plotly.express as px
+
+def customize_heatmap(fig, title, city):
+   
+    fig.update_layout(
+        height=500,
+        width=800,
+        paper_bgcolor='#a8d5ba',   # خلفية خضراء فاتحة
+        plot_bgcolor='#a8d5ba',     # خلفية منطقة الرسم الأخضر الفاتح
+        title_font=dict(
+            family="Arial, sans-serif",  # نوع الخط
+            size=20,                    # حجم الخط
+            color="#006400"             # لون الخط (أخضر داكن)
+        ),
+        xaxis_title_font=dict(
+            family="Arial, sans-serif",
+            size=16,
+            color="#006400"             # لون الخط لمحور X
+        ),
+        yaxis_title_font=dict(
+            family="Arial, sans-serif",
+            size=16,
+            color="#006400"             # لون الخط لمحور Y
+        ),
+        xaxis_tickfont=dict(
+            family="Arial, sans-serif",
+            size=12,
+            color="#006400"             # لون أرقام محور X
+        ),
+        yaxis_tickfont=dict(
+            family="Arial, sans-serif",
+            size=12,
+            color="#006400"             # لون أرقام محور Y
+        ),
+        xaxis=dict(
+            gridcolor="#006400",  # لون شبكة محور X
+            tickcolor="#006400"   # لون أرقام محور X
+        ),
+        yaxis=dict(
+            gridcolor="#006400",  # لون شبكة محور Y
+            tickcolor="#006400"   # لون أرقام محور Y
+        ),
+        title=title  # إضافة العنوان بشكل مخصص
+    )
+    return fig
 
 
 def heatmap_temperature(df, city):
@@ -371,13 +416,8 @@ def heatmap_temperature(df, city):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-         # تعيين لون الحواف والإطار
-    fig.update_layout(
-        height=500,
-        width=800,
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
-    )
+    fig = customize_heatmap(fig, f"🟢 Daily Avg temperature Point (°C) — {city}", city)
+
     st.plotly_chart(fig, use_container_width=True)
 
 def heatmap_humidity(df, city):
@@ -397,12 +437,8 @@ def heatmap_humidity(df, city):
         nbinsx=31
     )
 
-    fig.update_layout(
-        height=500,
-        width=800,
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
-    )
+    fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
+
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -422,12 +458,8 @@ def heatmap_dew_point(df, city):
         labels={"max_dew_point": "Dew Point (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig.update_layout(
-        height=500,
-        width=800,
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
-    )
+    fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
+
     st.plotly_chart(fig, use_container_width=True)
 
 def heatmap_wind(df, city):
@@ -447,12 +479,10 @@ def heatmap_wind(df, city):
         nbinsx=31
     )
 
-    fig.update_layout(
-        height=500,
-        width=800,
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
-    )
+   
+    
+    fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
+
     st.plotly_chart(fig, use_container_width=True)
 
 
