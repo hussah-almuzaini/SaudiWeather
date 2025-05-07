@@ -360,7 +360,7 @@ with right_col:
 # get_weather_extremes_latest_month(df)
 import plotly.express as px
 
-def customize_heatmap(fig, title, city):
+def customize_heatmap(fig, city):
 
 
     
@@ -383,13 +383,14 @@ def heatmap_temperature(df, city, col):
         grouped,
         x="day",  
         y="month",  
-        z="avg_temp",  
+        z="avg_temp", 
+        title=f"🌡️ Daily Avg Temperature (°C) — {city}",
         color_continuous_scale="YlOrRd",  
         
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig, title=f"🌡️ Daily Avg Temperature (°C) — {city}", city=city)
+    fig = customize_heatmap(fig,  city=city)
 
     # تأكد من إضافة المسافة البادئة بشكل صحيح هنا
     with col:
@@ -416,12 +417,12 @@ def heatmap_humidity(df, city,col):
         y="month",
         z="avg_humidity",  
         color_continuous_scale="Blues",  
-        
+        title=f"💧 Daily Avg Humidity (%) — {city}", 
         labels={"avg_humidity": "Humidity (%)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
 
-    fig = customize_heatmap(fig, title=f"💧 Daily Avg Humidity (%) — {city}", city=city)
+    fig = customize_heatmap(fig, city=city)
 
     with col:
         
@@ -448,11 +449,11 @@ def heatmap_dew_point(df, city,col):
         y="month",
         z="max_dew_point", 
         color_continuous_scale="Greens",  
-        
+        title=f"🟢 Daily Avg Dew Point (°C) — {city}",
         labels={"max_dew_point": "Dew Point (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig, title=f"🟢 Daily Avg Dew Point (°C) — {city}", city=city)
+    fig = customize_heatmap(fig,  city=city)
 
 
     with col:
@@ -481,14 +482,14 @@ def heatmap_wind(df, city,col):
         y="month",
         z="max_wind_speed",  
         color_continuous_scale="Purples",  
-        
+        title=f"🍃 Daily Avg Wind Speed (km/h) — {city}",
         labels={"max_wind_speed": "Wind Speed (km/h)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
 
    
     
-    fig = customize_heatmap(fig, title=f"🍃 Daily Avg Wind Speed (km/h) — {city}", city= city)
+    fig = customize_heatmap(fig,  city= city)
 
     with col:
         
