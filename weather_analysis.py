@@ -377,22 +377,22 @@ def customize_heatmap(fig, title, city):
             font=dict(size=20, color="#004d1a"),  # تخصيص الخط للعنوان
             x=0.5,  # محاذاة العنوان إلى المنتصف
             xanchor='center'  # تثبيت العنوان في المنتصف
-        ),
+        )
+    )
+
+    # تخصيص المحاور
+    fig.update_layout(
         xaxis=dict(
-            title="Day",
-            title=dict(
-                font=dict(color="#004d1a")  # تخصيص اللون للعنوان في المحور X
-            ),
+            title="Day",  # عنوان المحور X
+            title_font=dict(color="#004d1a"),  # تخصيص اللون للعنوان
             tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
             zerolinecolor="#cce5cc"
         ),
         yaxis=dict(
-            title="Month",
-            title=dict(
-                font=dict(color="#004d1a")  # تخصيص اللون للعنوان في المحور Y
-            ),
+            title="Month",  # عنوان المحور Y
+            title_font=dict(color="#004d1a"),  # تخصيص اللون للعنوان
             tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
@@ -408,8 +408,6 @@ def customize_heatmap(fig, title, city):
     )
 
     return fig
-
-
 
 
 
