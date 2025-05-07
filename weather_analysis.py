@@ -470,11 +470,6 @@ def show_all_weather_heatmaps(df, city):
 
 
 
-
-
-
-
-
 available_cities = sorted(df["city"].dropna().unique())
 
 # تعريف المتغير selected_city
@@ -515,7 +510,7 @@ with st.container():
         </p>
     """, unsafe_allow_html=True)
 
-    heatmap_temperature(df, city)  # أو st.pyplot إذا ترجع شكل
+    heatmap_temperature(df, selected_city)  # أو st.pyplot إذا ترجع شكل
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -532,7 +527,7 @@ with st.container():
         </p>
     """, unsafe_allow_html=True)
 
-    heatmap_humidity(df, city)
+    heatmap_humidity(df, selected_city)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -549,7 +544,7 @@ with st.container():
         </p>
     """, unsafe_allow_html=True)
 
-    heatmap_dew_point(df, city)
+    heatmap_dew_point(df, selected_city)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -566,7 +561,7 @@ with st.container():
         </p>
     """, unsafe_allow_html=True)
 
-    heatmap_wind_speed(df, city)
+    heatmap_wind_speed(df, selected_city)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
