@@ -151,8 +151,8 @@ def get_weather_extremes_latest_month(df):
             with col:
                 st.markdown(
                 f"""
-                <div style="background-color:{card['color']};padding:5px;border-radius:10px;
-                            box-shadow:0 2px 5px rgba(0,0,0,0.1);text-align:center;margin:10px;">
+                <div style="background-color:{card['color']};padding:5px;border-radius:5px;
+                            box-shadow:0 2px 5px rgba(0,0,0,0.1);text-align:center;margin:5px;">
                     <h4>{card['icon']} {card['title']}</h4>
                     <p style="font-size:16px;">{card['value']}</p>
                 </div>
