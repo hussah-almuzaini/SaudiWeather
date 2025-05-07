@@ -490,14 +490,14 @@ def show_all_weather_heatmaps(df, city):
 available_cities = sorted(df["city"].dropna().unique())
 
 # تعريف المتغير selected_city
-selected_city = None
+selected_city = 'Riyadh'
 
 # إضافة عنوان
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
 
 
 # عدد الأزرار في الصف الواحد
-buttons_per_row = 12
+buttons_per_row = 6
 
 # إنشاء عمود واحد
 cols = st.columns(buttons_per_row)
