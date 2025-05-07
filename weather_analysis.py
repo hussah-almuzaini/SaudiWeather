@@ -361,8 +361,8 @@ def customize_heatmap(fig, title, city):
     fig.update_layout(
         height=500,
         width=800,
-        paper_bgcolor='#a8d5ba',   # خلفية خضراء فاتحة
-        plot_bgcolor='#a8d5ba',     # خلفية منطقة الرسم الأخضر الفاتح
+        paper_bgcolor='None',   # خلفية خضراء فاتحة
+        plot_bgcolor='None',     # خلفية منطقة الرسم الأخضر الفاتح
         title_font=dict(
             family="Arial, sans-serif",  # نوع الخط
             size=20,                    # حجم الخط
@@ -501,13 +501,17 @@ def show_all_weather_heatmaps(df, city):
     
 
     
-    heatmap_temperature(df, city)
+    col1, col2 = st.columns(2)
+    with col1:
+        heatmap_temperature(df, city)
+    with col2:
+        heatmap_humidity(df, city)
     
-    heatmap_humidity(df, city)
-    
-    heatmap_dew_point(df, city)
-    
-    heatmap_wind(df, city)
+    col3, col4 = st.columns(2)
+    with col3:
+        heatmap_dew_point(df, city)
+    with col4:
+        heatmap_wind(df, city)
     
          
       
