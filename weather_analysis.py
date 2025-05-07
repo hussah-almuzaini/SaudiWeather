@@ -89,7 +89,7 @@ def get_weather_extremes_latest_month(df):
     calmest = avg.loc[avg["max_wind_speed"].idxmin()]
     windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
-    st.subheader(f"📅 blue[Weather Summary for {start.strftime('%B %Y')}]", divider=True)
+    st.subheader(f"📅 grean[Weather Summary for {start.strftime('%B %Y')}]", divider=True)
     st.markdown("---")
 
     cards = [
@@ -144,7 +144,7 @@ def get_weather_extremes_latest_month(df):
     ]
 
     # عرض البطاقات في صفوف من 3
-    rows = [cards[i:i+2] for i in range(0, len(cards), 2)]
+    rows = [cards[i:i+4] for i in range(0, len(cards), 4)]
     for row in rows:
         cols = st.columns(len(row))
         for col, card in zip(cols, row):
