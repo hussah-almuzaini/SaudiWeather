@@ -498,80 +498,18 @@ def show_all_weather_heatmaps(df, city):
                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
     
-    cols = st.columns(2)
+    
 
-    with cols[0]:
-        with st.container():
-            st.markdown("""
-            <div style="
-                border: 2px solid #ccc; 
-                border-radius: 10px; 
-                padding: 20px; 
-                margin-bottom: 20px;
-                ">
-                <p style="font-size:18px; font-weight:bold; color:#333; margin-bottom:15px;">
-                    🌡️ Temperature
-                </p>
-            """, unsafe_allow_html=True)
     
-            heatmap_temperature(df, city)
+    heatmap_temperature(df, city)
     
-            st.markdown("</div>", unsafe_allow_html=True)
+    heatmap_humidity(df, city)
     
-    with cols[1]:
-        with st.container():
-            st.markdown("""
-            <div style="
-                border: 2px solid #ccc; 
-                border-radius: 10px; 
-                padding: 20px; 
-                margin-bottom: 20px;
-                ">
-                <p style="font-size:18px; font-weight:bold; color:#333; margin-bottom:15px;">
-                    💧 Humidity
-                </p>
-            """, unsafe_allow_html=True)
+    heatmap_dew_point(df, city)
     
-            heatmap_humidity(df, city)
+    heatmap_wind_speed(df, city)
     
-            st.markdown("</div>", unsafe_allow_html=True)
-    cols = st.columns(2)
-
-    with cols[0]:
-        with st.container():
-            st.markdown("""
-            <div style="
-                border: 2px solid #ccc; 
-                border-radius: 10px; 
-                padding: 20px; 
-                margin-bottom: 20px;
-                ">
-                <p style="font-size:18px; font-weight:bold; color:#333; margin-bottom:15px;">
-                    🟢 Dew Point
-                </p>
-            """, unsafe_allow_html=True)
-    
-            heatmap_dew_point(df, city)
-    
-            st.markdown("</div>", unsafe_allow_html=True)
-    
-    with cols[1]:
-        with st.container():
-            st.markdown("""
-            <div style="
-                border: 2px solid #ccc; 
-                border-radius: 10px; 
-                padding: 20px; 
-                margin-bottom: 20px;
-                ">
-                <p style="font-size:18px; font-weight:bold; color:#333; margin-bottom:15px;">
-                    🍃 Wind Speed
-                </p>
-            """, unsafe_allow_html=True)
-    
-            heatmap_wind_speed(df, city)
-    
-            st.markdown("</div>", unsafe_allow_html=True)
+         
       
                 
     
