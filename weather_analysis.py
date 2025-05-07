@@ -90,7 +90,7 @@ def get_weather_extremes_latest_month(df):
     windiest = avg.loc[avg["max_wind_speed"].idxmax()]
 
     
-    st.markdown(f'<h1 style="color:#41755b;font-size:30px;">{f"Weather Summary for {start.strftime('%B %Y')}”"}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 style="color:#41755b;font-size:36px;">{f"Weather Summary for {start.strftime('%B %Y')}”"}</h1>', unsafe_allow_html=True)
 
     cards = [
         {
@@ -493,7 +493,8 @@ available_cities = sorted(df["city"].dropna().unique())
 selected_city = None
 
 # إضافة عنوان
-st.header("🌆 Select the city to view the weather: ", divider=True)
+st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
+
 
 # عدد الأزرار في الصف الواحد
 buttons_per_row = 12
@@ -512,7 +513,8 @@ if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 
 st.markdown('##')
-st.header("Select Weather Preferences 🎯", divider=True)
+st.markdown(f'<h1 style="color:#41755b;font-size:30px;">elect Weather Preferences 🎯</h1>', unsafe_allow_html=True)
+
 
 
 desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
