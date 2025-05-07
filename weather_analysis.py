@@ -362,9 +362,7 @@ with right_col:
 import plotly.express as px
 
 def customize_heatmap(fig, title, city):
-    if not isinstance(fig, go.Figure):
-        fig = go.Figure(fig) 
-        
+    
     fig.update_layout(
         height=500,
         width=800,
@@ -382,7 +380,7 @@ def customize_heatmap(fig, title, city):
         ),
         xaxis=dict(
             title="Day",
-            titlefont=dict(color="#004d1a"),
+            title_font=dict(color="#004d1a"),  # تعديل هنا
             tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
@@ -390,7 +388,7 @@ def customize_heatmap(fig, title, city):
         ),
         yaxis=dict(
             title="Month",
-            titlefont=dict(color="#004d1a"),
+            title_font=dict(color="#004d1a"),  # تعديل هنا
             tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
@@ -406,6 +404,7 @@ def customize_heatmap(fig, title, city):
     )
 
     return fig
+
 
 
 
