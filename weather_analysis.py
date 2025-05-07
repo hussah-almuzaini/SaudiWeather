@@ -369,7 +369,6 @@ def customize_heatmap(fig, city):
     
     
 
-    return fig
 
     
        
