@@ -520,30 +520,27 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 
-col1, col2, _, _ = st.columns([1, 1, 0.1, 0.1])
+# الصف الأول (درجة الحرارة + الرطوبة)
+col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])  # أعمدة بعرض أقل من كامل الصفحة
 
 with col1:
-    st.markdown('<div style="margin-bottom:10px;"><p style="font-size:15px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p></div>', unsafe_allow_html=True)
-    st.markdown('<style>div[data-baseweb="slider"] {padding: 0px 5px;}</style>', unsafe_allow_html=True)
-    desired_temp = st.slider("", 0, 50, 25, key="temp")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
+    desired_temp = st.slider("", 0, 50, 25)
 
 with col2:
-    st.markdown('<div style="margin-bottom:10px;"><p style="font-size:15px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p></div>', unsafe_allow_html=True)
-    desired_humidity = st.slider("", 0, 100, 50, key="humidity")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
+    desired_humidity = st.slider("", 0, 100, 50)
 
-# مسافة عمودية بسيطة بين الصفين
-st.markdown("<div style='height:15px;'></div>", unsafe_allow_html=True)
-
-# صف 2: نقطة الندى والرياح
-col3, col4, _, _ = st.columns([1, 1, 0.1, 0.1])
+# صف ثاني (ندى + رياح)
+col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col3:
-    st.markdown('<div style="margin-bottom:10px;"><p style="font-size:15px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p></div>', unsafe_allow_html=True)
-    desired_dew = st.slider("", -10, 40, 10, key="dew")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
+    desired_dew = st.slider("", -10, 40, 10)
 
 with col4:
-    st.markdown('<div style="margin-bottom:10px;"><p style="font-size:15px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p></div>', unsafe_allow_html=True)
-    desired_wind = st.slider("", 0, 100, 10, key="wind")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
+    desired_wind = st.slider("", 0, 100, 10)
 
 
 
