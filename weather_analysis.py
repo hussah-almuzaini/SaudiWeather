@@ -361,6 +361,11 @@ with right_col:
 import plotly.express as px
 
 def customize_heatmap(fig, city):
+     fig.update_layout(
+        xaxis_title="Day",
+        yaxis_title="Month"
+        # لا تضيف title هنا
+    )
 
 
     
