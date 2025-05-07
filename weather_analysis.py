@@ -388,6 +388,8 @@ def customize_heatmap(fig, title, city):
             zerolinecolor="#cce5cc"
         )
     )
+
+
     
 
     
