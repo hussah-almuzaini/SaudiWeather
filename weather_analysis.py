@@ -364,7 +364,7 @@ import plotly.express as px
 def customize_heatmap(fig, title, city):
     fig.update_layout(
         height=500,
-        title=title_text
+        title=title_text,
         width=800,
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية شفافة
         plot_bgcolor='rgba(0,0,0,0)',   # خلفية الرسم شفافة
