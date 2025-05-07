@@ -381,7 +381,6 @@ def customize_heatmap(fig, title, city):
         xaxis=dict(
             title="Day",
             title_font=dict(color="#004d1a"),  # تعديل هنا
-            tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
             zerolinecolor="#cce5cc"
