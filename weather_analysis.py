@@ -144,7 +144,7 @@ def get_weather_extremes_latest_month(df):
     ]
 
     # عرض البطاقات في صفوف من 3
-    rows = [cards[i:i+4] for i in range(0, len(cards), 4)]
+    rows = [cards[i:i+2] for i in range(0, len(cards), 2)]
     for row in rows:
         cols = st.columns(len(row))
         for col, card in zip(cols, row):
