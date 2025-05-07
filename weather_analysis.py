@@ -522,9 +522,10 @@ def show_all_weather_heatmaps(df, city):
     
 
 available_cities = sorted(df["city"].dropna().unique())
+if "selected_city" not in st.session_state:
+    st.session_state.selected_city = None
 
-# تعريف المتغير selected_city
-selected_city = None
+
 
 # إضافة عنوان
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
@@ -539,13 +540,12 @@ cols = st.columns(buttons_per_row)
 for i, city in enumerate(available_cities):
     with cols[i % buttons_per_row]:  # توزيع الأزرار في العمود المناسب
         if st.button(city, key=city):  # استخدام key لضمان عدم حدوث تعارض
-            selected_city = city
+            st.session_state.selected_city = city
 
-# التأكد من اختيار مدينة
-if selected_city:
-    show_all_weather_heatmaps(df, selected_city)
-else :
-    show_all_weather_heatmaps(df, 'abha')
+if st.session_state.selected_city:
+    show_all_weather_heatmaps(df, st.session_state.selected_city)
+else:
+    show_all_weather_heatmaps(df, 'Abha')
 
 
 
