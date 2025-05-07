@@ -361,8 +361,8 @@ def customize_heatmap(fig, title, city):
     fig.update_layout(
         height=500,
         width=800,
-        paper_bgcolor='None',   # خلفية خضراء فاتحة
-        plot_bgcolor='None',     # خلفية منطقة الرسم الأخضر الفاتح
+        paper_bgcolor='rgba(0,0,0,0)',   # خلفية خضراء فاتحة
+        plot_bgcolor='rgba(0,0,0,0)',     # خلفية منطقة الرسم الأخضر الفاتح
         title_font=dict(
             family="Arial, sans-serif",  # نوع الخط
             size=20,                    # حجم الخط
