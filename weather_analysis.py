@@ -511,16 +511,28 @@ for i, city in enumerate(available_cities):
 # التأكد من اختيار مدينة
 if selected_city:
     show_all_weather_heatmaps(df, selected_city)
+else :
+    show_all_weather_heatmaps(df, 'Riyadh')
 
 st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
 
 
 
-desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
-desired_humidity = st.slider("Ideal Humidity (%)", 0, 100, 50)
-desired_dew = st.slider("Ideal Dew Point (°C)", -10, 40, 10)
-desired_wind = st.slider("Ideal Wind Speed (km/h)", 0, 100, 10)
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
+
+with col2:
+    desired_humidity = st.slider("Ideal Humidity (%)", 0, 100, 50)
+
+with col3:
+    desired_dew = st.slider("Ideal Dew Point (°C)", -10, 40, 10)
+
+with col4:
+    desired_wind = st.slider("Ideal Wind Speed (km/h)", 0, 100, 10)
 
 if st.button("Show Top 3 Options 🔎"):
 
