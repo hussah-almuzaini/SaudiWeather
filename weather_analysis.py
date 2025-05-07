@@ -356,8 +356,8 @@ with right_col:
 # get_weather_extremes_latest_month(df)
 
 
-def heatmap_temperature(df, city):
-    city_df = df[df["city"] == city]
+def heatmap_temperature(df, selected_city):
+    city_df = df[df["city"] == selected_city]
 
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_temp"].mean()
 
@@ -380,8 +380,8 @@ def heatmap_temperature(df, city):
     )
     st.plotly_chart(fig, use_container_width=True)
 
-def heatmap_humidity(df, city):
-    city_df = df[df["city"] == city]
+def heatmap_humidity(df, selected_city):
+    city_df = df[df["city"] == selected_city]
 
 
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_humidity"].mean()
@@ -406,8 +406,8 @@ def heatmap_humidity(df, city):
     st.plotly_chart(fig, use_container_width=True)
 
 
-def heatmap_dew_point(df, city):
-    city_df = df[df["city"] == city]
+def heatmap_dew_point(df, selected_city):
+    city_df = df[df["city"] == selected_city]
 
     
     grouped = city_df.groupby(["month", "day"], as_index=False)["max_dew_point"].mean()
@@ -430,8 +430,8 @@ def heatmap_dew_point(df, city):
     )
     st.plotly_chart(fig, use_container_width=True)
 
-def heatmap_wind(df, city):
-    city_df = df[df["city"] == city]
+def heatmap_wind(df, selected_city):
+    city_df = df[df["city"] == selected_city]
 
     
     grouped = city_df.groupby(["month", "day"], as_index=False)["max_wind_speed"].mean()
