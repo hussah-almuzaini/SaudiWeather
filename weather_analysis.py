@@ -507,7 +507,7 @@ def show_all_weather_heatmaps(df, city):
     
     heatmap_dew_point(df, city)
     
-    heatmap_wind_speed(df, city)
+    heatmap_wind(df, city)
     
          
       
