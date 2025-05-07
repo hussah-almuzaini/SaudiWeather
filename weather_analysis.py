@@ -362,6 +362,9 @@ with right_col:
 import plotly.express as px
 
 def customize_heatmap(fig, title, city):
+    if not isinstance(fig, go.Figure):
+        fig = go.Figure(fig) 
+        
     fig.update_layout(
         height=500,
         width=800,
