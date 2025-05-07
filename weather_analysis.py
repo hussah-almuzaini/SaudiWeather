@@ -519,20 +519,27 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 
-
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, _, _ = st.columns([1, 1, 0.2, 0.2])  
 
 with col1:
-    desired_temp = st.slider("Ideal Temperature (°C)", 0, 50, 25)
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
+    desired_temp = st.slider("", 0, 50, 25)
 
 with col2:
-    desired_humidity = st.slider("Ideal Humidity (%)", 0, 100, 50)
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
+    desired_humidity = st.slider("", 0, 100, 50)
+
+# صف ثاني (ندى + رياح)
+col3, col4, _, _ = st.columns([1, 1, 0.2, 0.2])
 
 with col3:
-    desired_dew = st.slider("Ideal Dew Point (°C)", -10, 40, 10)
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
+    desired_dew = st.slider("", -10, 40, 10)
 
 with col4:
-    desired_wind = st.slider("Ideal Wind Speed (km/h)", 0, 100, 10)
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
+    desired_wind = st.slider("", 0, 100, 10)
+
 
 if st.button("Show Top 3 Options 🔎"):
 
