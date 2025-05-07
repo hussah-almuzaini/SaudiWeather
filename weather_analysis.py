@@ -402,7 +402,7 @@ def customize_heatmap(fig, title, city):
 
 
 
-def heatmap_temperature(df, city,col):
+def heatmap_temperature(df, city, col):
     city_df = df[df["city"] == city]
 
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_temp"].mean()
@@ -417,12 +417,10 @@ def heatmap_temperature(df, city,col):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig, f"🟢 Daily Avg temperature Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, f"🟢 Daily Avg Temperature Point (°C) — {city}", city)
 
+    # تأكد من إضافة المسافة البادئة بشكل صحيح هنا
     with col:
-        
-        
-        
         st.markdown("""
             <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
         """, unsafe_allow_html=True)
@@ -430,6 +428,7 @@ def heatmap_temperature(df, city,col):
         st.plotly_chart(fig, use_container_width=True)
     
         st.markdown("</div>", unsafe_allow_html=True)
+
 
 def heatmap_humidity(df, city،col):
     city_df = df[df["city"] == city]
