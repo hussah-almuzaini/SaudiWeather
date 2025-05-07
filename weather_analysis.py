@@ -12,6 +12,11 @@ from EDA import generate_folium_map
 
 
 
+
+
+
+
+
 st.set_page_config(page_title="Saudi Weather Dashboard", layout="wide", page_icon=r"icon.png")
 # file_path = r'C:\Users\PCD\Desktop\SaudiWeather\SaudiCitiesWeather.csv'
 file_path = r'SaudiCitiesWeather.csv'
