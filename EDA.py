@@ -155,10 +155,10 @@ def generate_folium_map(df):
     return m
 
 
-plot_avg_temp_by_month(df)
-plot_avg_humidity_by_month(df)
-plot_wind_speed_by_month(df)
-m = generate_folium_map(df)
+#plot_avg_temp_by_month(df)
+#plot_avg_humidity_by_month(df)
+#plot_wind_speed_by_month(df)
+#m = generate_folium_map(df)
 
-plot_boxplots_by_month(df)
+#plot_boxplots_by_month(df)
 
