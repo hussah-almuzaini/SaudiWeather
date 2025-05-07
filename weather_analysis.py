@@ -361,35 +361,7 @@ with right_col:
 import plotly.express as px
 
 def customize_heatmap(fig, title, city):
-    fig.update_layout(
-        height=500,
-        width=800,
-        paper_bgcolor='rgba(0,0,0,0)',  # خلفية شفافة
-        plot_bgcolor='rgba(0,0,0,0)',   # خلفية الرسم شفافة
-        font=dict(
-            family="Arial",
-            color="#004d1a"  # لون الخط أخضر غامق
-        ),
-        xaxis=dict(
-            title="Day",  # عنوان المحور X
-            title_font=dict(color="#004d1a"),  # تخصيص اللون للعنوان
-            tickfont=dict(color="#004d1a"),
-            gridcolor="#cce5cc",
-            linecolor="#004d1a",
-            zerolinecolor="#cce5cc"
-        ),
-        yaxis=dict(
-            title="Month",  # عنوان المحور Y
-            title_font=dict(color="#004d1a"),  # تخصيص اللون للعنوان
-            tickfont=dict(color="#004d1a"),
-            gridcolor="#cce5cc",
-            linecolor="#004d1a",
-            zerolinecolor="#cce5cc"
-        )
-    )
 
-
-    
 
     
     
@@ -417,7 +389,7 @@ def heatmap_temperature(df, city, col):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    #fig = customize_heatmap(fig, f"🟢 Daily Avg Temperature Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, f"🟢 Daily Avg Temperature Point (°C) — {city}", city)
 
     # تأكد من إضافة المسافة البادئة بشكل صحيح هنا
     with col:
@@ -449,7 +421,7 @@ def heatmap_humidity(df, city,col):
         nbinsx=31
     )
 
-    #fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
 
     with col:
         
@@ -480,7 +452,7 @@ def heatmap_dew_point(df, city,col):
         labels={"max_dew_point": "Dew Point (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    #fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
 
     with col:
        
@@ -515,7 +487,7 @@ def heatmap_wind(df, city,col):
 
    
     
-    #fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
+    fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
 
     with col:
         
