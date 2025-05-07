@@ -571,7 +571,7 @@ if st.button("Show Top 3 Options 🔎"):
             with cols[i]:
                 st.markdown(
                     f"""
-                    <div style="background-color:#e0f7fa;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="background-color:#5d9c7d;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="text-align:center;">📍 {row['city']} — {row['month']}</h4>
                         <p>🔥 <b>Temp:</b> {row['avg_temp']:.1f}°C</p>
                         <p>💧 <b>Humidity:</b> {row['avg_humidity']:.0f}%</p>
