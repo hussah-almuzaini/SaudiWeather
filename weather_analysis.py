@@ -420,6 +420,9 @@ def heatmap_temperature(df, city,col):
     fig = customize_heatmap(fig, f"🟢 Daily Avg temperature Point (°C) — {city}", city)
 
     with col:
+        
+        
+        
         st.markdown("""
             <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
         """, unsafe_allow_html=True)
