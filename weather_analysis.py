@@ -524,7 +524,7 @@ def show_all_weather_heatmaps(df, city):
 available_cities = sorted(df["city"].dropna().unique())
 
 # تعريف المتغير selected_city
-selected_city = 'Riyadh'
+selected_city = None
 
 # إضافة عنوان
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
@@ -545,28 +545,13 @@ for i, city in enumerate(available_cities):
 if selected_city:
     show_all_weather_heatmaps(df, selected_city)
 else :
-    show_all_weather_heatmaps(df, 'Riyadh')
+    show_all_weather_heatmaps(df, 'abha')
 
 
 
 
 
-# 🍃 Wind Speed داخل بوردر
-with st.container():
-    st.markdown("""
-    <div style="
-        border: 2px solid #2a9d8f; 
-        border-radius: 10px; 
-        padding: 15px; 
-        background-color: #e0f7f4;">
-        <p style="color:#2a9d8f; font-size:18px; font-weight:bold; margin-bottom:10px;">
-            🍃 Wind Speed
-        </p>
-    """, unsafe_allow_html=True)
-
-    heatmap_wind_speed(df, selected_city)
-
-    st.markdown("</div>", unsafe_allow_html=True)
+# 
 
 
 
