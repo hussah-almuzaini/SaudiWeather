@@ -386,13 +386,8 @@ def customize_heatmap(fig, title, city):
             gridcolor="#cce5cc",
             linecolor="#004d1a",
             zerolinecolor="#cce5cc"
-        ),
-        title=dict(
-            text=title,  # النص الذي سيتم وضعه كعنوان
-            font=dict(size=20, color="#004d1a"),  # تخصيص الخط للعنوان
-            x=0.5,  # محاذاة العنوان إلى المنتصف
-            xanchor='center'  # تثبيت العنوان في المنتصف
         )
+       
     )
 
     fig.update_coloraxes(
