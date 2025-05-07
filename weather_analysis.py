@@ -468,8 +468,71 @@ def show_all_weather_heatmaps(df, city):
                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
 
-    
-    col1, col2 = st.columns(2)
+
+
+    # 🌡️ Temperature
+st.markdown("""
+<div style="
+    border: 2px solid #e76f51; 
+    border-radius: 10px; 
+    padding: 10px 16px; 
+    color: #e76f51; 
+    font-size: 18px; 
+    font-weight: bold; 
+    background-color: #fff3f0; 
+    display: inline-block;">
+    🌡️ Temperature
+</div>
+""", unsafe_allow_html=True)
+
+# 💧 Humidity
+st.markdown("""
+<div style="
+    border: 2px solid #457b9d; 
+    border-radius: 10px; 
+    padding: 10px 16px; 
+    color: #457b9d; 
+    font-size: 18px; 
+    font-weight: bold; 
+    background-color: #f0f8ff; 
+    display: inline-block;">
+    💧 Humidity
+</div>
+""", unsafe_allow_html=True)
+
+# 🟢 Dew Point
+st.markdown("""
+<div style="
+    border: 2px solid #5d9c7d; 
+    border-radius: 10px; 
+    padding: 10px 16px; 
+    color: #5d9c7d; 
+    font-size: 18px; 
+    font-weight: bold; 
+    background-color: #f4fdf8; 
+    display: inline-block;">
+    🟢 Dew Point
+</div>
+""", unsafe_allow_html=True)
+
+# 🍃 Wind Speed
+st.markdown("""
+<div style="
+    border: 2px solid #2a9d8f; 
+    border-radius: 10px; 
+    padding: 10px 16px; 
+    color: #2a9d8f; 
+    font-size: 18px; 
+    font-weight: bold; 
+    background-color: #e0f7f4; 
+    display: inline-block;">
+    🍃 Wind Speed
+</div>
+""", unsafe_allow_html=True)
+
+
+
+   """ col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("#### 🌡️ Temperature")
@@ -484,7 +547,7 @@ def show_all_weather_heatmaps(df, city):
         heatmap_dew_point(df, city)
 
         st.markdown("#### 🍃 Wind Speed")
-        heatmap_wind(df, city)
+        heatmap_wind(df, city)"""
 
 
 available_cities = sorted(df["city"].dropna().unique())
