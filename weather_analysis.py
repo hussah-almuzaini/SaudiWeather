@@ -388,14 +388,14 @@ def customize_heatmap(fig, title, city):
             zerolinecolor="#cce5cc"
         )
        
-    )
+    
 
     fig.update_coloraxes(
         colorbar=dict(
             tickfont=dict(color="#228B22"),      # لون أرقام الـ colorbar
             titlefont=dict(color="#228B22")      # لون عنوان الـ colorbar
         )
-    )
+    
 
     return fig
 
