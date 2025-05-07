@@ -357,23 +357,6 @@ with right_col:
                 elif map_type == "Wind Speed":
                         wind_plot(avg_df)
 
-# get_weather_extremes_latest_month(df)
-import plotly.express as px
-
-def customize_heatmap(fig, city):
-    title = f"🌡️ Daily Avg Temperature (°C) — {city}"  # تخصيص العنوان هنا
-    fig.update_layout(title=title)  # تعيين العنوان في المخطط
-    return fig
-
-
-    
-    
-
-
-    
-       
-
-
 
 
 def heatmap_temperature(df, city, col):
@@ -392,7 +375,7 @@ def heatmap_temperature(df, city, col):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig,  city=city)
+    
 
     # تأكد من إضافة المسافة البادئة بشكل صحيح هنا
     with col:
@@ -424,7 +407,6 @@ def heatmap_humidity(df, city,col):
         nbinsx=31
     )
 
-    fig = customize_heatmap(fig, city=city)
 
     with col:
         
@@ -455,7 +437,6 @@ def heatmap_dew_point(df, city,col):
         labels={"max_dew_point": "Dew Point (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig = customize_heatmap(fig,  city=city)
 
 
     with col:
@@ -491,7 +472,6 @@ def heatmap_wind(df, city,col):
 
    
     
-    fig = customize_heatmap(fig,  city= city)
 
     with col:
         
