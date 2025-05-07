@@ -380,14 +380,20 @@ def customize_heatmap(fig, title, city):
         ),
         xaxis=dict(
             title="Day",
-            title_font=dict(color="#004d1a"),  # تعديل هنا
+            title=dict(
+                font=dict(color="#004d1a")  # تخصيص اللون للعنوان في المحور X
+            ),
+            tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
             zerolinecolor="#cce5cc"
         ),
         yaxis=dict(
             title="Month",
-            title_font=dict(color="#004d1a"),  # تعديل هنا
+            title=dict(
+                font=dict(color="#004d1a")  # تخصيص اللون للعنوان في المحور Y
+            ),
+            tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
             zerolinecolor="#cce5cc"
@@ -396,7 +402,8 @@ def customize_heatmap(fig, title, city):
 
     fig.update_coloraxes(
         colorbar=dict(
-            titlefont=dict(color="#228B22")
+            tickfont=dict(color="#228B22"),      # لون أرقام الـ colorbar
+            titlefont=dict(color="#228B22")      # لون عنوان الـ colorbar
         )
     )
 
