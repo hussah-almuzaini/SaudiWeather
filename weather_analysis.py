@@ -357,48 +357,49 @@ with right_col:
 import plotly.express as px
 
 def customize_heatmap(fig, title, city):
-   
     fig.update_layout(
         height=500,
         width=800,
-        paper_bgcolor='rgba(0,0,0,0)',   # خلفية خضراء فاتحة
-        plot_bgcolor='rgba(0,0,0,0)',     # خلفية منطقة الرسم الأخضر الفاتح
-        title_font=dict(
-            family="Arial, sans-serif",  # نوع الخط
-            size=20,                    # حجم الخط
-            color="#006400"             # لون الخط (أخضر داكن)
+        paper_bgcolor='rgba(0,0,0,0)',  # خلفية شفافة
+        plot_bgcolor='rgba(0,0,0,0)',   # خلفية الرسم شفافة
+
+        font=dict(
+            family="Arial",
+            color="#004d1a"  # لون عام أخضر غامق
         ),
-        xaxis_title_font=dict(
-            family="Arial, sans-serif",
-            size=16,
-            color="#006400"             # لون الخط لمحور X
-        ),
-        yaxis_title_font=dict(
-            family="Arial, sans-serif",
-            size=16,
-            color="#006400"             # لون الخط لمحور Y
-        ),
-        xaxis_tickfont=dict(
-            family="Arial, sans-serif",
-            size=12,
-            color="#006400"             # لون أرقام محور X
-        ),
-        yaxis_tickfont=dict(
-            family="Arial, sans-serif",
-            size=12,
-            color="#006400"             # لون أرقام محور Y
+        title=dict(
+            text=title_text,
+            font=dict(size=20, color="#004d1a"),
+            x=0.5,
+            xanchor='center'
         ),
         xaxis=dict(
-            gridcolor="#006400",  # لون شبكة محور X
-            tickcolor="#006400"   # لون أرقام محور X
+            title="Day",
+            titlefont=dict(color="#004d1a"),
+            tickfont=dict(color="#004d1a"),
+            gridcolor="#cce5cc",
+            linecolor="#004d1a",
+            zerolinecolor="#cce5cc"
         ),
         yaxis=dict(
-            gridcolor="#006400",  # لون شبكة محور Y
-            tickcolor="#006400"   # لون أرقام محور Y
-        ),
-        title=title  # إضافة العنوان بشكل مخصص
+            title="Month",
+            titlefont=dict(color="#004d1a"),
+            tickfont=dict(color="#004d1a"),
+            gridcolor="#cce5cc",
+            linecolor="#004d1a",
+            zerolinecolor="#cce5cc"
+        )
     )
+
+    fig.update_coloraxes(
+        colorbar=dict(
+            tickfont=dict(color="#228B22"),      # لون أرقام الـ colorbar
+            titlefont=dict(color="#228B22")
+        )
+    )
+
     return fig
+
 
 
 def heatmap_temperature(df, city):
@@ -418,7 +419,14 @@ def heatmap_temperature(df, city):
     )
     fig = customize_heatmap(fig, f"🟢 Daily Avg temperature Point (°C) — {city}", city)
 
+    with st.container():
+    st.markdown("""
+        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+    """, unsafe_allow_html=True)
+
     st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
 def heatmap_humidity(df, city):
     city_df = df[df["city"] == city]
@@ -439,7 +447,14 @@ def heatmap_humidity(df, city):
 
     fig = customize_heatmap(fig, f"🟢 Daily Avg humidity Point (°C) — {city}", city)
 
+    with st.container():
+    st.markdown("""
+        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+    """, unsafe_allow_html=True)
+
     st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def heatmap_dew_point(df, city):
@@ -460,7 +475,16 @@ def heatmap_dew_point(df, city):
     )
     fig = customize_heatmap(fig, f"🟢 Daily Avg Dew Point (°C) — {city}", city)
 
+    with st.container():
+    st.markdown("""
+        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+    """, unsafe_allow_html=True)
+
     st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
 
 def heatmap_wind(df, city):
     city_df = df[df["city"] == city]
@@ -483,7 +507,14 @@ def heatmap_wind(df, city):
     
     fig = customize_heatmap(fig, f"🟢 Daily Avg wind Point (°C) — {city}", city)
 
+    with st.container():
+    st.markdown("""
+        <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+    """, unsafe_allow_html=True)
+
     st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def show_all_weather_heatmaps(df, city):
