@@ -388,7 +388,6 @@ def customize_heatmap(fig, title, city):
         yaxis=dict(
             title="Month",
             title_font=dict(color="#004d1a"),  # تعديل هنا
-            tickfont=dict(color="#004d1a"),
             gridcolor="#cce5cc",
             linecolor="#004d1a",
             zerolinecolor="#cce5cc"
@@ -397,7 +396,6 @@ def customize_heatmap(fig, title, city):
 
     fig.update_coloraxes(
         colorbar=dict(
-            tickfont=dict(color="#228B22"),      # لون أرقام الـ colorbar
             titlefont=dict(color="#228B22")
         )
     )
