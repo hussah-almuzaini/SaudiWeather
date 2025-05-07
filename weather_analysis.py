@@ -363,8 +363,6 @@ import plotly.express as px
 
 def customize_heatmap(fig, title, city):
     fig.update_layout(
-        
-        
         height=500,
         width=800,
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية شفافة
@@ -378,7 +376,6 @@ def customize_heatmap(fig, title, city):
             font=dict(size=20, color="#004d1a"),  # تخصيص الخط للعنوان
             x=0.5,  # محاذاة العنوان إلى المنتصف
             xanchor='center'  # تثبيت العنوان في المنتصف
-        )
         ),
         xaxis=dict(
             title="Day",
@@ -406,6 +403,7 @@ def customize_heatmap(fig, title, city):
     )
 
     return fig
+
 
 
 
