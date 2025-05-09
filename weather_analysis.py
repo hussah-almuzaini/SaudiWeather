@@ -614,7 +614,7 @@ st.markdown("""
         }
         .stButton>button:active {
             background-color: #ffcccc;  /* Light red background when clicked */
-            color: #990000;  /* Dark red text */
+            color: #721c24;;  /* Dark red text */
         }
     </style>
 """, unsafe_allow_html=True)
