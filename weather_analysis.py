@@ -362,68 +362,42 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : <
 import streamlit as st
 
 
-import streamlit as st
-
-# تغيير شامل للواجهة إلى "Light Mode"
 st.markdown("""
     <style>
-        /* إزالة الخلفية العامة للتطبيق */
-        .stApp {
-            background-color: transparent !important;
-        }
-
-        /* إزالة خلفية حقل النصوص والمدخلات */
-        .stTextInput input, 
-        .stTextInput > div > div,
-        .stNumberInput input, 
-        .stNumberInput > div > div, 
+        .stTextInput input,
+        .stNumberInput input,
         .stDateInput input,
-        .stSelectbox > div {
-            background-color: transparent !important;
+        .stSelectbox > div,
+        .stRadio > div {
+            background-color: #dcedc8 !important;
             color: inherit !important;
             border-radius: 8px !important;
-            border: 1px solid transparent !important;
+            border: 1px solid #a5d6a7 !important;
         }
 
-        /* إزالة خلفية الحقول المنسدلة */
-        .stSelectbox > div, 
-        .stRadio > div {
-            background-color: transparent !important;
-            color: inherit !important;
-            border: 1px solid transparent !important;
-        }
-
-        /* إزالة الخلفية من السهم في selectbox */
         .stSelectbox svg {
-            fill: inherit !important;
+            fill: #388e3c !important;
         }
 
-        /* إزالة خلفية القوائم المنسدلة */
         div[data-baseweb="popover"], 
         div[data-baseweb="option"] {
-            background-color: transparent !important;
+            background-color: #dcedc8 !important;
             color: inherit !important;
         }
 
-        /* إزالة الخلفية من التقويم */
         .stDateInput input {
-            background-color: transparent !important;
+            background-color: #dcedc8 !important;
             color: inherit !important;
         }
 
         .DayPicker, .DayPicker-Month {
-            background-color: transparent !important;
+            background-color: #dcedc8 !important;
             color: inherit !important;
         }
 
         .DayPicker-Day--selected {
-            background-color: transparent !important;
-            color: inherit !important;
-        }
-
-        /* إزالة الحدود الحمراء */
-        .css-1cpxqw2 {
-            border: none !important;
+            background-color: #81c784 !important;
+            color: white !important;
         }
     </style>
 """, unsafe_allow_html=True)
