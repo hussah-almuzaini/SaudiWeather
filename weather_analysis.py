@@ -725,28 +725,33 @@ import streamlit.components.v1 as components
 
 st.markdown("""
     <style>
-    div[data-baseweb="slider"] > div > div {
+    /* الخط الأحمر يصبح أزرق */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
         background-color: #003366 !important;
     }
 
-    div[data-baseweb="slider"] [role="slider"] {
+    /* مقبض السلايدر (الدائرة) */
+    .stSlider [role="slider"] {
         background-color: #003366 !important;
         border: 2px solid #003366 !important;
     }
 
-    div[data-baseweb="slider"] span {
+    /* القيمة الحالية فوق المقبض */
+    .stSlider span {
         color: red !important;
         font-weight: bold !important;
     }
 
-    div[data-baseweb="slider"] input {
-        background: transparent !important;
+    /* الأرقام في أقصى اليمين واليسار */
+    .stSlider input[type="number"] {
         color: #003366 !important;
-        font-weight: bold !important;
+        background-color: transparent !important;
         border: none !important;
+        font-weight: bold !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
