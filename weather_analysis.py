@@ -728,6 +728,8 @@ import streamlit.components.v1 as components
 
 import streamlit as st
 
+import streamlit as st
+
 # إنشاء الأعمدة
 col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 
@@ -752,7 +754,7 @@ st.markdown(f"""
     <style>
     /* تخصيص السلايدر للحرارة */
     .stSlider[data-testid="temp"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(255, 87, 34) 0%, rgb(255, 87, 34) {desired_temp}%, gray {desired_temp}%, gray 100%) !important;
+        background: linear-gradient(to right, rgb(33, 150, 243) 0%, rgb(33, 150, 243) {desired_temp}%, gray {desired_temp}%, gray 100%) !important;
     }}
     
     .stSlider[data-testid="temp"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
@@ -770,7 +772,7 @@ st.markdown(f"""
     
     /* تخصيص السلايدر لنقطة الندى */
     .stSlider[data-testid="dew"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(76, 175, 80) 0%, rgb(76, 175, 80) {desired_dew}%, gray {desired_dew}%, gray 100%) !important;
+        background: linear-gradient(to right, rgb(33, 150, 243) 0%, rgb(33, 150, 243) {desired_dew}%, gray {desired_dew}%, gray 100%) !important;
     }}
     
     .stSlider[data-testid="dew"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
@@ -779,7 +781,7 @@ st.markdown(f"""
     
     /* تخصيص السلايدر لسرعة الرياح */
     .stSlider[data-testid="wind"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(0, 188, 212) 0%, rgb(0, 188, 212) {desired_wind}%, gray {desired_wind}%, gray 100%) !important;
+        background: linear-gradient(to right, rgb(33, 150, 243) 0%, rgb(33, 150, 243) {desired_wind}%, gray {desired_wind}%, gray 100%) !important;
     }}
     
     .stSlider[data-testid="wind"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
@@ -801,8 +803,6 @@ st.markdown(f"""
     }}
     </style>
 """, unsafe_allow_html=True)
-
-
 
 
 
