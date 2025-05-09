@@ -728,23 +728,38 @@ import streamlit.components.v1 as components
 
 import streamlit as st
 
-# سلايدر في الصفحة
-slider_value = st.slider('Select Value', 1, 100, 1)
+import streamlit as st
 
-# استخدام CSS لتغيير الألوان بناءً على القيمة
+# سلايدر 1
+slider_value_1 = st.slider('Slider 1', 1, 100, 1, key="slider_1")
+
+# سلايدر 2
+slider_value_2 = st.slider('Slider 2', 1, 100, 1, key="slider_2")
+
+# استخدام CSS لتغيير الألوان بناءً على القيمة لكل سلايدر
 st.markdown(f"""
     <style>
-    /* تعيين التدرج اللوني للسلايدر بناءً على القيمة */
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {slider_value}%, gray {slider_value}%, gray 100%) !important;
+    /* السلايدر الأول: تغيير اللون قبل الدائرة */
+    .stSlider[data-testid="slider_1"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {slider_value_1}%, gray {slider_value_1}%, gray 100%) !important;
     }}
-
-    /* تغيير اللون بعد الدائرة */
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+    
+    /* السلايدر الأول: اللون بعد الدائرة */
+    .stSlider[data-testid="slider_1"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+        background-color: gray !important;
+    }}
+    
+    /* السلايدر الثاني: تغيير اللون قبل الدائرة */
+    .stSlider[data-testid="slider_2"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {slider_value_2}%, gray {slider_value_2}%, gray 100%) !important;
+    }}
+    
+    /* السلايدر الثاني: اللون بعد الدائرة */
+    .stSlider[data-testid="slider_2"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
         background-color: gray !important;
     }}
 
-    /* الرقم فوق السلايدر */
+    /* الرقم فوق الدائرة */
     div[data-testid="stSliderThumbValue"] {{
         color: blue !important;
     }}
