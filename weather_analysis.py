@@ -447,7 +447,7 @@ def heatmap_temperature(df, city):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-     fig.update_layout(
+    fig.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
     
@@ -467,8 +467,7 @@ def heatmap_temperature(df, city):
         legend=dict(
             title_font=dict(color='#006400'),  # لون عنوان الليجند
             font=dict(color='#006400')         # لون عناصر الليجند
-        )
-    )
+        ))
  
     
    
