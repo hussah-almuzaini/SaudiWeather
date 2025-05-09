@@ -198,7 +198,7 @@ def temperature_plot(avg_df):
          coloraxis_colorbar=dict(
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Temperature (°C)",
-            title_font=dict(size=16, color="#4CAF8B"),
+            title_font=dict(size=16, color="#4CAF8B")),
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
@@ -235,7 +235,7 @@ def humidity_plot(avg_df):
         coloraxis_colorbar=dict(
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Humidity (%)",
-            title_font=dict(size=16, color="#4CAF8B"),
+            title_font=dict(size=16, color="#4CAF8B")),
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
