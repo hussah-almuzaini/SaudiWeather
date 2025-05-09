@@ -367,35 +367,60 @@ import streamlit as st
 # تغيير شامل للواجهة إلى "Light Mode"
 st.markdown("""
     <style>
-        /* تغيير تصميم selectbox الخاص بحقل النوع */
-        .stSelectbox, .stRadio > div {
-            background-color: #e8f5e9 !important;
-            color: #2e7d32 !important;
+        /* إزالة الخلفية العامة */
+        .stApp {
+            background-color: transparent !important;
+        }
+
+        /* إزالة خلفيات الحقول */
+        input, .stTextInput > div > div, .stDateInput > div, .stSelectbox > div {
+            background-color: transparent !important;
+            color: inherit !important;
             border-radius: 8px !important;
             border: 1px solid #c8e6c9 !important;
-            padding: 8px;
         }
 
-        /* تصميم سهم selectbox */
+        /* إزالة خلفية عناصر القائمة المنسدلة */
+        .css-1n76uvr, .css-1n76uvr:hover {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
+
+        /* إزالة الخلفية من السهم في الـ selectbox */
         .stSelectbox svg {
-            fill: #388e3c !important;
+            fill: inherit !important;
         }
 
-        /* قائمة الخيارات المنسدلة */
+        /* إزالة خلفية قائمة الخيارات المنسدلة */
         div[data-baseweb="popover"] {
-            background-color: #f1f8e9 !important;
-            color: #2e7d32 !important;
+            background-color: transparent !important;
+            color: inherit !important;
         }
 
         div[data-baseweb="option"] {
-            background-color: #f1f8e9 !important;
-            color: #2e7d32 !important;
+            background-color: transparent !important;
+            color: inherit !important;
         }
 
-        /* تعديل الإطار عند تحديد القيمة */
-        .stSelectbox > div > div {
-            background-color: #f1f8e9 !important;
-            color: #2e7d32 !important;
+        /* إزالة خلفية التقويم */
+        .stDateInput input {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
+
+        .DayPicker, .DayPicker-Month {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
+
+        .DayPicker-Day--selected {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
+
+        /* إزالة الإطار الأحمر */
+        .css-1cpxqw2 {
+            border: none !important;
         }
     </style>
 """, unsafe_allow_html=True)
