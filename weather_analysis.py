@@ -359,11 +359,38 @@ st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
+st.markdown("""
+    <style>
+    /* تغيير حدود selectbox */
+    div[data-baseweb="select"] > div {
+        border: 2px solid #5d9c7d !important;
+        border-radius: 8px;
+    }
+
+    /* تغيير حدود مدخل التاريخ */
+    input[type="text"][data-testid="stDateInput"] {
+        border: 2px solid #5d9c7d !important;
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    /* تغليف الـ date_input بالكامل */
+    div[data-testid="stDateInput"] {
+        border: 2px solid #5d9c7d !important;
+        border-radius: 8px;
+        padding: 4px;
+    }
+
+    /* لتقليل الفراغات بين العناصر */
+    .block-container {
+        padding-top: 1rem;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 # --------- الفلاتر في صف واحد ---------
 filter_cols = st.columns(3)
-
-
-
 
 with filter_cols[0]:
     st.markdown("<h5 style='color:#5d9c7d; margin: 0; padding: 0;'>🗺️ Select Map Type</h5>", unsafe_allow_html=True)
