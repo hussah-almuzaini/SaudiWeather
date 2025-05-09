@@ -729,25 +729,19 @@ import streamlit.components.v1 as components
 import streamlit as st
 
 # سلايدر في الصفحة
-import streamlit as st
-
-# سلايدر في الصفحة
-
-
-# سلايدر في الصفحة
-NB = st.slider('Select Value', 1, 100, 1)
+slider_value = st.slider('Select Value', 1, 100, 1)
 
 # استخدام CSS لتغيير الألوان بناءً على القيمة
 st.markdown(f"""
     <style>
     /* تعيين التدرج اللوني للسلايدر بناءً على القيمة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {NB}%, rgba(151, 166, 195, 0.25) {NB}%, rgba(151, 166, 195, 0.25) 100%) !important;
+        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {slider_value}%, gray {slider_value}%, gray 100%) !important;
     }}
 
     /* تغيير اللون بعد الدائرة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {{
-        background-color: rgba(151, 166, 195, 0.25) !important;
+        background-color: gray !important;
     }}
 
     /* الرقم فوق السلايدر */
