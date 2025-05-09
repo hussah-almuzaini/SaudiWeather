@@ -729,68 +729,45 @@ import streamlit as st
 
 import streamlit as st
 
-# قيمة ثابتة للسلايدر تستخدم في التدرج (بدل ما تكون ديناميكية من السلايدر المحذوف)
-NB = 50  # تقدر تغير القيمة اليدوية هنا حسب اللي يناسبك
+import streamlit as st
 
-# تدرج لوني ديناميكي للسطر
-st.markdown(f''' 
-    <style> 
-    div.stSlider > div[data-baseweb = "slider"] > div > div {{
-        background: linear-gradient(to right, #00b894 0%, 
-                                    #00b894 {NB}%, 
-                                    rgba(151, 166, 195, 0.2) {NB}%, 
-                                    rgba(151, 166, 195, 0.2) 100%) !important; 
-        height: 6px !important;
-        border-radius: 5px !important;
-    }} 
-    </style>
-''', unsafe_allow_html=True)
+# سلايدر في الشريط الجانبي
+value = st.sidebar.slider('ABC', 0, 20, 10)
 
-# إخفاء الخلفية خلف الأرقام
-st.markdown(''' 
-    <style> 
-    div.stSlider > div[data-baseweb = "slider"] > div[data-testid="stTickBar"] > div {
-        background: transparent !important;
-    } 
-    </style>
-''', unsafe_allow_html=True)
+# CSS لتعديل لون عنوان السلايدر وألوان السلايدر نفسه
+st.markdown("""
+    <style>
+    /* تغيير لون عنوان السلايدر في الشريط الجانبي */
+    section[data-testid="stSidebar"] label {
+        color: blue !important;
+        font-weight: bold;
+        font-size: 18px;
+    }
 
-# الدائرة (المؤشر)
-st.markdown(''' 
-    <style> 
-    div.stSlider > div[data-baseweb="slider"] > div > div > div[role="slider"] {
-        background-color: #0984e3 !important;
-        box-shadow: #0984e3 0px 0px 0px 0.2rem !important;
-    } 
-    </style>
-''', unsafe_allow_html=True)
+    /* الجزء قبل الدائرة */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
+        background-color: gray !important;
+    }
 
-# الرقم فوق الدائرة
-st.markdown(''' 
-    <style> 
+    /* الجزء بعد الدائرة */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
+        background-color: red !important;
+    }
+
+    /* الرقم فوق السلايدر */
     div[data-testid="stSliderThumbValue"] {
-        color: #0984e3 !important;
-    } 
-    </style>
-''', unsafe_allow_html=True)
+        color: blue !important;
+    }
 
-# الرقمين على الطرفين
-st.markdown(''' 
-    <style> 
+    /* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         background: transparent !important;
         box-shadow: none !important;
-        color: #0984e3 !important;
-    } 
+        color: blue !important;
+    }
     </style>
-''', unsafe_allow_html=True)
-
-  
-
-
-
-
+""", unsafe_allow_html=True)
 
 
 
