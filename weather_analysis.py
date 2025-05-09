@@ -361,28 +361,45 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : <
 
 st.markdown("""
     <style>
-    /* تغيير خلفية selectbox */
+    /* تغيير خلفية selectbox الخارجي */
     div[data-baseweb="select"] > div {
         background-color: #eef6f3 !important;
-        border-radius: 8px;
-        color: black;
+        border-radius: 8px !important;
+        color: black !important;
+    }
+
+    /* تغيير لون النص داخل selectbox */
+    div[data-baseweb="select"] span {
+        color: black !important;
+    }
+
+    /* تغيير خلفية القائمة المنسدلة نفسها */
+    div[data-baseweb="popover"] {
+        background-color: #eef6f3 !important;
+        color: black !important;
     }
 
     /* تغيير خلفية خانة كتابة التاريخ */
     input[type="text"][data-testid="stDateInput"] {
         background-color: #eef6f3 !important;
-        border-radius: 8px;
-        color: black;
+        border-radius: 8px !important;
+        color: black !important;
     }
 
     /* تغيير خلفية تغليف date_input بالكامل */
     div[data-testid="stDateInput"] {
         background-color: #eef6f3 !important;
-        border-radius: 8px;
+        border-radius: 8px !important;
         padding: 4px;
+    }
+
+    /* تغيير لون أيقونة التقويم */
+    svg {
+        fill: black !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
