@@ -726,13 +726,15 @@ import streamlit.components.v1 as components
 st.markdown("""
     <style>
       
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
-        background-color: #0066cc !important;
-    }
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
+      /* الخط بعد الدائرة (الرمادي) */
+    .stSlider > div[data-baseweb="slider"] > div > div:first-child {
         background-color: #cccccc !important;
     }
-  
+
+    /* الخط قبل الدائرة (الأزرق) */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
+        background-color: #0066cc !important;
+    }
 
     /* مقبض السلايدر (الدائرة) */
     .stSlider [role="slider"] {
