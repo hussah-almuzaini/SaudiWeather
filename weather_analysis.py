@@ -367,42 +367,45 @@ import streamlit as st
 # تغيير شامل للواجهة إلى "Light Mode"
 st.markdown("""
     <style>
-        /* إزالة الخلفية العامة */
+        /* إزالة الخلفية العامة للتطبيق */
         .stApp {
             background-color: transparent !important;
         }
 
-        /* إزالة خلفيات الحقول */
-        input, .stTextInput > div > div, .stDateInput > div, .stSelectbox > div {
+        /* إزالة خلفية حقل النصوص والمدخلات */
+        .stTextInput input, 
+        .stTextInput > div > div,
+        .stNumberInput input, 
+        .stNumberInput > div > div, 
+        .stDateInput input,
+        .stSelectbox > div {
             background-color: transparent !important;
             color: inherit !important;
             border-radius: 8px !important;
-            border: 1px solid #c8e6c9 !important;
+            border: 1px solid transparent !important;
         }
 
-        /* إزالة خلفية عناصر القائمة المنسدلة */
-        .css-1n76uvr, .css-1n76uvr:hover {
+        /* إزالة خلفية الحقول المنسدلة */
+        .stSelectbox > div, 
+        .stRadio > div {
             background-color: transparent !important;
             color: inherit !important;
+            border: 1px solid transparent !important;
         }
 
-        /* إزالة الخلفية من السهم في الـ selectbox */
+        /* إزالة الخلفية من السهم في selectbox */
         .stSelectbox svg {
             fill: inherit !important;
         }
 
-        /* إزالة خلفية قائمة الخيارات المنسدلة */
-        div[data-baseweb="popover"] {
-            background-color: transparent !important;
-            color: inherit !important;
-        }
-
+        /* إزالة خلفية القوائم المنسدلة */
+        div[data-baseweb="popover"], 
         div[data-baseweb="option"] {
             background-color: transparent !important;
             color: inherit !important;
         }
 
-        /* إزالة خلفية التقويم */
+        /* إزالة الخلفية من التقويم */
         .stDateInput input {
             background-color: transparent !important;
             color: inherit !important;
@@ -418,12 +421,13 @@ st.markdown("""
             color: inherit !important;
         }
 
-        /* إزالة الإطار الأحمر */
+        /* إزالة الحدود الحمراء */
         .css-1cpxqw2 {
             border: none !important;
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
