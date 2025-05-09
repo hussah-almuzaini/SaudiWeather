@@ -726,55 +726,56 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 import streamlit.components.v1 as components
 
+import streamlit as st
 
-st.markdown(""" <style>
-/\* الجزء قبل الدائرة \*/
-.stSlider > div\[data-baseweb="slider"] > div > div\:nth-child(1) {
-background-color: gray !important;
-}
+# تخصيص الألوان باستخدام CSS
+st.markdown("""
+    <style>
+    /* الجزء قبل الدائرة */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
+        background-color: gray !important;
+    }
 
-```
-/* الجزء بعد الدائرة */
-.stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
-    background-color: blue !important;
-}
+    /* الجزء بعد الدائرة */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
+        background-color: blue !important;
+    }
 
-/* الرقم فوق السلايدر */
-div[data-testid="stSliderThumbValue"] {
-    color: blue !important;
-}
+    /* الرقم فوق السلايدر */
+    div[data-testid="stSliderThumbValue"] {
+        color: blue !important;
+    }
 
-/* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
-div[data-testid="stSliderTickBarMin"],
-div[data-testid="stSliderTickBarMax"] {
-    background: transparent !important;
-    box-shadow: none !important;
-    color: blue !important;
-}
-</style>
-```
+    /* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
+    div[data-testid="stSliderTickBarMin"],
+    div[data-testid="stSliderTickBarMax"] {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: blue !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-""", unsafe\_allow\_html=True) 
-col1, col2, \_, \_ = st.columns(\[1, 1, 0.4, 0.4])
+# إنشاء الأعمدة
+col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col1:
-st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe\_allow\_html=True)
-desired\_temp = st.slider("temp", 0, 50, 25, label\_visibility="collapsed")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
+    desired_temp = st.slider("temp", 0, 50, 25, label_visibility="collapsed")
 
 with col2:
-st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe\_allow\_html=True)
-desired\_humidity = st.slider("humidity", 0, 100, 50, label\_visibility="collapsed")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
+    desired_humidity = st.slider("humidity", 0, 100, 50, label_visibility="collapsed")
 
-col3, col4, \_, \_ = st.columns(\[1, 1, 0.4, 0.4])
+col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col3:
-st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe\_allow\_html=True)
-desired\_dew = st.slider("dew", -10, 40, 10, label\_visibility="collapsed")
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
+    desired_dew = st.slider("dew", -10, 40, 10, label_visibility="collapsed")
 
 with col4:
-st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe\_allow\_html=True)
-desired\_wind = st.slider("wind", 0, 100, 10, label\_visibility="collapsed") 
-
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
+    desired_wind = st.slider("wind", 0, 100, 10, label_visibility="collapsed")
 
 if st.button("Show Top 3 Options 🔎"):
 
