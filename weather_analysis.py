@@ -195,6 +195,10 @@ def temperature_plot(avg_df):
 
     # تعيين لون الحواف والإطار
     fig.update_layout(
+        mapbox=dict(
+        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        zoom=4
+    ),
          coloraxis_colorbar=dict(
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Temperature (°C)",
@@ -232,6 +236,10 @@ def humidity_plot(avg_df):
 
         # تعيين لون الحواف والإطار
     fig.update_layout(
+        mapbox=dict(
+        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        zoom=4
+    ),
         coloraxis_colorbar=dict(
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Humidity (%)",
@@ -269,6 +277,10 @@ def wind_plot(avg_df):
 
         # تعيين لون الحواف والإطار
     fig.update_layout(
+        mapbox=dict(
+        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        zoom=4
+    ),
         coloraxis_colorbar=dict(
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Wind Speed (km/h)",
@@ -306,6 +318,10 @@ def dew_point_plot(avg_df):
 
         # تعيين لون الحواف والإطار
     fig.update_layout(
+        mapbox=dict(
+        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        zoom=4
+    ),
        coloraxis_colorbar=dict(
     tickfont=dict(color="#4CAF8B"),
     title="Dew Point (°C)",
