@@ -670,7 +670,7 @@ with col2:
     display_chart_with_frame(fig_humidity)
 
 # الصف الثاني: نقطة الندى والرياح
-col3, col4 = st.columns(2)
+col3, col4 = st.columns(2 , gap="small")
 
 with col3:
     fig_dew = heatmap_dew_point(df, city)
