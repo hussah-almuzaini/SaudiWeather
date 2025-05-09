@@ -741,6 +741,10 @@ st.markdown("""
         border-radius: 5px !important;
     }
 
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
+        display: none !important;
+    }
+
     div[data-testid="stSliderThumbValue"] {
         color: blue !important;
     }
@@ -753,6 +757,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
   
 
