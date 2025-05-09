@@ -773,6 +773,28 @@ with col2:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
     desired_wind = st.slider("wind", 0, 100, 10, label_visibility="collapsed")
 
+
+
+
+st.markdown("""
+    <style>
+    div.stButton > button {
+        background-color: #41755b;
+        color: white;
+        border: none;
+        padding: 0.6em 2em;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    div.stButton > button:hover {
+        background-color: #2f5c46;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 if st.button("Show Top 3 Options 🔎"):
 
     def recommend_top3_by_preferences(df, desired_temp, desired_humidity, desired_dew, desired_wind):
