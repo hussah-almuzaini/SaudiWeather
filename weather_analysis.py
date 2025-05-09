@@ -359,58 +359,53 @@ st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
-
 st.markdown("""
     <style>
-    /* خلفية selectbox المغلق */
+    /* خلفية selectbox */
     div[data-baseweb="select"] > div {
         background-color: #eef6f3 !important;
         border-radius: 10px !important;
         color: black !important;
     }
 
-    /* النص داخل selectbox */
+    /* النصوص بداخل الـ select */
     div[data-baseweb="select"] * {
         color: black !important;
     }
 
-    /* القائمة المنسدلة (dropdown) */
-    div[data-baseweb="menu"] {
+    /* خلفية النافذة المنبثقة (Popover) نفسها */
+    div[role="listbox"] {
         background-color: #eef6f3 !important;
         border-radius: 10px !important;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2) !important;
     }
 
-    /* كل عنصر داخل القائمة المنسدلة */
-    div[data-baseweb="menu"] div[role="option"] {
-        color: black !important;
-        background-color: #eef6f3 !important;
-    }
-
-    /* عند تمرير الماوس على العنصر */
-    div[data-baseweb="menu"] div[role="option"]:hover {
-        background-color: #cce2db !important;
-        color: black !important;
-    }
-
-    /* خانة إدخال التاريخ */
-    input[data-testid="stDateInput-input"] {
+    /* عناصر القائمة */
+    div[role="option"] {
         background-color: #eef6f3 !important;
         color: black !important;
-        border-radius: 10px !important;
     }
 
-    /* خلفية تغليف التاريخ */
+    /* عند تمرير الماوس */
+    div[role="option"]:hover {
+        background-color: #cde2da !important;
+    }
+
+    /* تغليف التاريخ */
     div[data-testid="stDateInput"] {
         background-color: #eef6f3 !important;
         border-radius: 10px !important;
     }
 
-    /* أيقونة التاريخ */
-    svg {
-        fill: black !important;
+    /* داخل خانة التاريخ */
+    input[data-testid="stDateInput-input"] {
+        background-color: #eef6f3 !important;
+        color: black !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
+    
 
 
 
