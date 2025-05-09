@@ -212,7 +212,20 @@ def temperature_plot(avg_df):
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
 
+    
+    st.markdown("""
+        <div style="
+            border: 2px solid #4CAF8B;
+            border-radius: 10px;
+            padding: 10px;
+        ">
+    """, unsafe_allow_html=True)
+
     st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
 
 def humidity_plot(avg_df):
     avg_df["avg_humidity"] = avg_df["avg_humidity"].round(1)
@@ -298,6 +311,7 @@ def wind_plot(avg_df):
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
     )
+    
     st.plotly_chart(fig, use_container_width=True)
 
 def dew_point_plot(avg_df):
