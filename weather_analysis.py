@@ -230,7 +230,7 @@ def humidity_plot(avg_df):
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
-        paper_bgcolor='rgba(0,0,0,0)'   # لون خلفية الورقة 
+        paper_bgcolor='rgba(0,0,0,0)'،   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
     st.plotly_chart(fig, use_container_width=True)
