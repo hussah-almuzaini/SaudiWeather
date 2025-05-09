@@ -360,7 +360,7 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : <
 
 
 
- st.markdown("""
+st.markdown("""
     <style>
     /* خلفية selectbox المغلق */
     div[data-baseweb="select"] > div {
