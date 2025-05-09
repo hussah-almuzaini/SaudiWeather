@@ -348,7 +348,7 @@ def dew_point_plot(avg_df):
     return fig 
 
 
-st.markdown("<hr style='border: 2px solid #4CAF50; margin: 20px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
 
 st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
@@ -593,7 +593,7 @@ if "selected_city" not in st.session_state:
 
 city = None
 # إضافة عنوان
-st.markdown("<hr style='border: 2px solid #4CAF50; margin: 20px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
 
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
 
@@ -710,7 +710,7 @@ with col4:
 
 
 
-st.markdown("<hr style='border: 2px solid #4CAF50; margin: 20px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
 
 st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
