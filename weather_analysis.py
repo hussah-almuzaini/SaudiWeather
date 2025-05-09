@@ -755,7 +755,7 @@ div[data-testid="stSliderTickBarMax"] {
 ```
 
 """, unsafe\_allow\_html=True) 
-
+col1, col2, \_, \_ = st.columns(\[1, 1, 0.4, 0.4])
 
 with col1:
 st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe\_allow\_html=True)
