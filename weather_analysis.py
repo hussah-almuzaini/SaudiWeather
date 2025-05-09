@@ -721,34 +721,32 @@ st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
 
 
-
-import streamlit as st
-
-# ✅ CSS متكامل لتعديل لون الخط والأرقام
-
 import streamlit.components.v1 as components
 
 st.markdown("""
     <style>
-    /* تغيير لون مسار السلايدر */
     div[data-baseweb="slider"] > div > div {
         background-color: #003366 !important;
     }
 
-    /* تغيير لون الدائرة (المقبض) */
     div[data-baseweb="slider"] [role="slider"] {
         background-color: #003366 !important;
         border: 2px solid #003366 !important;
     }
 
-    /* تغيير لون الأرقام */
     div[data-baseweb="slider"] span {
-        color: #000000 !important;
+        color: red !important;
         font-weight: bold !important;
+    }
+
+    div[data-baseweb="slider"] input {
+        background: transparent !important;
+        color: #003366 !important;
+        font-weight: bold !important;
+        border: none !important;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
