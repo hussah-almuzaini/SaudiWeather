@@ -431,7 +431,7 @@ else:
 
 
 
-def heatmap_temperature(df, city, col):
+def heatmap_temperature(df, city):
     city_df = df[df["city"] == city]
 
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_temp"].mean()
@@ -462,7 +462,7 @@ def heatmap_temperature(df, city, col):
         
 
 
-def heatmap_humidity(df, city,col):
+def heatmap_humidity(df, city):
     city_df = df[df["city"] == city]
 
 
@@ -492,7 +492,7 @@ def heatmap_humidity(df, city,col):
     
 
 
-def heatmap_dew_point(df, city,col):
+def heatmap_dew_point(df, city):
     city_df = df[df["city"] == city]
 
     
@@ -520,7 +520,7 @@ def heatmap_dew_point(df, city,col):
 
 
 
-def heatmap_wind(df, city,col):
+def heatmap_wind(df, city):
     city_df = df[df["city"] == city]
 
     
