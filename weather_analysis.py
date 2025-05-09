@@ -369,35 +369,34 @@ st.markdown("""
         .stDateInput input,
         .stSelectbox > div,
         .stRadio > div {
-            background-color: #dcedc8 !important;
+            background-color: transparent !important;
             color: inherit !important;
-            border-radius: 8px !important;
-            border: 1px solid #a5d6a7 !important;
+            border: 1px solid #c8e6c9 !important;
         }
 
         .stSelectbox svg {
-            fill: #388e3c !important;
+            fill: inherit !important;
         }
 
         div[data-baseweb="popover"], 
         div[data-baseweb="option"] {
-            background-color: #dcedc8 !important;
+            background-color: transparent !important;
             color: inherit !important;
         }
 
         .stDateInput input {
-            background-color: #dcedc8 !important;
+            background-color: transparent !important;
             color: inherit !important;
         }
 
         .DayPicker, .DayPicker-Month {
-            background-color: #dcedc8 !important;
+            background-color: transparent !important;
             color: inherit !important;
         }
 
         .DayPicker-Day--selected {
-            background-color: #81c784 !important;
-            color: white !important;
+            background-color: transparent !important;
+            color: inherit !important;
         }
     </style>
 """, unsafe_allow_html=True)
