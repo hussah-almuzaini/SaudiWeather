@@ -725,14 +725,6 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 import streamlit.components.v1 as components
-import streamlit as st
-
-import streamlit as st
-
-import streamlit as st
-
-# سلايدر في الشريط الجانبي
-import streamlit as st
 
 # سلايدر في الصفحة
 NB = st.slider('Select Value', 1, 100, 1)
