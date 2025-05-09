@@ -206,7 +206,7 @@ def temperature_plot(avg_df):
             title="Temperature (°C)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-         height=700,
+         height=600,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)' ,   # لون خلفية الرسم
@@ -257,7 +257,7 @@ def humidity_plot(avg_df):
             title="Humidity (%)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-         height=700,
+         height=600,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',  # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
@@ -301,7 +301,7 @@ def wind_plot(avg_df):
             title_font=dict(size=16, color="#4CAF8B")
 ),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=700,
+        height=600,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
@@ -346,7 +346,7 @@ def dew_point_plot(avg_df):
 ),
 
         margin=dict(l=50, r=50, t=50, b=50),
-        height=700,
+        height=600,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
