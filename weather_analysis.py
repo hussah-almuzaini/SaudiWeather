@@ -310,52 +310,53 @@ def dew_point_plot(avg_df):
     st.plotly_chart(fig, use_container_width=True)
 
 
-filtered_df = df[(df["date"] >= pd.to_datetime(start_date)) & (df["date"] <= pd.to_datetime(end_date))]
 
 
-avg_df = filtered_df.groupby("city", as_index=False).agg({
-    "avg_temp": "mean",              
-    "avg_humidity": "mean",          
-    "max_wind_speed": "mean",        
-    "max_dew_point": "mean",         
-    "latitude": "first",             
-    "longitude": "first"
-})
-
-avg_df['avg_temp'] = avg_df['avg_temp'].round(2)
-avg_df['avg_humidity'] = avg_df['avg_humidity'].round(2)
-avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
-avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
-
-with right_col:
-        if start_date > end_date:
-            st.error("Start date must be before end date ❌.")
-        else:
-                filtered_df = df[(df["date"] >= pd.to_datetime(start_date)) & (df["date"] <= pd.to_datetime(end_date))]
-
-                avg_df = filtered_df.groupby("city", as_index=False).agg({
-                    "avg_temp": "mean",
-                    "avg_humidity": "mean",
-                    "max_wind_speed": "mean",
-                    "max_dew_point": "mean",
-                    "latitude": "first",
-                    "longitude": "first"
-                })
-
-                avg_df['avg_temp'] = avg_df['avg_temp'].round(2)
-                avg_df['avg_humidity'] = avg_df['avg_humidity'].round(2)
-                avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
-                avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
 
 
-                if map_type == "Temperature":
-                    temperature_plot(avg_df)
-                elif map_type == "Humidity":
-                        humidity_plot(avg_df)
-                elif map_type == "Dew Point":
-                        dew_point_plot(avg_df)
-                elif map_type == "Wind Speed":
-                        wind_plot(avg_df)
+# --------- الفلاتر في صف واحد ---------
+filter_cols = st.columns(3)
+
+with filter_cols[0]:
+    map_type = st.selectbox("Select Map Type:", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
+
+with filter_cols[1]:
+    start_date = st.date_input("Start Date", pd.to_datetime("2022-01-01"))
+
+with filter_cols[2]:
+    end_date = st.date_input("End Date", pd.to_datetime("2025-01-01"))
+
+# --------- التحقق من التاريخ ---------
+if start_date > end_date:
+    st.error("Start date must be before end date ❌.")
+else:
+    # --------- فلترة وتجميع البيانات ---------
+    filtered_df = df[(df["date"] >= pd.to_datetime(start_date)) & (df["date"] <= pd.to_datetime(end_date))]
+
+    avg_df = filtered_df.groupby("city", as_index=False).agg({
+        "avg_temp": "mean",
+        "avg_humidity": "mean",
+        "max_wind_speed": "mean",
+        "max_dew_point": "mean",
+        "latitude": "first",
+        "longitude": "first"
+    })
+
+    avg_df['avg_temp'] = avg_df['avg_temp'].round(2)
+    avg_df['avg_humidity'] = avg_df['avg_humidity'].round(2)
+    avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
+    avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
+
+    # --------- رسم الخريطة ---------
+    if map_type == "Temperature":
+        temperature_plot(avg_df)
+    elif map_type == "Humidity":
+        humidity_plot(avg_df)
+    elif map_type == "Dew Point":
+        dew_point_plot(avg_df)
+    elif map_type == "Wind Speed":
+        wind_plot(avg_df)
+
 
 
 
