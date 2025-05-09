@@ -725,37 +725,23 @@ import streamlit.components.v1 as components
 
 st.markdown("""
     <style>
-      
-      /* الخط بعد الدائرة (الرمادي) */
-    .stSlider > div[data-baseweb="slider"] > div > div:first-child {
-        background-color: #cccccc !important;
+    /* تغيير لون النص للحد الأدنى */
+    .stSliderTickBarMin {
+        color: #0066cc !important;
     }
 
-    /* الخط قبل الدائرة (الأزرق) */
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
-        background-color: #0066cc !important;
+    /* تغيير لون النص للحد الأقصى */
+    .stSliderTickBarMax {
+        color: #0066cc !important;
     }
 
-    /* مقبض السلايدر (الدائرة) */
-    .stSlider [role="slider"] {
-        background-color: #003366 !important;
-        border: 2px solid #003366 !important;
-    }
-
-    /* القيمة الحالية فوق المقبض */
-    .stSlider span {
-        color: #003366 !important;
-        font-weight: bold !important;
-    }
-
-    /* الأرقام في أقصى اليمين واليسار */
-    .stSlider input[type="number"] {
-        color: #003366 !important;
+    /* إزالة خلفية الديف (إن وجدت) */
+    .stSliderTickBarMin, .stSliderTickBarMax {
         background-color: transparent !important;
-        border: none !important;
-        font-weight: bold !important;
     }
     </style>
+""", unsafe_allow_html=True)
+
 """, unsafe_allow_html=True)
 
 
