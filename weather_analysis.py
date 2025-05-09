@@ -422,14 +422,15 @@ else:
         border: 3px solid #4CAF8B;
         border-radius: 12px;
         padding: 20px;
-        margin: 10px auto;
+        margin: 10px 0;
         background-color: transparent;
-        max-width: 900px;
-        box-shadow: 0 0 10px rgba(76, 175, 139, 0.4);
+        width: 100%;
+        box-sizing: border-box;
         ">
         {html}
     </div>
     """, height=700)
+
 
 
 
