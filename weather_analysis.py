@@ -182,7 +182,7 @@ def temperature_plot(avg_df):
         color_continuous_scale="Hot_r", 
         size_max=20,               
         zoom=4,                    
-        mapbox_style="carto-darkmatter",  
+        mapbox_style="carto-positron",  
         hover_name=None,           
         custom_data=["city", "avg_temp"]  
     )
@@ -197,8 +197,8 @@ def temperature_plot(avg_df):
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
+        paper_bgcolor='None',   # لون خلفية الورقة 
+        plot_bgcolor='None'     # لون خلفية الرسم
     )
 
     st.plotly_chart(fig, use_container_width=True)
@@ -215,7 +215,7 @@ def humidity_plot(avg_df):
         color_continuous_scale="Blues",  
         size_max=20,
         zoom=4,
-        mapbox_style="carto-darkmatter",
+        mapbox_style="light",
         hover_name=None,
         custom_data=["city", "avg_humidity"]
     )
@@ -230,8 +230,8 @@ def humidity_plot(avg_df):
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
+        paper_bgcolor='None',   # لون خلفية الورقة 
+        plot_bgcolor='None'     # لون خلفية الرسم
     )
     st.plotly_chart(fig, use_container_width=True)
 
