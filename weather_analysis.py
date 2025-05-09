@@ -612,12 +612,12 @@ else :
      city =  'Riyadh'
     
 df = df.copy()
-    df["date"] = pd.to_datetime(df["date"])  
-    df["month"] = df["date"].dt.strftime("%b")  
-    df["day"] = df["date"].dt.day  
+df["date"] = pd.to_datetime(df["date"])  
+df["month"] = df["date"].dt.strftime("%b")  
+df["day"] = df["date"].dt.day  
 
-    month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
+month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
     
     
 
