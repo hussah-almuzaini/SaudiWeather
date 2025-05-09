@@ -421,7 +421,7 @@ else:
     <div style="
         border: 3px solid #4CAF8B;
         border-radius: 12px;
-        padding: 20px;
+        padding: 5px;
         margin: 10px 0;
         background-color: transparent;
         width: 100%;
