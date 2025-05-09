@@ -349,7 +349,7 @@ def dew_point_plot(avg_df):
 
 
 
-
+st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
@@ -452,7 +452,6 @@ def heatmap_temperature(df, city, col):
    
     st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("</div>", unsafe_allow_html=True)
         
         
 
@@ -475,16 +474,7 @@ def heatmap_humidity(df, city,col):
     )
 
 
-    with col:
-        
-    
-        st.markdown("""
-            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-        """, unsafe_allow_html=True)
-
-        st.plotly_chart(fig, use_container_width=True)
-
-        st.markdown("</div>", unsafe_allow_html=True)
+    st.plotly_chart(fig, use_container_width=True)
     
 
 
@@ -506,17 +496,7 @@ def heatmap_dew_point(df, city,col):
     )
 
 
-    with col:
-       
-    
-        st.markdown("""
-            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-        """, unsafe_allow_html=True)
-
-        st.plotly_chart(fig, use_container_width=True)
-
-        st.markdown("</div>", unsafe_allow_html=True)
-    
+   st.plotly_chart(fig, use_container_width=True)
 
 
 
@@ -540,16 +520,7 @@ def heatmap_wind(df, city,col):
    
     
 
-    with col:
-        
-    
-        st.markdown("""
-            <div style="border: 2px solid #004d1a; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
-        """, unsafe_allow_html=True)
-
-        st.plotly_chart(fig, use_container_width=True)
-
-        st.markdown("</div>", unsafe_allow_html=True)
+    st.plotly_chart(fig, use_container_width=True)
     
         
 
