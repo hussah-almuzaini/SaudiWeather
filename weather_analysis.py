@@ -182,13 +182,14 @@ def temperature_plot(avg_df):
         color_continuous_scale="Hot_r", 
         size_max=20,               
         zoom=4,                    
-        mapbox_style="carto-positron",  
+        mapbox_style="carto-darkmatter",  
         hover_name=None,           
         custom_data=["city", "avg_temp"]  
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🌡️ Temp: %{customdata[1]}°C<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🌡️ Temp: <span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span>°C<extra></extra>",
+
         hoverlabel=dict(font_size=14)  
     )
 
@@ -215,13 +216,13 @@ def humidity_plot(avg_df):
         color_continuous_scale="Blues",  
         size_max=20,
         zoom=4,
-        mapbox_style="light",
+        mapbox_style="carto-darkmatter",
         hover_name=None,
         custom_data=["city", "avg_humidity"]
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>💧 Humidity: %{customdata[1]}%<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>💧 Humidity: <span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span%<extra></extra>",
         hoverlabel=dict(font_size=14)
     )
 
@@ -254,7 +255,7 @@ def wind_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🌬️ Wind: %{customdata[1]} km/h<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🌬️ Wind: <span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span km/h<extra></extra>",
         hoverlabel=dict(font_size=14)
     )
 
@@ -263,8 +264,8 @@ def wind_plot(avg_df):
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
+        paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
+        plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -286,7 +287,7 @@ def dew_point_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🟢 Dew Point: %{customdata[1]}°C<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🟢 Dew Point:<span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span°C<extra></extra>",
         hoverlabel=dict(font_size=14)
     )
 
@@ -295,8 +296,8 @@ def dew_point_plot(avg_df):
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
-        paper_bgcolor='black',   # لون خلفية الورقة 
-        plot_bgcolor='black'     # لون خلفية الرسم
+        paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
+        plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
     st.plotly_chart(fig, use_container_width=True)
 
