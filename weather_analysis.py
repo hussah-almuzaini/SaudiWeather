@@ -725,10 +725,14 @@ import streamlit.components.v1 as components
 
 st.markdown("""
     <style>
-    /* الخط الأحمر يصبح أزرق */
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
-        background-color: red !important;
+      
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
+        background-color: #0066cc !important;
     }
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
+        background-color: #cccccc !important;
+    }
+  
 
     /* مقبض السلايدر (الدائرة) */
     .stSlider [role="slider"] {
