@@ -200,6 +200,8 @@ def temperature_plot(avg_df):
         zoom=4
     ),
          coloraxis_colorbar=dict(
+            len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            thickness=15,
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Temperature (°C)",
             title_font=dict(size=16, color="#4CAF8B")),
@@ -241,6 +243,8 @@ def humidity_plot(avg_df):
         zoom=4
     ),
         coloraxis_colorbar=dict(
+            len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            thickness=15,
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Humidity (%)",
             title_font=dict(size=16, color="#4CAF8B")),
@@ -282,6 +286,8 @@ def wind_plot(avg_df):
         zoom=4
     ),
         coloraxis_colorbar=dict(
+            len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            thickness=15,
             tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
             title="Wind Speed (km/h)",
             title_font=dict(size=16, color="#4CAF8B")
@@ -323,6 +329,8 @@ def dew_point_plot(avg_df):
         zoom=4
     ),
        coloraxis_colorbar=dict(
+           len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            thickness=15,
     tickfont=dict(color="#4CAF8B"),
     title="Dew Point (°C)",
     title_font=dict(size=16, color="#4CAF8B")
