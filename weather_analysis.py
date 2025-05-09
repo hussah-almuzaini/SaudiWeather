@@ -451,9 +451,19 @@ def heatmap_temperature(df, city):
         plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
         title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        legend_font=dict(color='#006400'),  # لون الليجند
-        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
-    )
+        legend_font=dict(color='#006400'),
+        font=dict(color='#006400') ،
+         xaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان المحور
+            tickfont=dict(color='#006400')),
+
+        yaxis=dict(
+        title_font=dict(color='#006400'),
+        tickfont=dict(color='#006400') ),
+        legend=dict(
+                title_font=dict(color='#006400'),
+                font=dict(color='#006400'))
+ 
     
    
     st.plotly_chart(fig, use_container_width=True)
