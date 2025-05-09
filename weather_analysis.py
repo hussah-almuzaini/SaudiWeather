@@ -651,24 +651,27 @@ df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
     
 st.markdown("""
     <style>
-        .block-container {
-            padding-top: 0rem;
-            padding-bottom: 0rem;
-        }
-        iframe {
-            display: block;
-            margin: 0px !important;
-            padding: 0px !important;
-        }
-        .element-container {
-            padding: 0px !important;
-            margin: 0px !important;
-        }
-        .stColumns {
-            gap: 0rem !important;
-        }
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
+        background-color: gray !important;
+    }
+
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
+        background-color: red !important;
+    }
+
+    div[data-testid="stSliderThumbValue"] {
+        color: blue !important;
+    }
+
+    div[data-testid="stSliderTickBarMin"],
+    div[data-testid="stSliderTickBarMax"] {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: blue !important;
+    }
     </style>
 """, unsafe_allow_html=True)
+
 
 
     
