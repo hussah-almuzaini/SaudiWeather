@@ -608,7 +608,7 @@ for i, city in enumerate(available_cities):
 
 if  st.session_state.selected_city:
     city = st.session_state.selected_city
-else 
+else :
      city =  'Riyadh'
     
 df = df.copy()
