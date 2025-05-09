@@ -729,26 +729,27 @@ import streamlit as st
 
 st.markdown("""
     <style>
-    /* الجزء قبل الدائرة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
         background-color: gray !important;
+        height: 6px !important;
+        border-radius: 5px !important;
     }
 
-    /* الجزء بعد الدائرة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
         background-color: red !important;
+        height: 6px !important;
+        border-radius: 5px !important;
     }
 
-    /* الرقم فوق السلايدر */
     div[data-testid="stSliderThumbValue"] {
         color: blue !important;
     }
 
-    /* الأرقام على طرفي السلايدر بدون خلفية */
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         background: transparent !important;
         box-shadow: none !important;
+        color: blue !important;
     }
     </style>
 """, unsafe_allow_html=True)
