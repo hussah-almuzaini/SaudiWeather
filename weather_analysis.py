@@ -727,68 +727,64 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit.components.v1 as components
 import streamlit as st
 
-NB = st.sidebar.select_slider(
-    '', 
-    options=[1,10,20,30,40,50,60,70,80,90,100], 
-    value=1
-)
+import streamlit as st
 
-# Gradient color fill for the slider track
+# قيمة ثابتة للسلايدر تستخدم في التدرج (بدل ما تكون ديناميكية من السلايدر المحذوف)
+NB = 50  # تقدر تغير القيمة اليدوية هنا حسب اللي يناسبك
+
+# تدرج لوني ديناميكي للسطر
 st.markdown(f''' 
     <style> 
     div.stSlider > div[data-baseweb = "slider"] > div > div {{
-        background: linear-gradient(to right, rgb(1, 183, 158) 0%, 
-                                    rgb(1, 183, 158) {NB}%, 
-                                    rgba(151, 166, 195, 0.25) {NB}%, 
-                                    rgba(151, 166, 195, 0.25) 100%) !important; 
+        background: linear-gradient(to right, #00b894 0%, 
+                                    #00b894 {NB}%, 
+                                    rgba(151, 166, 195, 0.2) {NB}%, 
+                                    rgba(151, 166, 195, 0.2) 100%) !important; 
         height: 6px !important;
         border-radius: 5px !important;
     }} 
     </style>
 ''', unsafe_allow_html=True)
 
-# Hide the tick bar background
+# إخفاء الخلفية خلف الأرقام
 st.markdown(''' 
     <style> 
     div.stSlider > div[data-baseweb = "slider"] > div[data-testid="stTickBar"] > div {
-        background: rgb(1 1 1 / 0%);
+        background: transparent !important;
     } 
     </style>
 ''', unsafe_allow_html=True)
 
-# Style the slider cursor (thumb)
+# الدائرة (المؤشر)
 st.markdown(''' 
     <style> 
     div.stSlider > div[data-baseweb="slider"] > div > div > div[role="slider"] {
-        background-color: rgb(14, 38, 74);
-        box-shadow: rgb(14 38 74 / 20%) 0px 0px 0px 0.2rem;
+        background-color: #0984e3 !important;
+        box-shadow: #0984e3 0px 0px 0px 0.2rem !important;
     } 
     </style>
 ''', unsafe_allow_html=True)
 
-# Style the number above the slider
+# الرقم فوق الدائرة
 st.markdown(''' 
     <style> 
     div[data-testid="stSliderThumbValue"] {
-        color: blue !important;
+        color: #0984e3 !important;
     } 
     </style>
 ''', unsafe_allow_html=True)
 
-# Style min/max numbers
+# الرقمين على الطرفين
 st.markdown(''' 
     <style> 
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         background: transparent !important;
         box-shadow: none !important;
-        color: blue !important;
+        color: #0984e3 !important;
     } 
     </style>
 ''', unsafe_allow_html=True)
-
-
-
 
   
 
