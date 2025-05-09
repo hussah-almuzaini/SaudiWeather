@@ -732,42 +732,39 @@ import streamlit as st
 import streamlit as st
 
 # سلايدر في الشريط الجانبي
-value = st.sidebar.slider('ABC', 0, 20, 10)
+import streamlit as st
 
-# CSS لتعديل لون عنوان السلايدر وألوان السلايدر نفسه
-st.markdown("""
+# سلايدر في الصفحة
+NB = st.slider('Select Value', 1, 100, 1)
+
+# تدرج لوني ديناميكي يعتمد على القيمة
+st.markdown(f'''
     <style>
-    /* تغيير لون عنوان السلايدر في الشريط الجانبي */
-    section[data-testid="stSidebar"] label {
-        color: blue !important;
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-    /* الجزء قبل الدائرة */
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
-        background-color: gray !important;
-    }
+    /* تغيير اللون قبل الدائرة بناءً على القيمة */
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background-color: rgb(1, 183, 158) {NB}% !important;
+    }}
 
     /* الجزء بعد الدائرة */
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
-        background-color: red !important;
-    }
+    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+        background-color: rgba(151, 166, 195, 0.25) !important;
+    }}
 
     /* الرقم فوق السلايدر */
-    div[data-testid="stSliderThumbValue"] {
+    div[data-testid="stSliderThumbValue"] {{
         color: blue !important;
-    }
+    }}
 
     /* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
     div[data-testid="stSliderTickBarMin"],
-    div[data-testid="stSliderTickBarMax"] {
+    div[data-testid="stSliderTickBarMax"] {{
         background: transparent !important;
         box-shadow: none !important;
         color: blue !important;
-    }
+    }}
     </style>
-""", unsafe_allow_html=True)
+''', unsafe_allow_html=True)
+
 
 
 
