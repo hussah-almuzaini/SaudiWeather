@@ -206,8 +206,8 @@ def temperature_plot(avg_df):
             title="Temperature (°C)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=600,
-        width=1200,
+        height=800,
+        width=1300,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)' ,   # لون خلفية الرسم
         
@@ -257,8 +257,8 @@ def humidity_plot(avg_df):
             title="Humidity (%)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=600,
-        width=800,
+        height=800,
+        width=1300,
         paper_bgcolor='rgba(0,0,0,0)',  # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
@@ -301,8 +301,8 @@ def wind_plot(avg_df):
             title_font=dict(size=16, color="#4CAF8B")
 ),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=600,
-        width=800,
+        height=800,
+        width=1300,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
     )
@@ -346,8 +346,8 @@ def dew_point_plot(avg_df):
 ),
 
         margin=dict(l=50, r=50, t=50, b=50),
-        height=600,
-        width=800,
+        height=800,
+        width=1300,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
@@ -356,7 +356,7 @@ def dew_point_plot(avg_df):
 
 
 
-st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview< </h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
 # --------- الفلاتر في صف واحد ---------
