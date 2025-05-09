@@ -594,17 +594,34 @@ city = None
 # إضافة عنوان
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
 
-# عدد الأزرار في الصف الواحد
+
 buttons_per_row = 6
-
-# إنشاء عمود واحد
 cols = st.columns(buttons_per_row)
+st.markdown("""
+    <style>
+        .stButton>button {
+            background-color: #f1f1f1;  /* Light background */
+            border: 2px solid #333;  /* Dark border */
+            color: #333;  /* Dark text */
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;  }
+        .stButton>button:hover {
+            background-color: #e0e0e0;  /* Hover effect */ }
+        .stButton>button:active {
+            background-color: #ffcccc;  /* Light red background when clicked */
+            color: #990000;  /* Dark red text */ }
+    </style>
+""", unsafe_allow_html=True)
 
-# توزيع الأزرار في صف واحد
-for i, city in enumerate(available_cities):
-    with cols[i % buttons_per_row]:  # توزيع الأزرار في العمود المناسب
-        if st.button(city, key=city):  # استخدام key لضمان عدم حدوث تعارض
+for i, city in enumerate(available_cities):  
+    with cols[i % buttons_per_row]: 
+        if st.button(city, key=city):  
             st.session_state.selected_city = city
+            st.write(f"You selected: {city}")
+
+
+
 
 if  st.session_state.selected_city:
     city = st.session_state.selected_city
