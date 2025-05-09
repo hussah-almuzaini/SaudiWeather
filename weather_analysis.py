@@ -448,26 +448,22 @@ def heatmap_temperature(df, city):
         nbinsx=31
     )
     fig.update_layout(
-        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
-        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
-    
-        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        font=dict(color='#006400'),  # اللون العام للنصوص
-    
-        xaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور X
-            tickfont=dict(color='#006400')     # لون القيم على محور X
-        ),
-    
-        yaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور Y
-            tickfont=dict(color='#006400')     # لون القيم على محور Y
-        ),
-    
+        plot_bgcolor='rgba(0,0,0,0)', 
+        paper_bgcolor='rgba(0,0,0,0)',  
+        title_font=dict(color='#006400', size=20),  
+        font=dict(color='#006400'),  
+        xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
+        yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'),  # لون عنوان الليجند
-            font=dict(color='#006400')         # لون عناصر الليجند
-        ))
+            title_font=dict(color='#006400'), font=dict(color='#006400') )
+        coloraxis_colorbar=dict(
+            len=0.9, 
+            thickness=15,
+            tickfont=dict(color="#4CAF8B"),  
+            title="Humidity (%)",
+            title_font=dict(size=16, color="#4CAF8B"))
+    
+    )
  
     
    
@@ -494,26 +490,21 @@ def heatmap_humidity(df, city):
         nbinsx=31
     )
     fig.update_layout(
-        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
-        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
-    
-        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        font=dict(color='#006400'),  # اللون العام للنصوص
-    
-        xaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور X
-            tickfont=dict(color='#006400')     # لون القيم على محور X
-        ),
-    
-        yaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور Y
-            tickfont=dict(color='#006400')     # لون القيم على محور Y
-        ),
-    
+        plot_bgcolor='rgba(0,0,0,0)', 
+        paper_bgcolor='rgba(0,0,0,0)',  
+        title_font=dict(color='#006400', size=20),  
+        font=dict(color='#006400'),  
+        xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
+        yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'),  # لون عنوان الليجند
-            font=dict(color='#006400')         # لون عناصر الليجند
-        )
+            title_font=dict(color='#006400'), font=dict(color='#006400') )
+        coloraxis_colorbar=dict(
+            len=0.9, 
+            thickness=15,
+            tickfont=dict(color="#4CAF8B"),  
+            title="Humidity (%)",
+            title_font=dict(size=16, color="#4CAF8B"))
+    
     )
     
 
@@ -539,26 +530,21 @@ def heatmap_dew_point(df, city):
         nbinsx=31
     )
     fig.update_layout(
-        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
-        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
-    
-        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        font=dict(color='#006400'),  # اللون العام للنصوص
-    
-        xaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور X
-            tickfont=dict(color='#006400')     # لون القيم على محور X
-        ),
-    
-        yaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور Y
-            tickfont=dict(color='#006400')     # لون القيم على محور Y
-        ),
-    
+        plot_bgcolor='rgba(0,0,0,0)', 
+        paper_bgcolor='rgba(0,0,0,0)',  
+        title_font=dict(color='#006400', size=20),  
+        font=dict(color='#006400'),  
+        xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
+        yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'),  # لون عنوان الليجند
-            font=dict(color='#006400')         # لون عناصر الليجند
-        )
+            title_font=dict(color='#006400'), font=dict(color='#006400') )
+        coloraxis_colorbar=dict(
+            len=0.9, 
+            thickness=15,
+            tickfont=dict(color="#4CAF8B"),  
+            title="Humidity (%)",
+            title_font=dict(size=16, color="#4CAF8B"))
+    
     )
     
     st.plotly_chart(fig, use_container_width=True)
@@ -582,26 +568,21 @@ def heatmap_wind(df, city):
         nbinsx=31
     )
     fig.update_layout(
-        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
-        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
-    
-        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        font=dict(color='#006400'),  # اللون العام للنصوص
-    
-        xaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور X
-            tickfont=dict(color='#006400')     # لون القيم على محور X
-        ),
-    
-        yaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان محور Y
-            tickfont=dict(color='#006400')     # لون القيم على محور Y
-        ),
-    
+        plot_bgcolor='rgba(0,0,0,0)', 
+        paper_bgcolor='rgba(0,0,0,0)',  
+        title_font=dict(color='#006400', size=20),  
+        font=dict(color='#006400'),  
+        xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
+        yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'),  # لون عنوان الليجند
-            font=dict(color='#006400')         # لون عناصر الليجند
-        )
+            title_font=dict(color='#006400'), font=dict(color='#006400') )
+        coloraxis_colorbar=dict(
+            len=0.9, 
+            thickness=15,
+            tickfont=dict(color="#4CAF8B"),  
+            title="Humidity (%)",
+            title_font=dict(size=16, color="#4CAF8B"))
+    
     )
     
 
