@@ -455,7 +455,7 @@ def heatmap_temperature(df, city):
         xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
         yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'), font=dict(color='#006400') )
+            title_font=dict(color='#006400'), font=dict(color='#006400') ),
         coloraxis_colorbar=dict(
             len=0.9, 
             thickness=15,
@@ -574,7 +574,7 @@ def heatmap_wind(df, city):
         xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
         yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'), font=dict(color='#006400') )
+            title_font=dict(color='#006400'), font=dict(color='#006400') ),
         coloraxis_colorbar=dict(
             len=0.9, 
             thickness=15,
