@@ -727,22 +727,14 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit.components.v1 as components
 import streamlit as st
 
-st.markdown("""
+sst.markdown("""
     <style>
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
         background-color: gray !important;
-        height: 6px !important;
-        border-radius: 5px !important;
     }
 
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
         background-color: red !important;
-        height: 6px !important;
-        border-radius: 5px !important;
-    }
-
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
-        display: none !important;
     }
 
     div[data-testid="stSliderThumbValue"] {
@@ -757,6 +749,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
   
