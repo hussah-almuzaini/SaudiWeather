@@ -401,27 +401,33 @@ else:
     avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
 
         # إضافة الإطار حول التشارت بالكامل (الـ chart مع الـ legend)
-    with st.container():
-        st.markdown("""
-            <div style="
-                border: 3px solid #4CAF8B;
-                border-radius: 10px;
-                padding: 10px;
-                background-color: rgba(0, 0, 0, 0);
+    import streamlit.components.v1 as components
+
+    # توليد الـ fig من الميثود المختارة
+    if map_type == "Temperature":
+        fig = temperature_plot(avg_df)
+    elif map_type == "Humidity":
+        fig = humidity_plot(avg_df)
+    elif map_type == "Dew Point":
+        fig = dew_point_plot(avg_df)
+    elif map_type == "Wind Speed":
+        fig = wind_plot(avg_df)
+    
+    # حوّلي الـ fig إلى HTML
+    html = fig.to_html(full_html=False, include_plotlyjs='cdn')
+    
+    # عرض التشارت داخل div له إطار
+    components.html(f"""
+        <div style="
+            border: 3px solid #4CAF8B;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: rgba(0,0,0,0);
             ">
-            """, unsafe_allow_html=True)
-    
-        if map_type == "Temperature":
-            fig = temperature_plot(avg_df)
-        elif map_type == "Humidity":
-            fig = humidity_plot(avg_df)
-        elif map_type == "Dew Point":
-            fig = dew_point_plot(avg_df)
-        elif map_type == "Wind Speed":
-            fig = wind_plot(avg_df)
-    
-        st.plotly_chart(fig, use_container_width=True)
-        st.markdown("</div>", unsafe_allow_html=True)
+            {html}
+        </div>
+        """, height=650)
+
 
 
 
