@@ -359,63 +359,59 @@ st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
-st.markdown("""
+
+ st.markdown("""
     <style>
-    /* خلفية الـ selectbox (الحقل المغلق) */
+    /* خلفية selectbox المغلق */
     div[data-baseweb="select"] > div {
         background-color: #eef6f3 !important;
-        border-radius: 8px !important;
+        border-radius: 10px !important;
         color: black !important;
     }
 
     /* النص داخل selectbox */
-    div[data-baseweb="select"] span {
+    div[data-baseweb="select"] * {
         color: black !important;
     }
 
-    /* القائمة المنسدلة لما تنفتح */
-    div[data-baseweb="popover"] {
-        background-color: #eef6f3 !important;
-        border-radius: 8px !important;
-    }
-
-    /* العناصر داخل القائمة المنسدلة */
+    /* القائمة المنسدلة (dropdown) */
     div[data-baseweb="menu"] {
         background-color: #eef6f3 !important;
-        color: black !important;
+        border-radius: 10px !important;
     }
 
-    /* كل عنصر داخل القائمة */
-    div[data-baseweb="menu"] div {
+    /* كل عنصر داخل القائمة المنسدلة */
+    div[data-baseweb="menu"] div[role="option"] {
         color: black !important;
         background-color: #eef6f3 !important;
     }
 
-    /* عند تمرير الماوس */
-    div[data-baseweb="menu"] div:hover {
-        background-color: #d2e6e0 !important;
-    }
-
-    /* خلفية حقول التاريخ */
-    input[type="text"][data-testid="stDateInput"] {
-        background-color: #eef6f3 !important;
-        border-radius: 8px !important;
+    /* عند تمرير الماوس على العنصر */
+    div[data-baseweb="menu"] div[role="option"]:hover {
+        background-color: #cce2db !important;
         color: black !important;
     }
 
-    /* تغليف التاريخ */
+    /* خانة إدخال التاريخ */
+    input[data-testid="stDateInput-input"] {
+        background-color: #eef6f3 !important;
+        color: black !important;
+        border-radius: 10px !important;
+    }
+
+    /* خلفية تغليف التاريخ */
     div[data-testid="stDateInput"] {
         background-color: #eef6f3 !important;
-        border-radius: 8px !important;
-        padding: 4px;
+        border-radius: 10px !important;
     }
 
-    /* لون أيقونة التقويم */
+    /* أيقونة التاريخ */
     svg {
         fill: black !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
