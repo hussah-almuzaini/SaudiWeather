@@ -213,13 +213,7 @@ def temperature_plot(avg_df):
         
     )
 
-   
-
-    return fig
-    
-    
-    
-
+    return fig 
 
 
 def humidity_plot(avg_df):
@@ -234,7 +228,7 @@ def humidity_plot(avg_df):
         color_continuous_scale="Blues",  
         size_max=20,
         zoom=4,
-        mapbox_style="carto-positron",
+        mapbox_style="carto-darkmatter",
         hover_name=None,
         custom_data=["city", "avg_humidity"]
     )
@@ -277,7 +271,7 @@ def wind_plot(avg_df):
         color_continuous_scale="Viridis",  
         size_max=20,
         zoom=4,
-        mapbox_style="light",
+        mapbox_style="carto-darkmatter",
         hover_name=None,
         custom_data=["city", "max_wind_speed"]
     )
