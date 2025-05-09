@@ -725,23 +725,26 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit as st
 
 # ✅ CSS متكامل لتعديل لون الخط والأرقام
+
 st.markdown("""
     <style>
-    div[data-baseweb="slider"] > div:first-child {
-        color: black !important;
-    }
-
-    div[data-baseweb="slider"] > div > div:nth-child(3) {
-        background: #003366 !important;
-    }
-
-    div[data-baseweb="slider"] > div > div:nth-child(2) {
-        background: #ccc !important;
-    }
-
     div[data-baseweb="slider"] div[role="slider"] {
         background-color: #003366 !important;
         border: 2px solid #003366 !important;
+    }
+
+    div[data-baseweb="slider"] div[role="presentation"] > div:nth-child(1) {
+        background: #003366 !important;
+    }
+
+    /* تغيير لون الخط غير النشط */
+    div[data-baseweb="slider"] div[role="presentation"] > div:nth-child(2) {
+        background: #b0b0b0 !important;
+    }
+
+    /* تغيير لون أرقام الحد الأدنى والأقصى */
+    div[data-baseweb="slider"] div[role="presentation"] > div:nth-child(3) > div {
+        color: black !important;
     }
     </style>
 """, unsafe_allow_html=True)
