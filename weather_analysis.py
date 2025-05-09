@@ -608,10 +608,11 @@ cols = st.columns(buttons_per_row)
 st.markdown("""
     <style>
     div.stButton > button {
+        width: 100%;
         background-color: #41755b;
         color: white;
         border: none;
-        padding: 0.6em 2em;
+        padding: 0.8em 1em;
         font-size: 18px;
         border-radius: 8px;
         cursor: pointer;
