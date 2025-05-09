@@ -309,17 +309,19 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview< </
 # --------- الفلاتر في صف واحد ---------
 filter_cols = st.columns(3)
 
-
 with filter_cols[0]:
-    st.markdown("<h5 style='color:#5d9c7d; margin-bottom: 5px;'>🗺️ Select Map Type</h5>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color:#5d9c7d;margin-bottom: 5px;'>🗺️ Select Map Type</h5>", unsafe_allow_html=True)
     map_type = st.selectbox("", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
 
+min_date = df["date"].min()
+max_date = df["date"].max()
+
 with filter_cols[1]:
-    st.markdown("<h5 style='color:#5d9c7d; margin-bottom: 5px;'>📅 Start Date</h5>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color:#5d9c7d;margin-bottom: 5px;'>📅 Start Date</h5>", unsafe_allow_html=True)
     start_date = st.date_input("", value=min_date, min_value=min_date, max_value=max_date)
 
 with filter_cols[2]:
-    st.markdown("<h5 style='color:#5d9c7d; margin-bottom: 5px;'>📅 End Date</h5>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color:#5d9c7d;margin-bottom: 5px;'>📅 End Date</h5>", unsafe_allow_html=True)
     end_date = st.date_input("", value=max_date, min_value=min_date, max_value=max_date)
 
 
