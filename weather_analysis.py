@@ -753,24 +753,23 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown("<style>div[data-testid='column']{padding: 0 10px;}</style>", unsafe_allow_html=True)
+
+
 # إنشاء الأعمدة
-col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
+col1, col2 = st.columns(2)
 
 with col1:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
     desired_temp = st.slider("temp", 0, 50, 25, label_visibility="collapsed")
 
+    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
+    desired_dew = st.slider("dew", -10, 40, 10, label_visibility="collapsed")
+
 with col2:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
     desired_humidity = st.slider("humidity", 0, 100, 50, label_visibility="collapsed")
 
-col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
-
-with col3:
-    st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
-    desired_dew = st.slider("dew", -10, 40, 10, label_visibility="collapsed")
-
-with col4:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
     desired_wind = st.slider("wind", 0, 100, 10, label_visibility="collapsed")
 
