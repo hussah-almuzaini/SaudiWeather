@@ -465,9 +465,7 @@ def heatmap_temperature(df, city):
     
     )
  
-    
-   
-    st.plotly_chart(fig, use_container_width=True)
+    return fig 
 
         
         
@@ -508,7 +506,7 @@ def heatmap_humidity(df, city):
     )
      
 
-    st.plotly_chart(fig, use_container_width=True)
+    return fig 
     
 
 
@@ -546,7 +544,7 @@ def heatmap_dew_point(df, city):
     
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    return fig 
 
 
 
@@ -583,59 +581,16 @@ def heatmap_wind(df, city):
             title_font=dict(size=16, color="#4CAF8B"))
     
     )
+    return fig 
     
 
-   
-    
-
-    st.plotly_chart(fig, use_container_width=True)
-    
-        
-
-
-def show_all_weather_heatmaps(df, city):
-
-    df = df.copy()
-    df["date"] = pd.to_datetime(df["date"])  
-    df["month"] = df["date"].dt.strftime("%b")  
-    df["day"] = df["date"].dt.day  
-
-    
-    month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
-    
-    
-
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        heatmap_temperature(df, city)
-    with col2:
-        heatmap_humidity(df, city)
-    
-    # الصف الثاني
-    col3, col4 = st.columns(2)
-    with col3:
-        heatmap_dew_point(df, city)
-    with col4:
-        heatmap_wind(df, city)    
-             
-      
-                
-    
-    
-    
-    
-    
-    
 
 available_cities = sorted(df["city"].dropna().unique())
 if "selected_city" not in st.session_state:
     st.session_state.selected_city = None
 
 
-
+city = None
 # إضافة عنوان
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
 
@@ -651,16 +606,53 @@ for i, city in enumerate(available_cities):
         if st.button(city, key=city):  # استخدام key لضمان عدم حدوث تعارض
             st.session_state.selected_city = city
 
-if st.session_state.selected_city:
-    show_all_weather_heatmaps(df, st.session_state.selected_city)
-else:
-    show_all_weather_heatmaps(df, 'Abha')
+if  st.session_state.selected_city:
+    city = st.session_state.selected_city
+else 
+     city =  'Riyadh'
+    
+df = df.copy()
+    df["date"] = pd.to_datetime(df["date"])  
+    df["month"] = df["date"].dt.strftime("%b")  
+    df["day"] = df["date"].dt.day  
+
+    month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
+    
+    
 
 
+    
+def display_chart_with_frame(fig, height=700):
+    html = fig.to_html(include_plotlyjs="cdn")
+    components.html(f"""
+        <div style="border: 3px solid #4CAF8B; border-radius: 12px;padding: 10px; margin: 10px 0;  background-color: transparent;width: 100%; box-sizing: border-box;overflow: auto;">
+            {html}
+        </div>
+    """, height=height)
 
+# الصف الأول: الحرارة والرطوبة
+col1, col2 = st.columns(2)
 
+with col1:
+    fig_temp = heatmap_temperature(df, city)
+    display_chart_with_frame(fig_temp)
 
-# 
+with col2:
+    fig_humidity = heatmap_humidity(df, city)
+    display_chart_with_frame(fig_humidity)
+
+# الصف الثاني: نقطة الندى والرياح
+col3, col4 = st.columns(2)
+
+with col3:
+    fig_dew = heatmap_dew_point(df, city)
+    display_chart_with_frame(fig_dew)
+
+with col4:
+    fig_wind = heatmap_wind(df, city)
+    display_chart_with_frame(fig_wind)
+
 
 
 
