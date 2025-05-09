@@ -622,11 +622,18 @@ df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
     
 st.markdown("""
     <style>
+        /* يقلل التباعد بين عناصر الصفحة */
         .block-container {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 0rem;
+            padding-bottom: 0rem;
         }
+        /* يمنع المسافة تحت كل iframe */
         iframe {
+            display: block;
+            margin-bottom: -10px;
+        }
+        /* يقلل الفراغ بين الأعمدة */
+        .element-container {
             margin-bottom: 0px !important;
         }
     </style>
