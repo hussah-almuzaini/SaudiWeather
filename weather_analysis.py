@@ -729,9 +729,12 @@ import streamlit.components.v1 as components
 import streamlit as st
 
 # سلايدر في الصفحة
+import streamlit as st
+
+# سلايدر في الصفحة
 NB = st.slider('Select Value', 1, 100, 1)
 
-# استخدام JavaScript + CSS لتغيير اللون بناءً على قيمة السلايدر
+# استخدام CSS و JavaScript لتغيير الألوان بناءً على قيمة السلايدر
 st.markdown(f"""
     <style>
     /* تعيين التدرج اللوني للسلايدر بناءً على القيمة */
@@ -765,6 +768,7 @@ st.markdown(f"""
     slider.style.background = `linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) ${sliderValue}%, rgba(151, 166, 195, 0.25) ${sliderValue}%, rgba(151, 166, 195, 0.25) 100%)`;
     </script>
 """, unsafe_allow_html=True)
+
 
 
 
