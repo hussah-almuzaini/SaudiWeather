@@ -722,27 +722,34 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 import streamlit.components.v1 as components
-
 st.markdown("""
     <style>
-    /* تغيير لون النص للحد الأدنى */
-    .stSliderTickBarMin {
-        color: #0066cc !important;
+    /* الخط قبل الدائرة - رمادي */
+    div[data-testid="stSlider"] > div > div:nth-child(1) {
+        background-color: #ccc !important;
     }
 
-    /* تغيير لون النص للحد الأقصى */
-    .stSliderTickBarMax {
-        color: #0066cc !important;
+    /* الخط بعد الدائرة - أزرق */
+    div[data-testid="stSlider"] > div > div:nth-child(2) {
+        background-color: #0066cc !important;
     }
 
-    /* إزالة خلفية الديف (إن وجدت) */
-    .stSliderTickBarMin, .stSliderTickBarMax {
-        background-color: transparent !important;
+    /* الأرقام الجانبية (البداية والنهاية) - لون أزرق للنص فقط */
+    div[data-testid="stSliderTickBarMin"],
+    div[data-testid="stSliderTickBarMax"] {
+        color: #0066cc !important;
+        background: transparent !important;
+    }
+
+    /* الرقم اللي فوق الدائرة */
+    div[data-testid="stSliderThumbValue"] {
+        color: #0066cc !important;
+        font-weight: bold !important;
+        font-size: 16px !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
-""", unsafe_allow_html=True)
 
 
 
