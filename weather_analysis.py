@@ -734,21 +734,27 @@ st.markdown("""
         background-color: #0066cc !important;
     }
 
-    /* الأرقام الجانبية (البداية والنهاية) - لون أزرق للنص فقط */
+    /* الرقم فوق الدائرة */
+    div[data-testid="stSliderThumbValue"] {
+        color: #0066cc !important;
+        font-weight: bold !important;
+        font-size: 16px !important;
+    }
+
+    /* أرقام البداية والنهاية (النص فقط بدون خلفية) */
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         color: #0066cc !important;
         background: transparent !important;
     }
 
-    /* الرقم اللي فوق الدائرة */
-    div[data-testid="stSliderThumbValue"] {
-        color: #0066cc !important;
-        font-weight: bold !important;
-        font-size: 16px !important;
+    /* العلامة الصغيرة على الطرف الأيسر */
+    div[data-testid="stSliderTickBar"] > div:first-child {
+        border-left: 2px solid #0066cc !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
