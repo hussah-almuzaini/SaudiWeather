@@ -207,7 +207,7 @@ def temperature_plot(avg_df):
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
         height=600,
-        width=800,
+        width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)' ,   # لون خلفية الرسم
         
