@@ -731,19 +731,16 @@ import streamlit as st
 # تخصيص الألوان باستخدام CSS
 st.markdown("""
     <style>
-    /* الجزء قبل الدائرة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
-        background-color: gray !important;
+        background-color: transparent !important;
     }
 
-    /* الجزء بعد الدائرة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
-        background-color: blue !important;
+        background-color: transparent !important;
     }
 
-    /* الرقم فوق السلايدر */
     div[data-testid="stSliderThumbValue"] {
-        color: blue !important;
+        color: #2a4d69 !important;
     }
 
     /* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
@@ -751,7 +748,7 @@ st.markdown("""
     div[data-testid="stSliderTickBarMax"] {
         background: transparent !important;
         box-shadow: none !important;
-        color: blue !important;
+        color: #2a4d69 !important;
     }
     </style>
 """, unsafe_allow_html=True)
