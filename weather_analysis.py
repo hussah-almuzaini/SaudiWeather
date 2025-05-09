@@ -367,45 +367,48 @@ import streamlit as st
 # تغيير شامل للواجهة إلى "Light Mode"
 st.markdown("""
     <style>
-        /* خلفية الصفحة */
+        /* تغيير الخلفية العامة */
         .stApp {
-            background-color: #e6f4ea;
-            color: #1b5e20;
+            background-color: #e8f5e9;
         }
 
-        /* العناوين */
-        h1, h2, h3, h4, h5, h6, label, p {
-            color: #2e7d32;
+        /* تعديل الحقول */
+        input, .stTextInput > div > div, .stDateInput > div, .stSelectbox > div {
+            background-color: #f1f8e9 !important;
+            color: #1b5e20 !important;
+            border-radius: 8px !important;
+            border: 1px solid #c8e6c9 !important;
         }
 
-        /* حقول الإدخال */
-        input, textarea, select, div[data-baseweb="input"], div[data-baseweb="select"] {
+        /* عناصر القائمة المنسدلة */
+        .css-1n76uvr, .css-1n76uvr:hover {
             background-color: #f1f8e9 !important;
             color: #2e7d32 !important;
-            border: 1px solid #c8e6c9 !important;
-            border-radius: 6px !important;
         }
 
-        /* قائمة الدروب داون (منسدلة) */
+        /* سهم selectbox */
+        .stSelectbox svg {
+            fill: #388e3c !important;
+        }
+
+        /* قائمة الخيارات المنسدلة */
         div[data-baseweb="popover"] {
             background-color: #f1f8e9 !important;
             color: #2e7d32 !important;
-            border: 1px solid #c8e6c9 !important;
         }
 
-        /* خيارات داخل القائمة */
         div[data-baseweb="option"] {
             background-color: #f1f8e9 !important;
             color: #2e7d32 !important;
         }
 
         /* التقويم */
-        .stDateInput, .stDateInput input {
+        .stDateInput input {
             background-color: #f1f8e9 !important;
             color: #2e7d32 !important;
         }
 
-        .DayPicker, .DayPicker-Month, .DayPicker-Day {
+        .DayPicker, .DayPicker-Month {
             background-color: #f1f8e9 !important;
             color: #2e7d32 !important;
         }
@@ -415,17 +418,13 @@ st.markdown("""
             color: white !important;
         }
 
-        /* إزالة الإطار الأحمر */
+        /* إزالة الأحمر */
         .css-1cpxqw2 {
             border: none !important;
         }
-
-        /* تخصيص زر السهم (dropdown) */
-        svg {
-            fill: #388e3c !important;
-        }
     </style>
 """, unsafe_allow_html=True)
+
 
 
        
