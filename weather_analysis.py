@@ -619,42 +619,45 @@ df["day"] = df["date"].dt.day
 month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
     
-    
 st.markdown("""
     <style>
-        /* يقلل التباعد بين عناصر الصفحة */
         .block-container {
             padding-top: 0rem;
             padding-bottom: 0rem;
         }
-        /* يمنع المسافة تحت كل iframe */
         iframe {
             display: block;
-            margin-bottom: -10px;
+            margin: 0px !important;
+            padding: 0px !important;
         }
-        /* يقلل الفراغ بين الأعمدة */
         .element-container {
-            margin-bottom: 0px !important;
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+        .stColumns {
+            gap: 0rem !important;
         }
     </style>
 """, unsafe_allow_html=True)
 
+
     
-def display_chart_with_frame(fig, height=600):
+def display_chart_with_frame(fig, height=550):
     html = fig.to_html(include_plotlyjs="cdn")
     components.html(f"""
         <div style="
-            border: 3px solid #4CAF8B;
-            border-radius: 12px;
-            padding: 10px;
+            border: 2px solid #4CAF8B;
+            border-radius: 10px;
+            padding: 5px;
             margin: 0px;
             background-color: transparent;
             width: 100%;
             box-sizing: border-box;
-            overflow: auto;">
+            overflow: hidden;">
             {html}
         </div>
     """, height=height)
+
 
 
 
