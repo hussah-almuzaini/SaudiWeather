@@ -620,7 +620,17 @@ month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oc
 df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
     
     
-
+st.markdown("""
+    <style>
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        iframe {
+            margin-bottom: 0px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
     
 def display_chart_with_frame(fig, height=650):  # قلل الارتفاع
