@@ -195,6 +195,9 @@ def temperature_plot(avg_df):
 
     # تعيين لون الحواف والإطار
     fig.update_layout(
+        coloraxis_colorbar=dict(
+        tickfont=dict(color="green")  # تغيير لون النص في الـ legend
+    ),
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
@@ -228,6 +231,9 @@ def humidity_plot(avg_df):
 
         # تعيين لون الحواف والإطار
     fig.update_layout(
+        coloraxis_colorbar=dict(
+        tickfont=dict(color="green")  # تغيير لون النص في الـ legend
+    ),
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
@@ -261,6 +267,9 @@ def wind_plot(avg_df):
 
         # تعيين لون الحواف والإطار
     fig.update_layout(
+        coloraxis_colorbar=dict(
+        tickfont=dict(color="green")  # تغيير لون النص في الـ legend
+    ),
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
@@ -293,6 +302,9 @@ def dew_point_plot(avg_df):
 
         # تعيين لون الحواف والإطار
     fig.update_layout(
+        coloraxis_colorbar=dict(
+        tickfont=dict(color="green")  # تغيير لون النص في الـ legend
+    ),
         height=600,
         width=800,
         margin=dict(l=0, r=0, t=0, b=0),  # إزالة الهوامش
