@@ -727,28 +727,66 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit.components.v1 as components
 import streamlit as st
 
-st.markdown("""
-    <style>
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
-        background-color: gray !important;
-    }
+NB = st.sidebar.select_slider(
+    '', 
+    options=[1,10,20,30,40,50,60,70,80,90,100], 
+    value=1
+)
 
-    .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
-        background-color: red !important;
-    }
+# Gradient color fill for the slider track
+st.markdown(f''' 
+    <style> 
+    div.stSlider > div[data-baseweb = "slider"] > div > div {{
+        background: linear-gradient(to right, rgb(1, 183, 158) 0%, 
+                                    rgb(1, 183, 158) {NB}%, 
+                                    rgba(151, 166, 195, 0.25) {NB}%, 
+                                    rgba(151, 166, 195, 0.25) 100%) !important; 
+        height: 6px !important;
+        border-radius: 5px !important;
+    }} 
+    </style>
+''', unsafe_allow_html=True)
 
+# Hide the tick bar background
+st.markdown(''' 
+    <style> 
+    div.stSlider > div[data-baseweb = "slider"] > div[data-testid="stTickBar"] > div {
+        background: rgb(1 1 1 / 0%);
+    } 
+    </style>
+''', unsafe_allow_html=True)
+
+# Style the slider cursor (thumb)
+st.markdown(''' 
+    <style> 
+    div.stSlider > div[data-baseweb="slider"] > div > div > div[role="slider"] {
+        background-color: rgb(14, 38, 74);
+        box-shadow: rgb(14 38 74 / 20%) 0px 0px 0px 0.2rem;
+    } 
+    </style>
+''', unsafe_allow_html=True)
+
+# Style the number above the slider
+st.markdown(''' 
+    <style> 
     div[data-testid="stSliderThumbValue"] {
         color: blue !important;
-    }
+    } 
+    </style>
+''', unsafe_allow_html=True)
 
+# Style min/max numbers
+st.markdown(''' 
+    <style> 
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         background: transparent !important;
         box-shadow: none !important;
         color: blue !important;
-    }
+    } 
     </style>
-""", unsafe_allow_html=True)
+''', unsafe_allow_html=True)
+
 
 
 
