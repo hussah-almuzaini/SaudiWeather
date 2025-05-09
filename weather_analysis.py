@@ -757,7 +757,7 @@ st.markdown("""
         background: transparent !important;
     }
     </style>
-""")
+""", unsafe_allow_html=True)
 
 
 
