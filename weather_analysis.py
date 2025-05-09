@@ -607,23 +607,20 @@ buttons_per_row = 6
 cols = st.columns(buttons_per_row)
 st.markdown("""
     <style>
-        .stButton>button {
-            background-color: #d3f9d8;  /* Light green background */
-            border: 2px solid #333;  /* Dark border */
-            color: #333;  /* Dark text */
-            border-radius: 5px;
-            font-size: 16px;
-            padding: 10px;
-            width: 100%;  /* Make buttons fill the column space */
-            text-align: center;  /* Center-align the text inside the button */
-        }
-        .stButton>button:hover {
-            background-color: #b8f7c5;  /* Slightly darker green on hover */
-        }
-        .stButton>button:active {
-            background-color: #ffcccc;  /* Light red background when clicked */
-            color: #721c24;;  /* Dark red text */
-        }
+    div.stButton > button {
+        background-color: #41755b;
+        color: white;
+        border: none;
+        padding: 0.6em 2em;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    div.stButton > button:hover {
+        background-color: #2f5c46;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -776,24 +773,7 @@ with col2:
 
 
 
-st.markdown("""
-    <style>
-    div.stButton > button {
-        background-color: #41755b;
-        color: white;
-        border: none;
-        padding: 0.6em 2em;
-        font-size: 18px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
 
-    div.stButton > button:hover {
-        background-color: #2f5c46;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 if st.button("Show Top 3 Options 🔎"):
 
