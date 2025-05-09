@@ -460,7 +460,7 @@ def heatmap_temperature(df, city):
             len=0.9, 
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
-            title="Humidity (%)",
+            title="temperature (C)",
             title_font=dict(size=16, color="#4CAF8B"))
     
     )
@@ -497,7 +497,7 @@ def heatmap_humidity(df, city):
         xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
         yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'), font=dict(color='#006400') )
+            title_font=dict(color='#006400'), font=dict(color='#006400') ),
         coloraxis_colorbar=dict(
             len=0.9, 
             thickness=15,
@@ -506,8 +506,7 @@ def heatmap_humidity(df, city):
             title_font=dict(size=16, color="#4CAF8B"))
     
     )
-    
-
+     
 
     st.plotly_chart(fig, use_container_width=True)
     
@@ -537,12 +536,12 @@ def heatmap_dew_point(df, city):
         xaxis=dict(title_font=dict(color='#006400'),   tickfont=dict(color='#006400') ),
         yaxis=dict(title_font=dict(color='#006400'),  tickfont=dict(color='#006400')  ),
         legend=dict(
-            title_font=dict(color='#006400'), font=dict(color='#006400') )
+            title_font=dict(color='#006400'), font=dict(color='#006400') ),
         coloraxis_colorbar=dict(
             len=0.9, 
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
-            title="Humidity (%)",
+            title="dew  (%)",
             title_font=dict(size=16, color="#4CAF8B"))
     
     )
@@ -580,7 +579,7 @@ def heatmap_wind(df, city):
             len=0.9, 
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
-            title="Humidity (%)",
+            title="wind (k/h)",
             title_font=dict(size=16, color="#4CAF8B"))
     
     )
