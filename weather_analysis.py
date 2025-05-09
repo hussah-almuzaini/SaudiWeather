@@ -727,7 +727,7 @@ st.markdown("""
     <style>
     /* الخط الأحمر يصبح أزرق */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
-        background-color: #003366 !important;
+        background-color: red !important;
     }
 
     /* مقبض السلايدر (الدائرة) */
@@ -738,7 +738,7 @@ st.markdown("""
 
     /* القيمة الحالية فوق المقبض */
     .stSlider span {
-        color: red !important;
+        color: #003366 !important;
         font-weight: bold !important;
     }
 
