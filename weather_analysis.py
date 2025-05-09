@@ -206,8 +206,8 @@ def temperature_plot(avg_df):
             title="Temperature (°C)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=800,
-        width=1300,
+         height=700,
+        width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)' ,   # لون خلفية الرسم
         
@@ -257,8 +257,8 @@ def humidity_plot(avg_df):
             title="Humidity (%)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=800,
-        width=1300,
+         height=700,
+        width=1200,
         paper_bgcolor='rgba(0,0,0,0)',  # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
@@ -301,8 +301,8 @@ def wind_plot(avg_df):
             title_font=dict(size=16, color="#4CAF8B")
 ),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=800,
-        width=1300,
+        height=700,
+        width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
     )
@@ -346,8 +346,8 @@ def dew_point_plot(avg_df):
 ),
 
         margin=dict(l=50, r=50, t=50, b=50),
-        height=800,
-        width=1300,
+        height=700,
+        width=1200,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
@@ -421,7 +421,7 @@ else:
     <div style="
         border: 3px solid #4CAF8B;
         border-radius: 12px;
-        padding: 5px;
+        padding: 10px;
         margin: 10px 0;
         background-color: transparent;
         width: 100%;
