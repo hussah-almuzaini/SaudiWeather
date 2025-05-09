@@ -727,7 +727,7 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit.components.v1 as components
 import streamlit as st
 
-sst.markdown("""
+st.markdown("""
     <style>
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
         background-color: gray !important;
