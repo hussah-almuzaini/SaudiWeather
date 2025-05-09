@@ -743,62 +743,45 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 st.markdown("""
     <style>
-    .stSlider div[data-baseweb="slider"] span {
+    /* تغيير لون قيمة السلايدر (النص) */
+    div[data-baseweb="slider"] span {
         color: black !important;
     }
 
-    input[type=range]::-webkit-slider-thumb {
-        background: #003366;  
-        border: 2px solid #003366;
+    /* تغيير لون المسار النشط (الخط اللي يمشي فيه السلايدر) */
+    div[data-baseweb="slider"] > div > div:nth-child(3) {
+        background: #003366 !important;
     }
 
-    input[type=range]::-webkit-slider-runnable-track {
-        background: #003366; 
-    }
-
-    input[type=range]::-moz-range-thumb {
-        background: #003366;
-        border: 2px solid #003366;
-    }
-
-    input[type=range]::-moz-range-track {
-        background: #003366;
-    }
-
-    input[type=range]::-ms-thumb {
-        background: #003366;
-        border: 2px solid #003366;
-    }
-
-    input[type=range]::-ms-track {
-        background: #003366;
+    /* تغيير لون الدائرة (المقبض) */
+    div[data-baseweb="slider"] div[role="slider"] {
+        background-color: #003366 !important;
+        border: 2px solid #003366 !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
-
-
-
+# ✅ استخدام label_visibility لإخفاء العنوان بدون تحذير
 col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col1:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
-    desired_temp = st.slider(" ", 0, 50, 25)
+    desired_temp = st.slider("temp", 0, 50, 25, label_visibility="collapsed")
 
 with col2:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
-    desired_humidity = st.slider(" ", 0, 100, 50)
+    desired_humidity = st.slider("humidity", 0, 100, 50, label_visibility="collapsed")
 
-# الصف الثاني
 col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col3:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
-    desired_dew = st.slider(" ", -10, 40, 10)
+    desired_dew = st.slider("dew", -10, 40, 10, label_visibility="collapsed")
 
 with col4:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
-    desired_wind = st.slider(" ", 0, 100, 10)
+    desired_wind = st.slider("wind", 0, 100, 10, label_visibility="collapsed")
+
 
 
 
