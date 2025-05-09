@@ -167,15 +167,6 @@ def get_weather_extremes_latest_month(df):
 get_weather_extremes_latest_month(df)
 left_col, right_col = st.columns([1, 3])
 
-with left_col:
-    st.markdown("### 🔍 Filters")
-    map_type = st.selectbox("Select Map Type 🗺️:", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
-    
-    min_date = df["date"].min()
-    max_date = df["date"].max()
-
-    start_date = st.date_input("📅 Start date", value=min_date, min_value=min_date, max_value=max_date)
-    end_date = st.date_input("📅 End date", value=max_date, min_value=min_date, max_value=max_date)
 
 
 
@@ -318,19 +309,22 @@ def dew_point_plot(avg_df):
 filter_cols = st.columns(3)
 
 with filter_cols[0]:
-    map_type = st.selectbox("Select Map Type:", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
+    st.markdown("### 🔍 Filters")
+    map_type = st.selectbox("Select Map Type 🗺️:", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
+
+min_date = df["date"].min()
+max_date = df["date"].max()
 
 with filter_cols[1]:
-    start_date = st.date_input("Start Date", pd.to_datetime("2022-01-01"))
+    start_date = st.date_input("📅 Start date", value=min_date, min_value=min_date, max_value=max_date)
 
 with filter_cols[2]:
-    end_date = st.date_input("End Date", pd.to_datetime("2025-01-01"))
+    end_date = st.date_input("📅 End date", value=max_date, min_value=min_date, max_value=max_date)
 
-# --------- التحقق من التاريخ ---------
+# --------- معالجة البيانات وعرض الخريطة ---------
 if start_date > end_date:
-    st.error("Start date must be before end date ❌.")
+    st.error("📛 Start date must be before end date.")
 else:
-    # --------- فلترة وتجميع البيانات ---------
     filtered_df = df[(df["date"] >= pd.to_datetime(start_date)) & (df["date"] <= pd.to_datetime(end_date))]
 
     avg_df = filtered_df.groupby("city", as_index=False).agg({
@@ -347,7 +341,6 @@ else:
     avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
     avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
 
-    # --------- رسم الخريطة ---------
     if map_type == "Temperature":
         temperature_plot(avg_df)
     elif map_type == "Humidity":
@@ -356,8 +349,6 @@ else:
         dew_point_plot(avg_df)
     elif map_type == "Wind Speed":
         wind_plot(avg_df)
-
-
 
 
 def heatmap_temperature(df, city, col):
