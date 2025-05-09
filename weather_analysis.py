@@ -659,7 +659,7 @@ def display_chart_with_frame(fig, height=600):
 
 
 # الصف الأول: الحرارة والرطوبة
-col1, col2 = st.columns(2 ، gap="small")
+col1, col2 = st.columns(2 , gap="small")
 
 with col1:
     fig_temp = heatmap_temperature(df, city)
