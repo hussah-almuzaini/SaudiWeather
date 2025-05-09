@@ -426,6 +426,7 @@ else:
         background-color: transparent;
         width: 100%;
         box-sizing: border-box;
+        overflow: auto;
         ">
         {html}
     </div>
