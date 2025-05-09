@@ -303,13 +303,13 @@ def dew_point_plot(avg_df):
 
 
 
+st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview< </h1>', unsafe_allow_html=True)
 
 
 # --------- الفلاتر في صف واحد ---------
 filter_cols = st.columns(3)
 
 with filter_cols[0]:
-    st.markdown("### 🔍 Filters")
     map_type = st.selectbox("Select Map Type 🗺️:", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
 
 min_date = df["date"].min()
