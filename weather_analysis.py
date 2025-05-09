@@ -188,7 +188,7 @@ def temperature_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🌡️ Temp: <span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span>°C<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🌡️ Temp: %{customdata[1]} °C<extra></extra>",
 
         hoverlabel=dict(font_size=14)  
     )
@@ -222,7 +222,7 @@ def humidity_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>💧 Humidity: <span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span%<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>💧 Humidity: %{customdata[1]}% <extra></extra>",
         hoverlabel=dict(font_size=14)
     )
 
@@ -255,7 +255,7 @@ def wind_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🌬️ Wind: <span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span km/h<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🌬️ Wind: %{customdata[1]}  km/h<extra></extra>",
         hoverlabel=dict(font_size=14)
     )
 
@@ -287,7 +287,7 @@ def dew_point_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🟢 Dew Point:<span style='color: rgb(0, 128, 0);'>%{customdata[1]}</span°C<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🟢 Dew Point:%{customdata[1]} °C<extra></extra>",
         hoverlabel=dict(font_size=14)
     )
 
