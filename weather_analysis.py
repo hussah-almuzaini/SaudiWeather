@@ -717,23 +717,37 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 
-
 st.markdown("""
     <style>
-    .stSlider > div > div > div > div {
-        color: #000000 !important;  /* أسود */
+    .stSlider div[data-baseweb="slider"] span {
+        color: black !important;
     }
 
-    .stSlider .st-dn .horizontal-slider .track-1 {
-        background: #003366 !important;  /* أزرق غامق */
+    input[type=range]::-webkit-slider-thumb {
+        background: #003366;  
+        border: 2px solid #003366;
     }
 
-    .stSlider .st-dn .horizontal-slider .thumb {
-        background-color: #003366 !important;
-        border-color: #003366 !important;
+    input[type=range]::-webkit-slider-runnable-track {
+        background: #003366; 
     }
-    .stSlider .st-dn .horizontal-slider .track-0 {
-        background: #dcdcdc !important;
+
+    input[type=range]::-moz-range-thumb {
+        background: #003366;
+        border: 2px solid #003366;
+    }
+
+    input[type=range]::-moz-range-track {
+        background: #003366;
+    }
+
+    input[type=range]::-ms-thumb {
+        background: #003366;
+        border: 2px solid #003366;
+    }
+
+    input[type=range]::-ms-track {
+        background: #003366;
     }
     </style>
 """, unsafe_allow_html=True)
