@@ -726,10 +726,6 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 import streamlit.components.v1 as components
 
-# سلايدر في الصفحة
-import streamlit as st
-
-# سلايدر في الصفحة
 import streamlit as st
 
 # سلايدر في الصفحة
@@ -764,14 +760,11 @@ st.markdown(f"""
     
     <script>
     // JavaScript لتغيير CSS عند تغيير السلايدر
-    const sliderValue = {NB}; // قيمة السلايدر
+    const sliderValue = {NB}; // قيمة السلايدر من Python
     const slider = document.querySelector('.stSlider > div[data-baseweb="slider"] > div > div:nth-child(1)');
     slider.style.background = `linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) ${sliderValue}%, rgba(151, 166, 195, 0.25) ${sliderValue}%, rgba(151, 166, 195, 0.25) 100%)`;
     </script>
 """, unsafe_allow_html=True)
-
-
-
 
 
 
