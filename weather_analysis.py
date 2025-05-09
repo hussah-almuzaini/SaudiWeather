@@ -727,14 +727,20 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit.components.v1 as components
 
 # سلايدر في الصفحة
+import streamlit as st
+
+# سلايدر في الصفحة
 NB = st.slider('Select Value', 1, 100, 1)
+
+# حساب النسبة التي سيمثلها اللون قبل الدائرة
+percentage = NB
 
 # تدرج لوني ديناميكي يعتمد على القيمة
 st.markdown(f'''
     <style>
     /* تغيير اللون قبل الدائرة بناءً على القيمة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background-color: rgb(1, 183, 158) {NB}% !important;
+        background-color: rgb(1, 183, 158) {percentage}% !important;
     }}
 
     /* الجزء بعد الدائرة */
@@ -756,6 +762,7 @@ st.markdown(f'''
     }}
     </style>
 ''', unsafe_allow_html=True)
+
 
 
 
