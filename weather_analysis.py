@@ -49,25 +49,6 @@ st.markdown(
 )
 
 
-st.markdown("""
-    <style>
-    /* تغيير لون النص بجانب السلايدر */
-    .stSlider label div {
-        color: black !important;
-    }
-
-    /* تغيير لون المسار النشط في السلايدر */
-    div[data-baseweb="slider"] > div > div > div:nth-child(3) {
-        background-color: #003366 !important;
-    }
-
-    /* تغيير لون المقبض (الدائرة) */
-    div[data-baseweb="slider"] span {
-        background-color: #003366 !important;
-        border: 2px solid #003366 !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 
 
@@ -741,19 +722,23 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 
+import streamlit as st
+
+# ✅ CSS متكامل لتعديل لون الخط والأرقام
 st.markdown("""
     <style>
-    /* تغيير لون قيمة السلايدر (النص) */
-    div[data-baseweb="slider"] span {
+    div[data-baseweb="slider"] > div:first-child {
         color: black !important;
     }
 
-    /* تغيير لون المسار النشط (الخط اللي يمشي فيه السلايدر) */
     div[data-baseweb="slider"] > div > div:nth-child(3) {
         background: #003366 !important;
     }
 
-    /* تغيير لون الدائرة (المقبض) */
+    div[data-baseweb="slider"] > div > div:nth-child(2) {
+        background: #ccc !important;
+    }
+
     div[data-baseweb="slider"] div[role="slider"] {
         background-color: #003366 !important;
         border: 2px solid #003366 !important;
@@ -761,7 +746,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ✅ استخدام label_visibility لإخفاء العنوان بدون تحذير
+
 col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col1:
