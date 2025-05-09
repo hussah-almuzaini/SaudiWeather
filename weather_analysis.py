@@ -724,14 +724,23 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 import streamlit.components.v1 as components
 st.markdown("""
     <style>
+    /* نضبط الخلفية الكاملة للسلايدر */
+    div[data-testid="stSlider"] > div {
+        background: transparent !important;
+    }
+
     /* الخط قبل الدائرة - رمادي */
     div[data-testid="stSlider"] > div > div:nth-child(1) {
         background-color: #ccc !important;
+        height: 6px !important;
+        border-radius: 10px !important;
     }
 
     /* الخط بعد الدائرة - أزرق */
     div[data-testid="stSlider"] > div > div:nth-child(2) {
         background-color: #0066cc !important;
+        height: 6px !important;
+        border-radius: 10px !important;
     }
 
     /* الرقم فوق الدائرة */
@@ -741,19 +750,21 @@ st.markdown("""
         font-size: 16px !important;
     }
 
-    /* أرقام البداية والنهاية (النص فقط بدون خلفية) */
+    /* أرقام البداية والنهاية */
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         color: #0066cc !important;
         background: transparent !important;
     }
 
-    /* العلامة الصغيرة على الطرف الأيسر */
-    div[data-testid="stSliderTickBar"] > div:first-child {
-        border-left: 2px solid #0066cc !important;
+    /* نزيل أي تباعد غريب فوق وتحت */
+    div[data-testid="stSliderTickBar"] {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
