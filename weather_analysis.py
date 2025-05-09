@@ -447,22 +447,28 @@ def heatmap_temperature(df, city):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-    fig.update_layout(
+     fig.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+    
         title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        legend_font=dict(color='#006400'),
-        font=dict(color='#006400') ،
-         xaxis=dict(
-            title_font=dict(color='#006400'),  # لون عنوان المحور
-            tickfont=dict(color='#006400')),
-
+        font=dict(color='#006400'),  # اللون العام للنصوص
+    
+        xaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور X
+            tickfont=dict(color='#006400')     # لون القيم على محور X
+        ),
+    
         yaxis=dict(
-        title_font=dict(color='#006400'),
-        tickfont=dict(color='#006400') ),
+            title_font=dict(color='#006400'),  # لون عنوان محور Y
+            tickfont=dict(color='#006400')     # لون القيم على محور Y
+        ),
+    
         legend=dict(
-                title_font=dict(color='#006400'),
-                font=dict(color='#006400'))
+            title_font=dict(color='#006400'),  # لون عنوان الليجند
+            font=dict(color='#006400')         # لون عناصر الليجند
+        )
+    )
  
     
    
@@ -491,9 +497,24 @@ def heatmap_humidity(df, city):
     fig.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+    
         title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        legend_font=dict(color='#006400'),  # لون الليجند
-        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+        font=dict(color='#006400'),  # اللون العام للنصوص
+    
+        xaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور X
+            tickfont=dict(color='#006400')     # لون القيم على محور X
+        ),
+    
+        yaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور Y
+            tickfont=dict(color='#006400')     # لون القيم على محور Y
+        ),
+    
+        legend=dict(
+            title_font=dict(color='#006400'),  # لون عنوان الليجند
+            font=dict(color='#006400')         # لون عناصر الليجند
+        )
     )
     
 
@@ -521,9 +542,24 @@ def heatmap_dew_point(df, city):
     fig.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+    
         title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        legend_font=dict(color='#006400'),  # لون الليجند
-        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+        font=dict(color='#006400'),  # اللون العام للنصوص
+    
+        xaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور X
+            tickfont=dict(color='#006400')     # لون القيم على محور X
+        ),
+    
+        yaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور Y
+            tickfont=dict(color='#006400')     # لون القيم على محور Y
+        ),
+    
+        legend=dict(
+            title_font=dict(color='#006400'),  # لون عنوان الليجند
+            font=dict(color='#006400')         # لون عناصر الليجند
+        )
     )
     
     st.plotly_chart(fig, use_container_width=True)
@@ -549,9 +585,24 @@ def heatmap_wind(df, city):
     fig.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
         paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+    
         title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
-        legend_font=dict(color='#006400'),  # لون الليجند
-        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+        font=dict(color='#006400'),  # اللون العام للنصوص
+    
+        xaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور X
+            tickfont=dict(color='#006400')     # لون القيم على محور X
+        ),
+    
+        yaxis=dict(
+            title_font=dict(color='#006400'),  # لون عنوان محور Y
+            tickfont=dict(color='#006400')     # لون القيم على محور Y
+        ),
+    
+        legend=dict(
+            title_font=dict(color='#006400'),  # لون عنوان الليجند
+            font=dict(color='#006400')         # لون عناصر الليجند
+        )
     )
     
 
