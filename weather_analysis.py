@@ -569,15 +569,18 @@ def show_all_weather_heatmaps(df, city):
 
     
     col1, col2 = st.columns(2)
-    heatmap_temperature(df, city,col1)
-    heatmap_humidity(df, city,col2)
+    with col1:
+        heatmap_temperature(df, city)
+    with col2:
+        heatmap_humidity(df, city)
     
+    # الصف الثاني
     col3, col4 = st.columns(2)
-    heatmap_dew_point(df, city,col3)
-    
-    heatmap_wind(df, city,col4)
-    
-         
+    with col3:
+        heatmap_dew_point(df, city)
+    with col4:
+        heatmap_wind(df, city)    
+             
       
                 
     
