@@ -359,51 +359,47 @@ st.markdown('##')
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
+import streamlit as st
+
 st.markdown("""
-    <style>
-    /* خلفية selectbox */
-    div[data-baseweb="select"] > div {
-        background-color: #eef6f3 !important;
-        border-radius: 10px !important;
-        color: black !important;
-    }
+<style>
+/* تخصيص نافذة اختيار التاريخ */
+div[class*="datepicker"] {
+    background-color: #eef6f3 !important;
+    color: black !important;
+    border-radius: 10px !important;
+}
 
-    /* النصوص بداخل الـ select */
-    div[data-baseweb="select"] * {
-        color: black !important;
-    }
+/* تخصيص رأس الشهر والسنة */
+div[class*="datepicker"] .DayPicker-Caption {
+    color: black !important;
+}
 
-    /* خلفية النافذة المنبثقة (Popover) نفسها */
-    div[role="listbox"] {
-        background-color: #eef6f3 !important;
-        border-radius: 10px !important;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2) !important;
-    }
+/* تخصيص أيام الأسبوع */
+div[class*="datepicker"] .DayPicker-Weekday {
+    color: #555 !important;
+}
 
-    /* عناصر القائمة */
-    div[role="option"] {
-        background-color: #eef6f3 !important;
-        color: black !important;
-    }
+/* تخصيص الأرقام */
+div[class*="datepicker"] .DayPicker-Day {
+    background-color: #eef6f3 !important;
+    color: black !important;
+}
 
-    /* عند تمرير الماوس */
-    div[role="option"]:hover {
-        background-color: #cde2da !important;
-    }
+/* اليوم المحدد */
+div[class*="datepicker"] .DayPicker-Day--selected {
+    background-color: #3cb371 !important;
+    color: white !important;
+}
 
-    /* تغليف التاريخ */
-    div[data-testid="stDateInput"] {
-        background-color: #eef6f3 !important;
-        border-radius: 10px !important;
-    }
-
-    /* داخل خانة التاريخ */
-    input[data-testid="stDateInput-input"] {
-        background-color: #eef6f3 !important;
-        color: black !important;
-    }
-    </style>
+/* عند تمرير الماوس */
+div[class*="datepicker"] .DayPicker-Day:hover {
+    background-color: #cde2da !important;
+    color: black !important;
+}
+</style>
 """, unsafe_allow_html=True)
+
 
     
 
