@@ -623,13 +623,22 @@ df["month"] = pd.Categorical(df["month"], categories=month_order, ordered=True)
 
 
     
-def display_chart_with_frame(fig, height=700):
+def display_chart_with_frame(fig, height=650):  # قلل الارتفاع
     html = fig.to_html(include_plotlyjs="cdn")
     components.html(f"""
-        <div style="border: 3px solid #4CAF8B; border-radius: 12px;padding: 10px; margin: 10px 0;  background-color: transparent;width: 100%; box-sizing: border-box;overflow: auto;">
+        <div style="
+            border: 3px solid #4CAF8B;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 5px 0;  /* قلل المسافة بين العناصر */
+            background-color: transparent;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: auto;">
             {html}
         </div>
     """, height=height)
+
 
 # الصف الأول: الحرارة والرطوبة
 col1, col2 = st.columns(2)
