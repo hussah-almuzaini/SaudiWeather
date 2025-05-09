@@ -600,17 +600,22 @@ cols = st.columns(buttons_per_row)
 st.markdown("""
     <style>
         .stButton>button {
-            background-color: #f1f1f1;  /* Light background */
+            background-color: #d3f9d8;  /* Light green background */
             border: 2px solid #333;  /* Dark border */
             color: #333;  /* Dark text */
             border-radius: 5px;
             font-size: 16px;
-            padding: 10px;  }
+            padding: 10px;
+            width: 100%;  /* Make buttons fill the column space */
+            text-align: center;  /* Center-align the text inside the button */
+        }
         .stButton>button:hover {
-            background-color: #e0e0e0;  /* Hover effect */ }
+            background-color: #b8f7c5;  /* Slightly darker green on hover */
+        }
         .stButton>button:active {
             background-color: #ffcccc;  /* Light red background when clicked */
-            color: #990000;  /* Dark red text */ }
+            color: #990000;  /* Dark red text */
+        }
     </style>
 """, unsafe_allow_html=True)
 
