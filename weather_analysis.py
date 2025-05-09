@@ -730,20 +730,20 @@ import streamlit.components.v1 as components
 import streamlit as st
 
 # سلايدر في الصفحة
+import streamlit as st
+
+# سلايدر في الصفحة
 NB = st.slider('Select Value', 1, 100, 1)
 
-# حساب النسبة التي سيمثلها اللون قبل الدائرة
-percentage = NB
-
-# تدرج لوني ديناميكي يعتمد على القيمة
-st.markdown(f'''
+# استخدام JavaScript + CSS لتغيير اللون بناءً على قيمة السلايدر
+st.markdown(f"""
     <style>
-    /* تغيير اللون قبل الدائرة بناءً على القيمة */
+    /* تعيين التدرج اللوني للسلايدر بناءً على القيمة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background-color: rgb(1, 183, 158) {percentage}% !important;
+        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {NB}%, rgba(151, 166, 195, 0.25) {NB}%, rgba(151, 166, 195, 0.25) 100%) !important;
     }}
 
-    /* الجزء بعد الدائرة */
+    /* تغيير اللون بعد الدائرة */
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {{
         background-color: rgba(151, 166, 195, 0.25) !important;
     }}
@@ -761,7 +761,15 @@ st.markdown(f'''
         color: blue !important;
     }}
     </style>
-''', unsafe_allow_html=True)
+    
+    <script>
+    // JavaScript لتغيير CSS عند تغيير السلايدر
+    const sliderValue = {NB}; // قيمة السلايدر
+    const slider = document.querySelector('.stSlider > div[data-baseweb="slider"] > div > div:nth-child(1)');
+    slider.style.background = `linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) ${sliderValue}%, rgba(151, 166, 195, 0.25) ${sliderValue}%, rgba(151, 166, 195, 0.25) 100%)`;
+    </script>
+""", unsafe_allow_html=True)
+
 
 
 
