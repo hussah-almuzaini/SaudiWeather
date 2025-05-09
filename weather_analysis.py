@@ -47,6 +47,30 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
+st.markdown("""
+    <style>
+    /* تغيير لون النص بجانب السلايدر */
+    .stSlider label div {
+        color: black !important;
+    }
+
+    /* تغيير لون المسار النشط في السلايدر */
+    div[data-baseweb="slider"] > div > div > div:nth-child(3) {
+        background-color: #003366 !important;
+    }
+
+    /* تغيير لون المقبض (الدائرة) */
+    div[data-baseweb="slider"] span {
+        background-color: #003366 !important;
+        border: 2px solid #003366 !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
 # استخدام st.image مباشرة
 st.image("logo.png", width=150)
 df = load_data(file_path)
