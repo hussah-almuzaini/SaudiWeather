@@ -365,50 +365,68 @@ import streamlit as st
 import streamlit as st
 
 # تغيير شامل للواجهة إلى "Light Mode"
+import streamlit as st
+
 st.markdown("""
     <style>
-        /* لون خلفية الصفحة */
+        /* خلفية التطبيق */
         .stApp {
-            background-color: #f5fdf6;
-            color: black;
+            background-color: #e8f5e9;
+            color: #1b5e20;
         }
 
-        /* مربعات الإدخال والاختيار */
-        input, textarea, select, div[data-baseweb="select"], .stDateInput input {
-            background-color: white !important;
-            color: black !important;
-            border: 1px solid #ccc !important;
+        /* عناصر الإدخال (input, select, text, date) */
+        input, textarea, select, div[data-baseweb="input"], div[data-baseweb="select"] {
+            background-color: #d0f0ce !important;
+            color: #1b5e20 !important;
+            border: 1px solid #a5d6a7 !important;
         }
 
-        /* قائمة الخيارات المنسدلة */
-        .stSelectbox div[role="combobox"] {
-            background-color: white !important;
-            color: black !important;
+        /* نصوص القوائم */
+        div[data-baseweb="select"] div {
+            color: #1b5e20 !important;
         }
 
-        /* نافذة التاريخ */
-        div[class*="datepicker"] {
-            background-color: white !important;
-            color: black !important;
+        /* قائمة الدروب داون */
+        div[data-baseweb="popover"] {
+            background-color: #d0f0ce !important;
+            color: #1b5e20 !important;
+            border: 1px solid #a5d6a7 !important;
         }
 
-        /* ترويسة التاريخ */
-        .DayPicker-Caption, .DayPicker-Weekday, .DayPicker-Day {
-            color: black !important;
+        /* حقل التاريخ */
+        .stDateInput, .stDateInput input {
+            background-color: #d0f0ce !important;
+            color: #1b5e20 !important;
         }
 
-        /* اليوم المحدد */
+        /* نافذة التقويم */
+        .css-1dbjc4n.r-kdyh1x.r-1loqt21 {
+            background-color: #d0f0ce !important;
+            color: #1b5e20 !important;
+        }
+
+        /* مكونات تقويم التاريخ */
+        .DayPicker, .DayPicker-Month, .DayPicker-Caption, .DayPicker-Weekdays, .DayPicker-Day {
+            background-color: #d0f0ce !important;
+            color: #1b5e20 !important;
+        }
+
+        /* اليوم المختار */
         .DayPicker-Day--selected {
-            background-color: #3cb371 !important;
+            background-color: #66bb6a !important;
             color: white !important;
         }
 
-        /* شريط التنقل العلوي */
+        /* الشريط العلوي والسفلي */
         header, footer {
-            background-color: #f5fdf6 !important;
+            background-color: #e8f5e9 !important;
         }
     </style>
 """, unsafe_allow_html=True)
+
+
+       
 
 
     
