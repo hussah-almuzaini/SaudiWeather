@@ -367,26 +367,16 @@ import streamlit as st
 # تغيير شامل للواجهة إلى "Light Mode"
 st.markdown("""
     <style>
-        /* تغيير الخلفية العامة */
-        .stApp {
-            background-color: #e8f5e9;
-        }
-
-        /* تعديل الحقول */
-        input, .stTextInput > div > div, .stDateInput > div, .stSelectbox > div {
-            background-color: #f1f8e9 !important;
-            color: #1b5e20 !important;
+        /* تغيير تصميم selectbox الخاص بحقل النوع */
+        .stSelectbox, .stRadio > div {
+            background-color: #e8f5e9 !important;
+            color: #2e7d32 !important;
             border-radius: 8px !important;
             border: 1px solid #c8e6c9 !important;
+            padding: 8px;
         }
 
-        /* عناصر القائمة المنسدلة */
-        .css-1n76uvr, .css-1n76uvr:hover {
-            background-color: #f1f8e9 !important;
-            color: #2e7d32 !important;
-        }
-
-        /* سهم selectbox */
+        /* تصميم سهم selectbox */
         .stSelectbox svg {
             fill: #388e3c !important;
         }
@@ -402,25 +392,10 @@ st.markdown("""
             color: #2e7d32 !important;
         }
 
-        /* التقويم */
-        .stDateInput input {
+        /* تعديل الإطار عند تحديد القيمة */
+        .stSelectbox > div > div {
             background-color: #f1f8e9 !important;
             color: #2e7d32 !important;
-        }
-
-        .DayPicker, .DayPicker-Month {
-            background-color: #f1f8e9 !important;
-            color: #2e7d32 !important;
-        }
-
-        .DayPicker-Day--selected {
-            background-color: #81c784 !important;
-            color: white !important;
-        }
-
-        /* إزالة الأحمر */
-        .css-1cpxqw2 {
-            border: none !important;
         }
     </style>
 """, unsafe_allow_html=True)
