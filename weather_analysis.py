@@ -214,17 +214,19 @@ def temperature_plot(avg_df):
 
     
     st.markdown("""
-        <div style="
-            border: 2px solid #4CAF8B;
-            border-radius: 10px;
-            padding: 10px;
-        ">
+    <div style="
+        border: 2px solid #4CAF8B;  /* اللون الأخضر */
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0);  /* خلفية شفافة */
+    ">
     """, unsafe_allow_html=True)
 
+# هنا تحط الكود الخاص بخريطة Plotly
     st.plotly_chart(fig, use_container_width=True)
 
+# إغلاق الـ div بعد الخريطة
     st.markdown("</div>", unsafe_allow_html=True)
-
 
 
 def humidity_plot(avg_df):
