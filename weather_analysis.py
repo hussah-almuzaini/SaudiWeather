@@ -726,28 +726,38 @@ import streamlit as st
 
 # ✅ CSS متكامل لتعديل لون الخط والأرقام
 
-st.markdown("""
-    <style>
-    div[data-baseweb="slider"] div[role="slider"] {
-        background-color: #003366 !important;
-        border: 2px solid #003366 !important;
-    }
+import streamlit.components.v1 as components
 
-    div[data-baseweb="slider"] div[role="presentation"] > div:nth-child(1) {
-        background: #003366 !important;
-    }
+components.html(
+    """
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const sliders = document.querySelectorAll('[role="slider"]');
+            sliders.forEach(slider => {
+                slider.style.backgroundColor = "#003366";
+                slider.style.border = "2px solid #003366";
+            });
 
-    /* تغيير لون الخط غير النشط */
-    div[data-baseweb="slider"] div[role="presentation"] > div:nth-child(2) {
-        background: #b0b0b0 !important;
-    }
+            const tracks = document.querySelectorAll('div[role="presentation"] > div');
+            if (tracks.length > 0) {
+                tracks.forEach(track => {
+                    if (track.style && track.style.backgroundColor === 'rgb(255, 75, 75)') {
+                        track.style.backgroundColor = "#003366";
+                    }
+                });
+            }
 
-    /* تغيير لون أرقام الحد الأدنى والأقصى */
-    div[data-baseweb="slider"] div[role="presentation"] > div:nth-child(3) > div {
-        color: black !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
+            const labels = document.querySelectorAll('div[role="presentation"] > div > div');
+            labels.forEach(label => {
+                label.style.color = "#000000";
+                label.style.fontWeight = "bold";
+            });
+        });
+    </script>
+    """,
+    height=0,
+)
+
 
 
 col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
