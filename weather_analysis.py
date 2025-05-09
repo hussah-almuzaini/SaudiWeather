@@ -447,8 +447,14 @@ def heatmap_temperature(df, city, col):
         labels={"avg_temp": "Temp (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
+        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
+        legend_font=dict(color='#006400'),  # لون الليجند
+        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+    )
     
-
    
     st.plotly_chart(fig, use_container_width=True)
 
@@ -472,6 +478,14 @@ def heatmap_humidity(df, city,col):
         labels={"avg_humidity": "Humidity (%)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
+        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
+        legend_font=dict(color='#006400'),  # لون الليجند
+        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+    )
+    
 
 
     st.plotly_chart(fig, use_container_width=True)
@@ -494,9 +508,15 @@ def heatmap_dew_point(df, city,col):
         labels={"max_dew_point": "Dew Point (°C)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
-
-
-   st.plotly_chart(fig, use_container_width=True)
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
+        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
+        legend_font=dict(color='#006400'),  # لون الليجند
+        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
 
 
 
@@ -516,6 +536,14 @@ def heatmap_wind(df, city,col):
         labels={"max_wind_speed": "Wind Speed (km/h)", "day": "Day", "month": "Month"},
         nbinsx=31
     )
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',  # خلفية الرسم شفافة
+        paper_bgcolor='rgba(0,0,0,0)',  # خلفية الشكل شفافة
+        title_font=dict(color='#006400', size=20),  # لون التايتل أخضر غامق
+        legend_font=dict(color='#006400'),  # لون الليجند
+        font=dict(color='#006400')  # لون النصوص بشكل عام (بما فيها المحاور)
+    )
+    
 
    
     
