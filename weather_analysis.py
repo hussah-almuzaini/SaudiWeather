@@ -361,32 +361,29 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : <
 
 st.markdown("""
     <style>
-    /* تغيير حدود selectbox */
+    /* تغيير خلفية selectbox */
     div[data-baseweb="select"] > div {
-        border: 2px solid #5d9c7d !important;
+        background-color: #eef6f3 !important;
         border-radius: 8px;
+        color: black;
     }
 
-    /* تغيير حدود مدخل التاريخ */
+    /* تغيير خلفية خانة كتابة التاريخ */
     input[type="text"][data-testid="stDateInput"] {
-        border: 2px solid #5d9c7d !important;
+        background-color: #eef6f3 !important;
         border-radius: 8px;
-        padding: 8px;
+        color: black;
     }
 
-    /* تغليف الـ date_input بالكامل */
+    /* تغيير خلفية تغليف date_input بالكامل */
     div[data-testid="stDateInput"] {
-        border: 2px solid #5d9c7d !important;
+        background-color: #eef6f3 !important;
         border-radius: 8px;
         padding: 4px;
     }
-
-    /* لتقليل الفراغات بين العناصر */
-    .block-container {
-        padding-top: 1rem;
-    }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 # --------- الفلاتر في صف واحد ---------
