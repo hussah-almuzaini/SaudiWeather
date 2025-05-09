@@ -361,43 +361,53 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : <
 
 import streamlit as st
 
+
+import streamlit as st
+
+# تغيير شامل للواجهة إلى "Light Mode"
 st.markdown("""
-<style>
-/* تخصيص نافذة اختيار التاريخ */
-div[class*="datepicker"] {
-    background-color: #eef6f3 !important;
-    color: black !important;
-    border-radius: 10px !important;
-}
+    <style>
+        /* لون خلفية الصفحة */
+        .stApp {
+            background-color: #f5fdf6;
+            color: black;
+        }
 
-/* تخصيص رأس الشهر والسنة */
-div[class*="datepicker"] .DayPicker-Caption {
-    color: black !important;
-}
+        /* مربعات الإدخال والاختيار */
+        input, textarea, select, div[data-baseweb="select"], .stDateInput input {
+            background-color: white !important;
+            color: black !important;
+            border: 1px solid #ccc !important;
+        }
 
-/* تخصيص أيام الأسبوع */
-div[class*="datepicker"] .DayPicker-Weekday {
-    color: #555 !important;
-}
+        /* قائمة الخيارات المنسدلة */
+        .stSelectbox div[role="combobox"] {
+            background-color: white !important;
+            color: black !important;
+        }
 
-/* تخصيص الأرقام */
-div[class*="datepicker"] .DayPicker-Day {
-    background-color: #eef6f3 !important;
-    color: black !important;
-}
+        /* نافذة التاريخ */
+        div[class*="datepicker"] {
+            background-color: white !important;
+            color: black !important;
+        }
 
-/* اليوم المحدد */
-div[class*="datepicker"] .DayPicker-Day--selected {
-    background-color: #3cb371 !important;
-    color: white !important;
-}
+        /* ترويسة التاريخ */
+        .DayPicker-Caption, .DayPicker-Weekday, .DayPicker-Day {
+            color: black !important;
+        }
 
-/* عند تمرير الماوس */
-div[class*="datepicker"] .DayPicker-Day:hover {
-    background-color: #cde2da !important;
-    color: black !important;
-}
-</style>
+        /* اليوم المحدد */
+        .DayPicker-Day--selected {
+            background-color: #3cb371 !important;
+            color: white !important;
+        }
+
+        /* شريط التنقل العلوي */
+        header, footer {
+            background-color: #f5fdf6 !important;
+        }
+    </style>
 """, unsafe_allow_html=True)
 
 
