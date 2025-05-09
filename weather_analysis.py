@@ -215,7 +215,7 @@ def temperature_plot(avg_df):
 
    
 
-    st.plotly_chart(fig, use_container_width=True)
+    return fig
     
     
     
@@ -262,7 +262,7 @@ def humidity_plot(avg_df):
         paper_bgcolor='rgba(0,0,0,0)',  # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
-    st.plotly_chart(fig, use_container_width=True)
+    return fig 
 
 
 def wind_plot(avg_df):
@@ -307,7 +307,7 @@ def wind_plot(avg_df):
         plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    return fig 
 
 def dew_point_plot(avg_df):
     avg_df["max_dew_point"] = avg_df["max_dew_point"].round(1)
@@ -351,7 +351,7 @@ def dew_point_plot(avg_df):
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
         plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
     )
-    st.plotly_chart(fig, use_container_width=True)
+    return fig 
 
 
 
@@ -413,13 +413,14 @@ else:
 
 
     if map_type == "Temperature":
-        temperature_plot(avg_df)
+        fig = temperature_plot(avg_df)
     elif map_type == "Humidity":
-        humidity_plot(avg_df)
+        fig =humidity_plot(avg_df)
     elif map_type == "Dew Point":
-        dew_point_plot(avg_df)
+        fig =dew_point_plot(avg_df)
     elif map_type == "Wind Speed":
-        wind_plot(avg_df)
+        fig =wind_plot(avg_df)
+    st.plotly_chart(fig, use_container_width=True)
 
 
     # إغلاق الـ div بعد الخريطة
