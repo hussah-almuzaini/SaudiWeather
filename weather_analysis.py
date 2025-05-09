@@ -728,35 +728,27 @@ import streamlit as st
 
 import streamlit.components.v1 as components
 
-components.html(
-    """
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            const sliders = document.querySelectorAll('[role="slider"]');
-            sliders.forEach(slider => {
-                slider.style.backgroundColor = "#003366";
-                slider.style.border = "2px solid #003366";
-            });
+st.markdown("""
+    <style>
+    /* تغيير لون مسار السلايدر */
+    div[data-baseweb="slider"] > div > div {
+        background-color: #003366 !important;
+    }
 
-            const tracks = document.querySelectorAll('div[role="presentation"] > div');
-            if (tracks.length > 0) {
-                tracks.forEach(track => {
-                    if (track.style && track.style.backgroundColor === 'rgb(255, 75, 75)') {
-                        track.style.backgroundColor = "#003366";
-                    }
-                });
-            }
+    /* تغيير لون الدائرة (المقبض) */
+    div[data-baseweb="slider"] [role="slider"] {
+        background-color: #003366 !important;
+        border: 2px solid #003366 !important;
+    }
 
-            const labels = document.querySelectorAll('div[role="presentation"] > div > div');
-            labels.forEach(label => {
-                label.style.color = "#000000";
-                label.style.fontWeight = "bold";
-            });
-        });
-    </script>
-    """,
-    height=0,
-)
+    /* تغيير لون الأرقام */
+    div[data-baseweb="slider"] span {
+        color: #000000 !important;
+        font-weight: bold !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 
 
