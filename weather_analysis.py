@@ -633,14 +633,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
     
-def display_chart_with_frame(fig, height=650):  # قلل الارتفاع
+def display_chart_with_frame(fig, height=600):
     html = fig.to_html(include_plotlyjs="cdn")
     components.html(f"""
         <div style="
             border: 3px solid #4CAF8B;
             border-radius: 12px;
             padding: 10px;
-            margin: 5px 0;  /* قلل المسافة بين العناصر */
+            margin: 0px;
             background-color: transparent;
             width: 100%;
             box-sizing: border-box;
@@ -648,6 +648,7 @@ def display_chart_with_frame(fig, height=650):  # قلل الارتفاع
             {html}
         </div>
     """, height=height)
+
 
 
 # الصف الأول: الحرارة والرطوبة
