@@ -234,7 +234,7 @@ def humidity_plot(avg_df):
         color_continuous_scale="Blues",  
         size_max=20,
         zoom=4,
-        mapbox_style="carto-darkmatter",
+        mapbox_style="carto-positron",
         hover_name=None,
         custom_data=["city", "avg_humidity"]
     )
@@ -277,7 +277,7 @@ def wind_plot(avg_df):
         color_continuous_scale="Viridis",  
         size_max=20,
         zoom=4,
-        mapbox_style="carto-darkmatter",
+        mapbox_style="light",
         hover_name=None,
         custom_data=["city", "max_wind_speed"]
     )
