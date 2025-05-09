@@ -728,57 +728,8 @@ import streamlit.components.v1 as components
 
 import streamlit as st
 
-import streamlit as st
-
-# سلايدر 1
-slider_value_1 = st.slider('Slider 1', 1, 100, 1, key="slider_1")
-
-# سلايدر 2
-slider_value_2 = st.slider('Slider 2', 1, 100, 1, key="slider_2")
-
-# استخدام CSS لتغيير الألوان بناءً على القيمة لكل سلايدر
-st.markdown(f"""
-    <style>
-    /* السلايدر الأول: تغيير اللون قبل الدائرة */
-    .stSlider[data-testid="slider_1"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {slider_value_1}%, gray {slider_value_1}%, gray 100%) !important;
-    }}
-    
-    /* السلايدر الأول: اللون بعد الدائرة */
-    .stSlider[data-testid="slider_1"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
-        background-color: gray !important;
-    }}
-    
-    /* السلايدر الثاني: تغيير اللون قبل الدائرة */
-    .stSlider[data-testid="slider_2"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
-        background: linear-gradient(to right, rgb(1, 183, 158) 0%, rgb(1, 183, 158) {slider_value_2}%, gray {slider_value_2}%, gray 100%) !important;
-    }}
-    
-    /* السلايدر الثاني: اللون بعد الدائرة */
-    .stSlider[data-testid="slider_2"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
-        background-color: gray !important;
-    }}
-
-    /* الرقم فوق الدائرة */
-    div[data-testid="stSliderThumbValue"] {{
-        color: blue !important;
-    }}
-
-    /* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
-    div[data-testid="stSliderTickBarMin"],
-    div[data-testid="stSliderTickBarMax"] {{
-        background: transparent !important;
-        box-shadow: none !important;
-        color: blue !important;
-    }}
-    </style>
-""", unsafe_allow_html=True)
-
-
-
-
-
-col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
+# إنشاء الأعمدة
+col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 
 with col1:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
@@ -788,8 +739,6 @@ with col2:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
     desired_humidity = st.slider("humidity", 0, 100, 50, label_visibility="collapsed")
 
-col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
-
 with col3:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
     desired_dew = st.slider("dew", -10, 40, 10, label_visibility="collapsed")
@@ -797,6 +746,62 @@ with col3:
 with col4:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
     desired_wind = st.slider("wind", 0, 100, 10, label_visibility="collapsed")
+
+# تخصيص الألوان بناءً على القيم باستخدام CSS
+st.markdown(f"""
+    <style>
+    /* تخصيص السلايدر للحرارة */
+    .stSlider[data-testid="temp"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background: linear-gradient(to right, rgb(255, 87, 34) 0%, rgb(255, 87, 34) {desired_temp}%, gray {desired_temp}%, gray 100%) !important;
+    }}
+    
+    .stSlider[data-testid="temp"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+        background-color: gray !important;
+    }}
+    
+    /* تخصيص السلايدر للرطوبة */
+    .stSlider[data-testid="humidity"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background: linear-gradient(to right, rgb(33, 150, 243) 0%, rgb(33, 150, 243) {desired_humidity}%, gray {desired_humidity}%, gray 100%) !important;
+    }}
+    
+    .stSlider[data-testid="humidity"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+        background-color: gray !important;
+    }}
+    
+    /* تخصيص السلايدر لنقطة الندى */
+    .stSlider[data-testid="dew"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background: linear-gradient(to right, rgb(76, 175, 80) 0%, rgb(76, 175, 80) {desired_dew}%, gray {desired_dew}%, gray 100%) !important;
+    }}
+    
+    .stSlider[data-testid="dew"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+        background-color: gray !important;
+    }}
+    
+    /* تخصيص السلايدر لسرعة الرياح */
+    .stSlider[data-testid="wind"] > div[data-baseweb="slider"] > div > div:nth-child(1) {{
+        background: linear-gradient(to right, rgb(0, 188, 212) 0%, rgb(0, 188, 212) {desired_wind}%, gray {desired_wind}%, gray 100%) !important;
+    }}
+    
+    .stSlider[data-testid="wind"] > div[data-baseweb="slider"] > div > div:nth-child(3) {{
+        background-color: gray !important;
+    }}
+
+    /* تغيير لون النصوص (الأرقام) لكل سلايدر */
+    .stSlider[data-testid="temp"] .stSliderValue,
+    .stSlider[data-testid="humidity"] .stSliderValue,
+    .stSlider[data-testid="dew"] .stSliderValue,
+    .stSlider[data-testid="wind"] .stSliderValue {{
+        color: #2a4d69 !important; /* تغيير اللون إلى الأزرق الداكن */
+    }}
+
+    /* تغيير لون الأرقام على الأطراف (min/max) */
+    div[data-testid="stSliderTickBarMin"] span,
+    div[data-testid="stSliderTickBarMax"] span {{
+        color: #2a4d69 !important; /* تغيير اللون إلى الأزرق الداكن */
+    }}
+    </style>
+""", unsafe_allow_html=True)
+
 
 
 
