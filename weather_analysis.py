@@ -783,22 +783,22 @@ col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col1:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
-    desired_temp = st.slider("", 0, 50, 25)
+    desired_temp = st.slider(" ", 0, 50, 25)
 
 with col2:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
-    desired_humidity = st.slider("", 0, 100, 50)
+    desired_humidity = st.slider(" ", 0, 100, 50)
 
 # الصف الثاني
 col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col3:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🟢 Ideal Dew Point (°C)</b></p>', unsafe_allow_html=True)
-    desired_dew = st.slider("", -10, 40, 10)
+    desired_dew = st.slider(" ", -10, 40, 10)
 
 with col4:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
-    desired_wind = st.slider("", 0, 100, 10)
+    desired_wind = st.slider(" ", 0, 100, 10)
 
 
 
