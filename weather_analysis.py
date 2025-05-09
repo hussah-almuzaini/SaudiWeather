@@ -310,16 +310,19 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview< </
 filter_cols = st.columns(3)
 
 with filter_cols[0]:
-    map_type = st.selectbox("Select Map Type 🗺️:", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
+    st.markdown("<h5 style='color:#FF6347;'>🗺️ Select Map Type</h5>", unsafe_allow_html=True)
+    map_type = st.selectbox("", ["Temperature", "Humidity", "Dew Point", "Wind Speed"])
 
 min_date = df["date"].min()
 max_date = df["date"].max()
 
 with filter_cols[1]:
-    start_date = st.date_input("📅 Start date", value=min_date, min_value=min_date, max_value=max_date)
+    st.markdown("<h5 style='color:#1E90FF;'>📅 Start Date</h5>", unsafe_allow_html=True)
+    start_date = st.date_input("", value=min_date, min_value=min_date, max_value=max_date)
 
 with filter_cols[2]:
-    end_date = st.date_input("📅 End date", value=max_date, min_value=min_date, max_value=max_date)
+    st.markdown("<h5 style='color:#1E90FF;'>📅 End Date</h5>", unsafe_allow_html=True)
+    end_date = st.date_input("", value=max_date, min_value=min_date, max_value=max_date)
 
 # --------- معالجة البيانات وعرض الخريطة ---------
 if start_date > end_date:
