@@ -209,25 +209,19 @@ def temperature_plot(avg_df):
         height=600,
         width=800,
         paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
-        plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
+        plot_bgcolor='rgba(0,0,0,0)' ,   # لون خلفية الرسم
+        shapes=[dict(
+        type="rect",
+        x0=0, x1=1, y0=0, y1=1,
+        xref="paper", yref="paper",
+        line=dict(color="#4CAF8B", width=3)
+    )] 
     )
 
-    
    
-    st.markdown("""
-        <div style="
-            border: 3px solid #4CAF8B;  /* اللون الأخضر */
-            border-radius: 10px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0);  /* خلفية شفافة */
-        ">
-    """, unsafe_allow_html=True)
-    
-    # رسم الخريطة نفسها
     st.plotly_chart(fig, use_container_width=True)
     
-    # إغلاق الـ div بعد الخريطة
-    st.markdown("</div>", unsafe_allow_html=True)
+    
 
 
 
