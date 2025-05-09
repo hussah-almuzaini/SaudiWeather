@@ -718,8 +718,30 @@ st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferenc
 
 
 
-# الصف الأول (درجة الحرارة + الرطوبة)
-col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])  # أعمدة بعرض أقل من كامل الصفحة
+st.markdown("""
+    <style>
+    .stSlider > div > div > div > div {
+        color: #000000 !important;  /* أسود */
+    }
+
+    .stSlider .st-dn .horizontal-slider .track-1 {
+        background: #003366 !important;  /* أزرق غامق */
+    }
+
+    .stSlider .st-dn .horizontal-slider .thumb {
+        background-color: #003366 !important;
+        border-color: #003366 !important;
+    }
+    .stSlider .st-dn .horizontal-slider .track-0 {
+        background: #dcdcdc !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+
+col1, col2, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col1:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🌡️ Ideal Temperature (°C)</b></p>', unsafe_allow_html=True)
@@ -729,7 +751,7 @@ with col2:
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>💧 Ideal Humidity (%)</b></p>', unsafe_allow_html=True)
     desired_humidity = st.slider("", 0, 100, 50)
 
-# صف ثاني (ندى + رياح)
+# الصف الثاني
 col3, col4, _, _ = st.columns([1, 1, 0.4, 0.4])
 
 with col3:
