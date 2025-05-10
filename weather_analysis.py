@@ -24,6 +24,17 @@ def load_image(image_file):
 image_path = 'download.jpg'
 image_base64 = load_image(image_path)
 
+import streamlit as st
+import base64
+
+def load_image(image_file):
+    with open(image_file, "rb") as img:
+        return base64.b64encode(img.read()).decode()
+
+image_path = 'download.jpg'
+image_base64 = load_image(image_path)
+
+# إعداد الخلفية
 st.markdown(
     f"""
     <style>
@@ -38,20 +49,21 @@ st.markdown(
     .header-container {{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: 30px;
-        gap: 20px;
+        gap: 25px;
+        padding-left: 40px;
     }}
 
     .dashboard-logo {{
-        width: 100px;
+        width: 240px;
     }}
 
     .dashboard-title {{
-        font-size: 36px;
+        font-size: 38px;
         font-weight: bold;
         color: white;
-        text-shadow: 2px 2px 4px #000;
+        text-shadow: 2px 2px 5px #000;
     }}
     </style>
 
@@ -63,7 +75,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# باقي الكود
+# تحميل البيانات ومعالجتها
+df = load_data(file_path)
+df = preprocess_data(df)
+
 
 
 
