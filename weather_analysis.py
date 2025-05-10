@@ -546,7 +546,8 @@ def heatmap_wind(df, city):
             title="wind (k/h)",
             title_font=dict(size=16, color="#4CAF8B"))
     
-    )return fig 
+    )
+    return fig 
     
 
 
