@@ -36,42 +36,56 @@ image_base64 = load_image(image_path)
 
 
 
+import streamlit as st
+import base64
+
+def load_image(image_file):
+    with open(image_file, "rb") as img:
+        return base64.b64encode(img.read()).decode()
+
+image_path = 'download.jpg'
+image_base64 = load_image(image_path)
+
+# إعداد الخلفية
 st.markdown(
-    """
+    f"""
     <style>
-    .dashboard-title {
-        font-size: 32px;
-        font-weight: 700;
-        color: #2e7d32; /* لون أخضر هادئ */
-        margin-bottom: 20px;
-    }
-    .title-container {
+    .stApp {{
+        background-image: url('data:image/jpeg;base64,{image_base64}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }}
+
+    .header-container {{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-    .logo {
+        justify-content: flex-start;
+        margin-top: 30px;
+        gap: 30px;
+        padding-left: 80px;
+    }}
+
+    .dashboard-logo {{
         width: 300px;
-        margin-left: auto;
-    }
+    }}
+
+    .dashboard-title {{
+        font-size: 38px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 5px #000;
+    }}
     </style>
-    <div class="title-container">
-        <div>
-            <div class="dashboard-title">Interactive Weather Insights Across Saudi Arabia</div>
-            <div class="dashboard-title">Saudi Arabia Climate Explorer</div>
-            <div class="dashboard-title">Weather Trends & Travel Insights – KSA</div>
-            <div class="dashboard-title">Your Guide to Saudi Arabia’s Weather</div>
-            <div class="dashboard-title">Explore Saudi Weather – Smarter, Simpler</div>
-            <div class="dashboard-title">Visualizing Saudi Arabia’s Weather Data</div>
-        </div>
-        <img class="logo" src="data:image/png;base64,{image_base64}">
+
+    <div class="header-container">
+        <img class="dashboard-logo" src="data:image/png;base64,{load_image('logo.png')}">
+        <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
     </div>
     """,
     unsafe_allow_html=True
 )
-
-
 
 
 df = load_data(file_path)
