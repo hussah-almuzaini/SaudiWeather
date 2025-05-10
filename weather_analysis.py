@@ -32,14 +32,27 @@ st.markdown(
         background-size: cover;  
         background-repeat: no-repeat;  
         background-attachment: fixed;  
-        background-position: center;  }}
+        background-position: center;
+    }}
 
+    .dashboard-title {{
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px #000000;
+    }}
     </style>
+
+    <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
     """,
     unsafe_allow_html=True
 )
 
 st.image("logo.png", width=150)
+
 df = load_data(file_path)
 df = preprocess_data(df)
 
