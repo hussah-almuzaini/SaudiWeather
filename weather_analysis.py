@@ -56,7 +56,7 @@ st.markdown(
         position: absolute;
         left: 30px;
         top: 0;
-        width: 300px;
+        width: 140px;
     }}
 
     .dashboard-title {{
