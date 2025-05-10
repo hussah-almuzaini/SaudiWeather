@@ -687,6 +687,8 @@ with col1:
 with col2:
     fig_humidity = heatmap_humidity(df, city)
     display_chart_with_frame(fig_humidity)
+    
+st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
 col3, col4 = st.columns(2 , gap="small")
 
