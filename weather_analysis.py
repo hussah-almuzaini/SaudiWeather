@@ -47,23 +47,25 @@ st.markdown(
     }}
 
     .header-container {{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        position: relative;
         margin-top: 30px;
-        gap: 30px;
-        padding-left: 80px;
+        height: 100px;
     }}
 
     .dashboard-logo {{
+        position: absolute;
+        left: 30px;
+        top: 0;
         width: 300px;
     }}
 
     .dashboard-title {{
+        text-align: center;
         font-size: 44px;
         font-weight: bold;
         color: #ffffff;
-        text-shadow: 4px 4px 16px #2e7d32; /* ظل أخضر */
+        text-shadow: 2px 2px 8px #2e7d32;
+        line-height: 100px;
     }}
     </style>
 
@@ -74,6 +76,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 st.markdown("<hr style='border: 2px solid #5d9c7d; margin: 30px 0;'>", unsafe_allow_html=True)
 
