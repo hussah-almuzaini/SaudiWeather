@@ -447,8 +447,7 @@ def heatmap_temperature(df, city):
             tickfont=dict(color="#4CAF8B"),  
             title="temperature (C)",
             title_font=dict(size=16, color="#4CAF8B")) )
- 
-    return fig 
+     return fig 
 
 
 def heatmap_humidity(df, city):
