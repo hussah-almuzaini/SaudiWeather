@@ -6,32 +6,24 @@ from EDA import load_data, preprocess_data
 import geopandas as gpd
 from datetime import date
 import plotly.express as px
-
 from streamlit_folium import folium_static
 from EDA import generate_folium_map 
-
-
 import plotly.graph_objects as go
-
-
+import base64
+import streamlit.components.v1 as components
 
 
 st.set_page_config(page_title="Saudi Weather Dashboard", layout="wide", page_icon=r"icon.png")
 # file_path = r'C:\Users\PCD\Desktop\SaudiWeather\SaudiCitiesWeather.csv'
 file_path = r'SaudiCitiesWeather.csv'
 
-import base64
-
-
 def load_image(image_file):
     with open(image_file, "rb") as img:
         return base64.b64encode(img.read()).decode()
 
-# تأكد أن الصورة في نفس المجلد
 image_path = 'download.jpg'
 image_base64 = load_image(image_path)
 
-# إضافة صورة كخلفية
 st.markdown(
     f"""
     <style>
@@ -40,39 +32,25 @@ st.markdown(
         background-size: cover;  
         background-repeat: no-repeat;  
         background-attachment: fixed;  
-        background-position: center;  
-    }}
+        background-position: center;  }}
 
     </style>
     """,
     unsafe_allow_html=True
 )
 
-
-
-
-
-# استخدام st.image مباشرة
 st.image("logo.png", width=150)
 df = load_data(file_path)
-
-
 df = preprocess_data(df)
-
-import plotly.express as px 
 
 def get_weather_extremes_latest_month(df):
     
     latest = df["date"].max()
-
-    
     start = pd.Timestamp(year=latest.year, month=latest.month, day=1)
-
     if latest.month == 12:
         end = pd.Timestamp(year=latest.year + 1, month=1, day=1)
     else:
         end = pd.Timestamp(year=latest.year, month=latest.month + 1, day=1)
-
     df_month = df[(df["date"] >= start) & (df["date"] < end)]
 
     avg = df_month.groupby("city", as_index=False).agg({
@@ -100,7 +78,6 @@ def get_weather_extremes_latest_month(df):
 
     
     st.markdown(f'<h1 style="color:#41755b;font-size:36px;">Weather Summary for {start.strftime("%B %Y")}</h1>', unsafe_allow_html=True)
-
     cards = [
         {
             "icon": "🌡️",
@@ -152,7 +129,6 @@ def get_weather_extremes_latest_month(df):
         },
     ]
 
-    # عرض البطاقات في صفوف من 3
     rows = [cards[i:i+2] for i in range(0, len(cards), 2)]
     for row in rows:
         cols = st.columns(len(row))
@@ -172,12 +148,8 @@ def get_weather_extremes_latest_month(df):
 get_weather_extremes_latest_month(df)
 left_col, right_col = st.columns([1, 3])
 
-
-
-
 def temperature_plot(avg_df):
     avg_df["avg_temp"] = avg_df["avg_temp"].round(1)
-
     fig = px.scatter_mapbox(
         avg_df,
         lat="latitude",             
@@ -193,37 +165,31 @@ def temperature_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🌡️ Temp: %{customdata[1]} °C<extra></extra>",
+        hovertemplate="<b>%{customdata[0]}</b><br>🌡️ Temp: %{customdata[1]} °C<extra></extra>",hoverlabel=dict(font_size=14)    )
 
-        hoverlabel=dict(font_size=14)  
-    )
-
-    # تعيين لون الحواف والإطار
     fig.update_layout(
         mapbox=dict(
-        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        center=dict(lat=24, lon=45), 
         zoom=4
     ),
          coloraxis_colorbar=dict(
-            len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            len=0.9, 
             thickness=15,
-            tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
+            tickfont=dict(color="#4CAF8B"), 
             title="Temperature (°C)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
          height=600,
         width=1200,
-        paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
-        plot_bgcolor='rgba(0,0,0,0)' ,   # لون خلفية الرسم
-        
-    )
+        paper_bgcolor='rgba(0,0,0,0)',  
+        plot_bgcolor='rgba(0,0,0,0)' ,  
+         )
 
     return fig 
 
 
 def humidity_plot(avg_df):
     avg_df["avg_humidity"] = avg_df["avg_humidity"].round(1)
-
     fig = px.scatter_mapbox(
         avg_df,
         lat="latitude",
@@ -243,30 +209,26 @@ def humidity_plot(avg_df):
         hoverlabel=dict(font_size=14)
     )
 
-        # تعيين لون الحواف والإطار
     fig.update_layout(
         mapbox=dict(
-        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        center=dict(lat=24, lon=45), 
         zoom=4
     ),
         coloraxis_colorbar=dict(
-            len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            len=0.9, 
             thickness=15,
-            tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
+            tickfont=dict(color="#4CAF8B"), 
             title="Humidity (%)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
          height=600,
         width=1200,
-        paper_bgcolor='rgba(0,0,0,0)',  # لون خلفية الورقة 
-        plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
-    )
+        paper_bgcolor='rgba(0,0,0,0)'
+        plot_bgcolor='rgba(0,0,0,0)'     )
     return fig 
-
-
+    
 def wind_plot(avg_df):
     avg_df["max_wind_speed"] = avg_df["max_wind_speed"].round(1)
-
     fig = px.scatter_mapbox(
         avg_df,
         lat="latitude",
@@ -282,35 +244,33 @@ def wind_plot(avg_df):
     )
 
     fig.update_traces(
-        hovertemplate="<b>%{customdata[0]}</b><br>🌬️ Wind: %{customdata[1]}  km/h<extra></extra>",
-        hoverlabel=dict(font_size=14)
+        hovertemplate="<b>%{customdata[0]}</b><br>🌬️ Wind: %{customdata[1]}  km/h<extra></extra>", hoverlabel=dict(font_size=14)
     )
 
-        # تعيين لون الحواف والإطار
+
     fig.update_layout(
         mapbox=dict(
-        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        center=dict(lat=24, lon=45), 
         zoom=4
     ),
         coloraxis_colorbar=dict(
-            len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+            len=0.9,
             thickness=15,
-            tickfont=dict(color="#4CAF8B"),  # لون الأرقام في شريط الألوان
+            tickfont=dict(color="#4CAF8B"),  
             title="Wind Speed (km/h)",
             title_font=dict(size=16, color="#4CAF8B")
 ),
         margin=dict(l=50, r=50, t=50, b=50),
         height=600,
         width=1200,
-        paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
-        plot_bgcolor='rgba(0,0,0,0)'     # لون خلفية الرسم
+        paper_bgcolor='rgba(0,0,0,0)',  
+        plot_bgcolor='rgba(0,0,0,0)'  
     )
     
     return fig 
 
 def dew_point_plot(avg_df):
     avg_df["max_dew_point"] = avg_df["max_dew_point"].round(1)
-
     fig = px.scatter_mapbox(
         avg_df,
         lat="latitude",
@@ -330,14 +290,13 @@ def dew_point_plot(avg_df):
         hoverlabel=dict(font_size=14)
     )
 
-        # تعيين لون الحواف والإطار
     fig.update_layout(
         mapbox=dict(
-        center=dict(lat=24, lon=45),  # حسب مكان بياناتك
+        center=dict(lat=24, lon=45),  
         zoom=4
     ),
        coloraxis_colorbar=dict(
-           len=0.9,  # النسبة المئوية لطول الليجند (من 0 إلى 1) — زيديها عشان يمط
+           len=0.9,  
             thickness=15,
     tickfont=dict(color="#4CAF8B"),
     title="Dew Point (°C)",
@@ -347,19 +306,14 @@ def dew_point_plot(avg_df):
         margin=dict(l=50, r=50, t=50, b=50),
         height=600,
         width=1200,
-        paper_bgcolor='rgba(0,0,0,0)',   # لون خلفية الورقة 
-        plot_bgcolor='rgba(0,0,0,0)'    # لون خلفية الرسم
+        paper_bgcolor='rgba(0,0,0,0)',  
+        plot_bgcolor='rgba(0,0,0,0)'    
     )
     return fig 
 
 
-st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
-
-st.markdown('##')
+st.markdown("<hr style='border: 2px solid #41755b; margin: 30px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
-
-
-import streamlit as st
 
 
 st.markdown("""
@@ -375,19 +329,16 @@ st.markdown("""
         }
 
         .stSelectbox svg {
-            fill: inherit !important;
-        }
+            fill: inherit !important;}
 
         div[data-baseweb="popover"], 
         div[data-baseweb="option"] {
             background-color: transparent !important;
-            color: inherit !important;
-        }
+            color: inherit !important; }
 
         .stDateInput input {
             background-color: transparent !important;
-            color: inherit !important;
-        }
+            color: inherit !important; }
 
         .DayPicker, .DayPicker-Month {
             background-color: transparent !important;
@@ -402,17 +353,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
-
-       
-
-
-    
-
-
-
-
-# --------- الفلاتر في صف واحد ---------
 filter_cols = st.columns(3)
 
 with filter_cols[0]:
@@ -430,7 +370,6 @@ with filter_cols[2]:
     end_date = st.date_input("", value=max_date, min_value=min_date, max_value=max_date)
 
 
-# --------- معالجة البيانات وعرض الخريطة ---------
 if start_date > end_date:
     st.error("📛 Start date must be before end date.")
 else:
@@ -450,10 +389,8 @@ else:
     avg_df['max_wind_speed'] = avg_df['max_wind_speed'].round(2)
     avg_df['max_dew_point'] = avg_df['max_dew_point'].round(2)
 
-        # إضافة الإطار حول التشارت بالكامل (الـ chart مع الـ legend)
     import streamlit.components.v1 as components
 
-    # توليد الـ fig من الميثود المختارة
     if map_type == "Temperature":
         fig = temperature_plot(avg_df)
     elif map_type == "Humidity":
@@ -463,10 +400,8 @@ else:
     elif map_type == "Wind Speed":
         fig = wind_plot(avg_df)
     
-    # حوّلي الـ fig إلى HTML
     html = fig.to_html(full_html=False, include_plotlyjs='cdn')
     
-    # عرض التشارت داخل div له إطار
     components.html(f"""
     <div style="
         border: 3px solid #4CAF8B;
@@ -483,15 +418,9 @@ else:
     """, height=700)
 
 
-
-
-
-
 def heatmap_temperature(df, city):
     city_df = df[df["city"] == city]
-
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_temp"].mean()
-
     fig = px.density_heatmap(
         grouped,
         x="day",  
@@ -517,22 +446,14 @@ def heatmap_temperature(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="temperature (C)",
-            title_font=dict(size=16, color="#4CAF8B"))
-    
-    )
+            title_font=dict(size=16, color="#4CAF8B")) )
  
     return fig 
-
-        
-        
 
 
 def heatmap_humidity(df, city):
     city_df = df[df["city"] == city]
-
-
     grouped = city_df.groupby(["month", "day"], as_index=False)["avg_humidity"].mean()
-
     fig = px.density_heatmap(
         grouped,
         x="day",
@@ -557,21 +478,14 @@ def heatmap_humidity(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="Humidity (%)",
-            title_font=dict(size=16, color="#4CAF8B"))
-    
-    )
-     
-
-    return fig 
+            title_font=dict(size=16, color="#4CAF8B")))
+      return fig 
     
 
 
 def heatmap_dew_point(df, city):
     city_df = df[df["city"] == city]
-
-    
     grouped = city_df.groupby(["month", "day"], as_index=False)["max_dew_point"].mean()
-
     fig = px.density_heatmap(
         grouped,
         x="day",
@@ -596,9 +510,7 @@ def heatmap_dew_point(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="dew  (%)",
-            title_font=dict(size=16, color="#4CAF8B"))
-    
-    )
+            title_font=dict(size=16, color="#4CAF8B")))
     
     return fig 
 
@@ -606,10 +518,7 @@ def heatmap_dew_point(df, city):
 
 def heatmap_wind(df, city):
     city_df = df[df["city"] == city]
-
-    
     grouped = city_df.groupby(["month", "day"], as_index=False)["max_wind_speed"].mean()
-
     fig = px.density_heatmap(
         grouped,
         x="day",
@@ -636,8 +545,7 @@ def heatmap_wind(df, city):
             title="wind (k/h)",
             title_font=dict(size=16, color="#4CAF8B"))
     
-    )
-    return fig 
+    )return fig 
     
 
 
@@ -645,13 +553,9 @@ available_cities = sorted(df["city"].dropna().unique())
 if "selected_city" not in st.session_state:
     st.session_state.selected_city = None
 
-
 city = None
-# إضافة عنوان
-st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
-
+st.markdown("<hr style='border: 2px solid #41755b; margin: 30px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
-
 
 buttons_per_row = 6
 cols = st.columns(buttons_per_row)
@@ -681,9 +585,6 @@ for i, city in enumerate(available_cities):
             st.session_state.selected_city = city
             st.write(f"You selected: {city}")
 
-
-
-
 if  st.session_state.selected_city:
     city = st.session_state.selected_city
 else :
@@ -704,12 +605,10 @@ st.markdown("""
     }
 
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(3) {
-        background-color: red !important;
-    }
+        background-color: red !important;}
 
     div[data-testid="stSliderThumbValue"] {
-        color: blue !important;
-    }
+        color: blue !important;  }
 
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
@@ -719,8 +618,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-
 
     
 def display_chart_with_frame(fig, height=550):
@@ -739,44 +636,27 @@ def display_chart_with_frame(fig, height=550):
         </div>
     """, height=height)
 
-
-
-
-# الصف الأول: الحرارة والرطوبة
 col1, col2 = st.columns(2 , gap="small")
 
 with col1:
     fig_temp = heatmap_temperature(df, city)
     display_chart_with_frame(fig_temp)
-
 with col2:
     fig_humidity = heatmap_humidity(df, city)
     display_chart_with_frame(fig_humidity)
 
-# الصف الثاني: نقطة الندى والرياح
 col3, col4 = st.columns(2 , gap="small")
 
 with col3:
     fig_dew = heatmap_dew_point(df, city)
     display_chart_with_frame(fig_dew)
-
 with col4:
     fig_wind = heatmap_wind(df, city)
     display_chart_with_frame(fig_wind)
 
-
-
-st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
-
-st.markdown('##')
+st.markdown("<hr style='border: 2px solid #41755b; margin: 30px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
 
-
-import streamlit.components.v1 as components
-
-import streamlit as st
-
-# تخصيص الألوان باستخدام CSS
 st.markdown("""
     <style>
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(1) {
@@ -784,14 +664,12 @@ st.markdown("""
     }
 
     .stSlider > div[data-baseweb="slider"] > div > div:nth-child(2) {
-        background-color: transparent !important;
-    }
+        background-color: transparent !important; }
 
     div[data-testid="stSliderThumbValue"] {
         color: #2a4d69 !important;
     }
 
-    /* الأرقام على طرفي السلايدر بدون خلفية ولون أزرق */
     div[data-testid="stSliderTickBarMin"],
     div[data-testid="stSliderTickBarMax"] {
         background: transparent !important;
@@ -803,8 +681,6 @@ st.markdown("""
 
 st.markdown("<style>div[data-testid='column']{padding: 0 10px;}</style>", unsafe_allow_html=True)
 
-
-# إنشاء الأعمدة
 col1, col2 = st.columns(2)
 
 with col1:
@@ -820,10 +696,6 @@ with col2:
 
     st.markdown('<p style="font-size:16px; color:#2a4d69;"><b>🍃 Ideal Wind Speed (km/h)</b></p>', unsafe_allow_html=True)
     desired_wind = st.slider("wind", 0, 100, 10, label_visibility="collapsed")
-
-
-
-
 
 
 if st.button("Show Top 3 Options 🔎"):
@@ -875,7 +747,7 @@ if st.button("Show Top 3 Options 🔎"):
             with cols[i]:
                 st.markdown(
                     f"""
-                    <div style="background-color:#5d9c7d;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="background-color:#5d9c7d;color= #ffffff ;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="text-align:center;">📍 {row['city']} — {row['month']}</h4>
                         <p>🔥 <b>Temp:</b> {row['avg_temp']:.1f}°C</p>
                         <p>💧 <b>Humidity:</b> {row['avg_humidity']:.0f}%</p>
