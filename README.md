@@ -1,4 +1,3 @@
-بالطبع! إليك النسخة المعدلة بدون قسم **Contributing** و **License**
 # Weather Analysis Web App
 
 This is a **Weather Analysis Web App** built using **Python** and **Streamlit**. The app allows users to explore weather data across various cities in **Saudi Arabia**, providing valuable insights into climate conditions and helping users make informed decisions based on their weather preferences.
