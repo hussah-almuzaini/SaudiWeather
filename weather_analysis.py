@@ -446,8 +446,9 @@ def heatmap_temperature(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="temperature (C)",
-            title_font=dict(size=16, color="#4CAF8B")) )
-     return fig 
+            title_font=dict(size=16, color="#4CAF8B")) 
+    )
+    return fig 
 
 
 def heatmap_humidity(df, city):
@@ -477,8 +478,9 @@ def heatmap_humidity(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="Humidity (%)",
-            title_font=dict(size=16, color="#4CAF8B")))
-      return fig 
+            title_font=dict(size=16, color="#4CAF8B"))
+    )
+    return fig 
     
 
 
@@ -509,7 +511,8 @@ def heatmap_dew_point(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="dew  (%)",
-            title_font=dict(size=16, color="#4CAF8B")))
+            title_font=dict(size=16, color="#4CAF8B"))
+    )
     
     return fig 
 
@@ -544,7 +547,8 @@ def heatmap_wind(df, city):
             title="wind (k/h)",
             title_font=dict(size=16, color="#4CAF8B"))
     
-    )return fig 
+    )
+    return fig 
     
 
 
