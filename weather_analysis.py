@@ -35,18 +35,6 @@ image_path = 'download.jpg'
 image_base64 = load_image(image_path)
 
 
-
-import streamlit as st
-import base64
-
-def load_image(image_file):
-    with open(image_file, "rb") as img:
-        return base64.b64encode(img.read()).decode()
-
-image_path = 'download.jpg'
-image_base64 = load_image(image_path)
-
-# إعداد الخلفية
 st.markdown(
     f"""
     <style>
@@ -72,10 +60,10 @@ st.markdown(
     }}
 
     .dashboard-title {{
-        font-size: 38px;
+        font-size: 44px;
         font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 5px #000;
+        color: #ffffff;
+        text-shadow: 2px 2px 8px #2e7d32; /* ظل أخضر */
     }}
     </style>
 
@@ -86,6 +74,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 df = load_data(file_path)
