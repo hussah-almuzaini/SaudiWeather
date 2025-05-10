@@ -585,7 +585,7 @@ for i, city in enumerate(available_cities):
     with cols[i % buttons_per_row]: 
         if st.button(city, key=city):  
             st.session_state.selected_city = city
-            st.write(f"You selected: {city}")
+            
 
 if  st.session_state.selected_city:
     city = st.session_state.selected_city
