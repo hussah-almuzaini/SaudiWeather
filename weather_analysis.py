@@ -478,8 +478,9 @@ def heatmap_humidity(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="Humidity (%)",
-            title_font=dict(size=16, color="#4CAF8B")))
-      return fig 
+            title_font=dict(size=16, color="#4CAF8B"))
+    )
+    return fig 
     
 
 
