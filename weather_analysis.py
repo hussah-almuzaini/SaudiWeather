@@ -223,7 +223,7 @@ def humidity_plot(avg_df):
         margin=dict(l=50, r=50, t=50, b=50),
          height=600,
         width=1200,
-        paper_bgcolor='rgba(0,0,0,0)'
+        paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)'     )
     return fig 
     
