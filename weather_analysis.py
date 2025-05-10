@@ -312,7 +312,7 @@ def dew_point_plot(avg_df):
     return fig 
 
 
-st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 2px solid #a9a9a9; margin: 30px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
@@ -556,7 +556,7 @@ if "selected_city" not in st.session_state:
     st.session_state.selected_city = None
 
 city = None
-st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 2px solid #a9a9a9; margin: 30px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
 
 buttons_per_row = 6
@@ -656,7 +656,7 @@ with col4:
     fig_wind = heatmap_wind(df, city)
     display_chart_with_frame(fig_wind)
 
-st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 2px solid #a9a9a9; margin: 30px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
 
 st.markdown("""
