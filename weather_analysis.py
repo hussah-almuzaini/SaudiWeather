@@ -75,6 +75,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("<hr style='border: 2px solid #5d9c7d; margin: 30px 0;'>", unsafe_allow_html=True)
 
 
 df = load_data(file_path)
