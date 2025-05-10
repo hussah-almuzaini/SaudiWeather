@@ -223,7 +223,7 @@ def humidity_plot(avg_df):
         margin=dict(l=50, r=50, t=50, b=50),
          height=600,
         width=1200,
-        paper_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)'
         plot_bgcolor='rgba(0,0,0,0)'     )
     return fig 
     
@@ -312,7 +312,7 @@ def dew_point_plot(avg_df):
     return fig 
 
 
-st.markdown("<hr style='border: 2px solid #41755b; margin: 30px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Weather Map Overview : </h1>', unsafe_allow_html=True)
 
 
@@ -446,8 +446,8 @@ def heatmap_temperature(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="temperature (C)",
-            title_font=dict(size=16, color="#4CAF8B")) 
-    )
+            title_font=dict(size=16, color="#4CAF8B")) )
+ 
     return fig 
 
 
@@ -478,9 +478,8 @@ def heatmap_humidity(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="Humidity (%)",
-            title_font=dict(size=16, color="#4CAF8B"))
-    )
-    return fig 
+            title_font=dict(size=16, color="#4CAF8B")))
+      return fig 
     
 
 
@@ -511,8 +510,7 @@ def heatmap_dew_point(df, city):
             thickness=15,
             tickfont=dict(color="#4CAF8B"),  
             title="dew  (%)",
-            title_font=dict(size=16, color="#4CAF8B"))
-    )
+            title_font=dict(size=16, color="#4CAF8B")))
     
     return fig 
 
@@ -547,8 +545,7 @@ def heatmap_wind(df, city):
             title="wind (k/h)",
             title_font=dict(size=16, color="#4CAF8B"))
     
-    )
-    return fig 
+    )return fig 
     
 
 
@@ -557,7 +554,7 @@ if "selected_city" not in st.session_state:
     st.session_state.selected_city = None
 
 city = None
-st.markdown("<hr style='border: 2px solid #41755b; margin: 30px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">🌆 Select the city to view the weather: </h1>', unsafe_allow_html=True)
 
 buttons_per_row = 6
@@ -657,7 +654,7 @@ with col4:
     fig_wind = heatmap_wind(df, city)
     display_chart_with_frame(fig_wind)
 
-st.markdown("<hr style='border: 2px solid #41755b; margin: 30px 0;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 1px solid #d3d3d3; margin: 20px 0;'>", unsafe_allow_html=True)
 st.markdown(f'<h1 style="color:#41755b;font-size:30px;">Select Weather Preferences 🎯</h1>', unsafe_allow_html=True)
 
 st.markdown("""
@@ -750,7 +747,7 @@ if st.button("Show Top 3 Options 🔎"):
             with cols[i]:
                 st.markdown(
                     f"""
-                    <div style="background-color:#5d9c7d;color= #ffffff ;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="background-color:#5d9c7d;padding:15px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="text-align:center;">📍 {row['city']} — {row['month']}</h4>
                         <p>🔥 <b>Temp:</b> {row['avg_temp']:.1f}°C</p>
                         <p>💧 <b>Humidity:</b> {row['avg_humidity']:.0f}%</p>
