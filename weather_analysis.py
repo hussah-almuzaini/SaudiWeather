@@ -35,23 +35,35 @@ st.markdown(
         background-position: center;
     }}
 
-    .dashboard-title {{
-        font-size: 40px;
-        font-weight: 700;
-        text-align: center;
-        color: white;
+    .header-container {{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 30px;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px #000000;
+        margin-bottom: 30px;
+    }}
+
+    .header-logo {{
+        width: 80px;
+        margin-right: 20px;
+    }}
+
+    .header-title {{
+        font-size: 36px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px #000;
     }}
     </style>
 
-    <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
+    <div class="header-container">
+        <img src="data:image/png;base64,{load_image('logo.png')}" class="header-logo">
+        <div class="header-title">Saudi Arabia Weather Dashboard</div>
+    </div>
     """,
     unsafe_allow_html=True
 )
 
-st.image("logo.png", width=150)
 
 df = load_data(file_path)
 df = preprocess_data(df)
