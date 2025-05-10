@@ -70,7 +70,7 @@ st.markdown(
     </style>
 
     <div class="header-container">
-        <img class="dashboard-logo" src="data:image/png;base64,{load_image('logo.png')}">
+        <img class="dashboard-logo" src="data:image/png;base64,{load_image('logo (1).png')}">
         <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
     </div>
     """,
