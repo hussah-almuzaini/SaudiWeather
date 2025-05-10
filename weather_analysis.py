@@ -29,40 +29,36 @@ st.markdown(
     <style>
     .stApp {{
         background-image: url('data:image/jpeg;base64,{image_base64}');
-        background-size: cover;  
-        background-repeat: no-repeat;  
-        background-attachment: fixed;  
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         background-position: center;
     }}
 
-    .header-container {{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }}
-
-    .header-logo {{
+    .logo {{
+        position: absolute;
+        top: 20px;
+        left: 20px;
         width: 80px;
-        margin-right: 20px;
+        z-index: 100;
     }}
 
-    .header-title {{
+    .dashboard-title {{
+        text-align: center;
         font-size: 36px;
         font-weight: bold;
+        margin-top: 60px;
         color: white;
         text-shadow: 2px 2px 4px #000;
     }}
     </style>
 
-    <div class="header-container">
-        <img src="data:image/png;base64,{load_image('logo.png')}" class="header-logo">
-        <div class="header-title">Saudi Arabia Weather Dashboard</div>
-    </div>
+    <img class="logo" src="data:image/png;base64,{load_image('logo.png')}">
+    <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 df = load_data(file_path)
