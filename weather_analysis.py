@@ -35,29 +35,35 @@ st.markdown(
         background-position: center;
     }}
 
-    .logo {{
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 80px;
-        z-index: 100;
+    .header-container {{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 20px;
+    }}
+
+    .dashboard-logo {{
+        width: 100px;
     }}
 
     .dashboard-title {{
-        text-align: center;
         font-size: 36px;
         font-weight: bold;
-        margin-top: 60px;
         color: white;
         text-shadow: 2px 2px 4px #000;
     }}
     </style>
 
-    <img class="logo" src="data:image/png;base64,{load_image('logo.png')}">
-    <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
+    <div class="header-container">
+        <img class="dashboard-logo" src="data:image/png;base64,{load_image('logo.png')}">
+        <div class="dashboard-title">Saudi Arabia Weather Dashboard</div>
+    </div>
     """,
     unsafe_allow_html=True
 )
+
+# باقي الكود
 
 
 
