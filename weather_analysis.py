@@ -64,7 +64,7 @@ st.markdown(
         font-size: 44px;
         font-weight: bold;
         color: #ffffff;
-        text-shadow: 2px 2px 8px #2e7d32;
+        text-shadow: 4px 4px 16px #2e7d32;
         line-height: 100px;
     }}
     </style>
