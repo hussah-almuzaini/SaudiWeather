@@ -56,12 +56,12 @@ st.markdown(
         position: absolute;
         left: 30px;
         top: 0;
-        width: 140px;
+        width: 150px;
     }}
 
     .dashboard-title {{
         text-align: center;
-        font-size: 44px;
+        font-size: 50px;
         font-weight: bold;
         color: #ffffff;
         text-shadow: 4px 4px 16px #2e7d32;
@@ -220,7 +220,7 @@ def temperature_plot(avg_df):
             title="Temperature (°C)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-         height=600,
+         height=500,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',  
         plot_bgcolor='rgba(0,0,0,0)' ,  
@@ -262,7 +262,7 @@ def humidity_plot(avg_df):
             title="Humidity (%)",
             title_font=dict(size=16, color="#4CAF8B")),
         margin=dict(l=50, r=50, t=50, b=50),
-         height=600,
+         height=500,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)'     )
@@ -302,7 +302,7 @@ def wind_plot(avg_df):
             title_font=dict(size=16, color="#4CAF8B")
 ),
         margin=dict(l=50, r=50, t=50, b=50),
-        height=600,
+        height=500,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',  
         plot_bgcolor='rgba(0,0,0,0)'  
@@ -345,7 +345,7 @@ def dew_point_plot(avg_df):
 ),
 
         margin=dict(l=50, r=50, t=50, b=50),
-        height=600,
+        height=500,
         width=1200,
         paper_bgcolor='rgba(0,0,0,0)',  
         plot_bgcolor='rgba(0,0,0,0)'    
