@@ -669,7 +669,7 @@ def display_chart_with_frame(fig, height=550):
         <div style="
             border: 2px solid #4CAF8B;
             border-radius: 10px;
-            padding: 5px;
+            padding: 0px;  /* تقليل الحشو */
             margin: 0px;
             background-color: transparent;
             width: 100%;
